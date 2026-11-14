@@ -27,15 +27,6 @@ QString GetStyleStatistics(QString const & mapcssMappingFile, QString const & dr
   env.insert("PROTOBUF_EGG_PATH", GetProtobufEggPath());
 
   // Run the script.
-#if defined(OMIM_OS_MAC)
-  return ExecProcess("python3",
-                     {
-                         GetExternalPath("drules_info.py", "kothic/src", "../tools/python/stylesheet"),
-                         mapcssMappingFile,
-                         drulesFile,
-                     },
-                     &env);
-#else
   return ExecProcess("python",
                      {
                          GetExternalPath("drules_info.py", "kothic/src", "../tools/python/stylesheet"),
@@ -43,7 +34,6 @@ QString GetStyleStatistics(QString const & mapcssMappingFile, QString const & dr
                          drulesFile,
                      },
                      &env);
-#endif
 }
 
 QString GetCurrentStyleStatistics()

@@ -12,14 +12,7 @@
 #include "drape/utils/gpu_mem_tracker.hpp"
 #endif
 
-#if defined(OMIM_OS_IPHONE)
-#include "drape/hw_texture_ios.hpp"
-#endif
 
-#if defined(OMIM_METAL_AVAILABLE)
-extern drape_ptr<dp::HWTextureAllocator> CreateMetalAllocator();
-extern ref_ptr<dp::HWTextureAllocator> GetDefaultMetalAllocator();
-#endif
 
 extern drape_ptr<dp::HWTextureAllocator> CreateVulkanAllocator();
 extern ref_ptr<dp::HWTextureAllocator> GetDefaultVulkanAllocator();
@@ -263,41 +256,19 @@ drape_ptr<HWTextureAllocator> CreateAllocator(ref_ptr<dp::GraphicsContext> conte
 {
   CHECK(context != nullptr, ());
   auto const apiVersion = context->GetApiVersion();
-  if (apiVersion == dp::ApiVersion::Metal)
-  {
-#if defined(OMIM_METAL_AVAILABLE)
-    return CreateMetalAllocator();
-#endif
-    CHECK(false, ("Metal rendering is supported now only on iOS."));
-    return nullptr;
-  }
-
   if (apiVersion == dp::ApiVersion::Vulkan)
     return CreateVulkanAllocator();
 
   if (apiVersion == dp::ApiVersion::OpenGLES3)
     return make_unique_dp<OpenGLHWTextureAllocator>();
 
-#if defined(OMIM_OS_IPHONE)
-  return make_unique_dp<HWTextureAllocatorApple>();
-#else
   return make_unique_dp<OpenGLHWTextureAllocator>();
-#endif
 }
 
 ref_ptr<HWTextureAllocator> GetDefaultAllocator(ref_ptr<dp::GraphicsContext> context)
 {
   CHECK(context != nullptr, ());
   auto const apiVersion = context->GetApiVersion();
-  if (apiVersion == dp::ApiVersion::Metal)
-  {
-#if defined(OMIM_METAL_AVAILABLE)
-    return GetDefaultMetalAllocator();
-#endif
-    CHECK(false, ("Metal rendering is supported now only on iOS."));
-    return nullptr;
-  }
-
   if (apiVersion == dp::ApiVersion::Vulkan)
     return GetDefaultVulkanAllocator();
 

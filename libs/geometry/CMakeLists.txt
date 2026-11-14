@@ -67,7 +67,7 @@ set(SRC
   triangle2d.hpp
 )
 
-if (NOT PLATFORM_IPHONE AND NOT PLATFORM_ANDROID)
+if (NOT PLATFORM_ANDROID)
   append(SRC
     region2d/binary_operators.cpp
     region2d/binary_operators.hpp

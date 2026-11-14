@@ -65,7 +65,7 @@ set(SRC
   update_dialog.hpp
 )
 
-omim_add_executable(${PROJECT_NAME} MACOSX_BUNDLE ${RES_SOURCES} ${SRC})
+omim_add_executable(${PROJECT_NAME} ${RES_SOURCES} ${SRC})
 
 set_target_properties(${PROJECT_NAME} PROPERTIES AUTOMOC ON)
 
@@ -99,11 +99,9 @@ if (BUILD_DESIGNER)
   target_link_libraries(${PROJECT_NAME} PRIVATE generator)
   set(BUNDLE_NAME "CoMaps-Designer")
   set(BUNDLE_DISPLAY_NAME "CoMaps Designer")
-  set(BUNDLE_ICON designer.icns)
 else()
   set(BUNDLE_NAME "CoMaps")
   set(BUNDLE_DISPLAY_NAME "CoMaps Desktop")
-  set(BUNDLE_ICON mac.icns)
 endif()
 
 set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME ${BUNDLE_NAME})
@@ -202,34 +200,6 @@ if (NOT PLATFORM_LINUX)
   copy_resources(icudt75l.dat)
 endif()
 
-if (PLATFORM_MAC)
-  if (BUILD_DESIGNER)
-    execute_process(
-        COMMAND cp ${PROJECT_SOURCE_DIR}/res/mac/designer.icns ${RESOURCES_FOLDER}
-    )
-  else ()
-    execute_process(
-        COMMAND cp ${PROJECT_SOURCE_DIR}/res/mac/mac.icns ${RESOURCES_FOLDER}
-    )
-  endif ()
-endif()
-
-if (PLATFORM_MAC)
-  if (NOT APP_VERSION)
-    set(BUNDLE_VERSION "UNKNOWN")
-  else()
-    set(BUNDLE_VERSION ${APP_VERSION})
-  endif()
-
-  configure_file(${CMAKE_CURRENT_SOURCE_DIR}/res/mac/Info.plist.in ${CMAKE_CURRENT_BINARY_DIR}/generated/Info.plist)
-
-  set_target_properties(${PROJECT_NAME}
-    PROPERTIES
-      OUTPUT_NAME ${BUNDLE_NAME}
-      MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_BINARY_DIR}/generated/Info.plist
-  )
-endif()
-
 if (PLATFORM_WIN)
   if (BUILD_DESIGNER)
     target_sources(${PROJECT_NAME} PRIVATE res/windows/designer.rc)
@@ -274,40 +244,6 @@ if (BUILD_DESIGNER)
     COMMAND cp -f ${OMIM_ROOT}/3party/protobuf/protobuf-3.3.0-py2.7.egg ${RESOURCES_FOLDER}/kothic/
   )
 
-  # Generate DMG
-  install(DIRECTORY ${DATA_DIR}/styles DESTINATION .)
-  set(BUNDLES
-    ${CMAKE_BINARY_DIR}/generator_tool.app
-    ${CMAKE_BINARY_DIR}/skin_generator_tool.app
-    ${CMAKE_BINARY_DIR}/style_tests.app
-  )
-  install(CODE "
-    foreach(BUNDLE ${BUNDLE_FOLDER} ${BUNDLES})
-      execute_process(
-        COMMAND \"${QT_PATH}/bin/macdeployqt\" \"\${BUNDLE}\"
-      )
-    endforeach()
-    foreach(BUNDLE ${BUNDLES})
-      execute_process(
-        COMMAND cp -rf \"\${BUNDLE}\" \"${RESOURCES_FOLDER}\"
-      )
-    endforeach()
-  ")
-  install(TARGETS ${PROJECT_NAME} DESTINATION .)
-
-  set(CPACK_GENERATOR DragNDrop)
-  set(CPACK_DMG_FORMAT UDZO)
-  set(CPACK_DMG_VOLUME_NAME ${BUNDLE_NAME})
-  set(CPACK_PACKAGE_ICON ${PROJECT_SOURCE_DIR}/res/mac/designer.icns)
-  include(CPack)
-elseif (BUILD_STANDALONE)
-  add_custom_command(TARGET desktop POST_BUILD
-    COMMAND "${QT_PATH}/bin/macdeployqt" ${BUNDLE_FOLDER}
-    COMMAND ${Python3_EXECUTABLE} "${OMIM_ROOT}/tools/macdeployqtfix/macdeployqtfix.py" -q -nl ${BUNDLE_FOLDER}/Contents/MacOS/${BUNDLE_NAME} ${QT_PATH}
-    COMMAND echo "Fixing Qt dependencies finished."
-    VERBATIM
-    COMMENT "Fixing Qt dependencies for standalone desktop app"
-  )
 endif()
 
 add_subdirectory(qt_common)

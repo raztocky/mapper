@@ -79,8 +79,8 @@ namespace
 {
 float constexpr kIsometryAngle = static_cast<float>(math::pi) * 76.0f / 180.0f;
 double constexpr kVSyncInterval = 0.06;
-// Metal/Vulkan rendering is fast, so we can decrease sync inverval.
-double constexpr kVSyncIntervalMetalVulkan = 0.03;
+// Vulkan rendering is fast, so we can decrease sync inverval.
+double constexpr kVSyncIntervalVulkan = 0.03;
 
 std::string const kTransitBackgroundColor = "TransitBackground";
 
@@ -953,10 +953,8 @@ void FrontendRenderer::AcceptMessage(ref_ptr<Message> message)
   {
     ref_ptr<SetPosteffectEnabledMessage> msg = message;
     // Enabling anti aliasing destroys performance on some Android devices
-#ifndef OMIM_OS_IPHONE_SIMULATOR
     CHECK(m_context != nullptr, ());
     m_postprocessRenderer->SetEffectEnabled(m_context, msg->GetEffect(), msg->IsEnabled());
-#endif
     break;
   }
 
@@ -1880,8 +1878,8 @@ void FrontendRenderer::RenderFrame()
   }
   else
   {
-    auto const syncInverval = (m_apiVersion == dp::ApiVersion::Metal || m_apiVersion == dp::ApiVersion::Vulkan)
-                                ? kVSyncIntervalMetalVulkan
+    auto const syncInverval = (m_apiVersion == dp::ApiVersion::Vulkan)
+                                ? kVSyncIntervalVulkan
                                 : kVSyncInterval;
 
     double availableTime;
@@ -2023,11 +2021,6 @@ void FrontendRenderer::RefreshPivotTransform(ScreenBase const & screen)
     math::Matrix<float, 4, 4> transform(math::Identity<float, 4>());
     transform(2, 1) = -1.0f / static_cast<float>(tan(kIsometryAngle));
     transform(2, 2) = 1.0f / screen.GetHeight();
-    if (m_apiVersion == dp::ApiVersion::Metal)
-    {
-      transform(3, 2) = transform(3, 2) + 0.5f;
-      transform(2, 2) = transform(2, 2) * 0.5f;
-    }
     m_frameValues.m_pivotTransform = glsl::make_mat4(transform.m_data);
   }
   else
@@ -2481,14 +2474,12 @@ void FrontendRenderer::OnContextCreate()
     return true;
   }, [this](ScreenBase const & modelView) { PreRender3dLayer(modelView); });
 
-#ifndef OMIM_OS_IPHONE_SIMULATOR
   for (auto const & effect : m_enabledOnStartEffects)
     m_postprocessRenderer->SetEffectEnabled(m_context, effect, true /* enabled */);
   m_enabledOnStartEffects.clear();
 
   if (dp::SupportManager::Instance().IsAntialiasingEnabledByDefault() || m_screenshotMode)
     m_postprocessRenderer->SetEffectEnabled(m_context, PostprocessRenderer::Antialiasing, true);
-#endif
 
   m_buildingsFramebuffer =
       make_unique_dp<dp::Framebuffer>(dp::TextureFormat::RGBA8, true /* depthEnabled */, false /* stencilEnabled */);

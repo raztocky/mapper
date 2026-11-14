@@ -102,9 +102,7 @@ QString GetExternalPath(QString const & name, QString const & primaryPath, QStri
   {
     QString appPath = QCoreApplication::applicationDirPath();
 
-#if defined(OMIM_OS_MAC)
-    path = JoinPathQt({appPath, "..", "..", "..", name});
-#elif defined(OMIM_OS_LINUX)
+#if   defined(OMIM_OS_LINUX)
     path = JoinPathQt({appPath, name});
 #endif
   }

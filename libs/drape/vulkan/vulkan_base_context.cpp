@@ -209,13 +209,6 @@ bool VulkanBaseContext::BeginRendering()
     return false;
   }
 
-#if defined(OMIM_OS_MAC)
-  // MoltenVK returns VK_SUBOPTIMAL_KHR in our configuration, it means that window is not resized that's expected
-  // in the developer sandbox for macOS
-  // https://github.com/KhronosGroup/MoltenVK/issues/1753
-  if (res == VK_SUBOPTIMAL_KHR)
-    res = VK_SUCCESS;
-#endif
 
   if (res == VK_ERROR_OUT_OF_DATE_KHR || res == VK_SUBOPTIMAL_KHR)
   {

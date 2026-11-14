@@ -1,6 +1,6 @@
 if (NOT PYBINDINGS_VERSION)
     execute_process(
-	COMMAND grep -h -E "propVersionName|CURRENT_PROJECT_VERSION" xcode/common.xcconfig android/gradle.properties
+	COMMAND grep -h -E "propVersionName" android/gradle.properties
 	COMMAND cut -d = -f 2
 	COMMAND awk "{print $1}"
 	COMMAND sort -Vr

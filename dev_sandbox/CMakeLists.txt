@@ -6,26 +6,13 @@ set(SRC
   imgui_renderer.hpp
 )
 
-if (${PLATFORM_MAC})
-  append(SRC
-    main.mm
-    ../iphone/Maps/Classes/MetalContextFactory.h
-    ../iphone/Maps/Classes/MetalContextFactory.mm
-  )
-
-  file(GLOB_RECURSE SHADER_SOURCES_FILES ${OMIM_ROOT}/libs/shaders/Metal/*.metal)
-  add_metal_shader_library(shaders_metal
-    ${SHADER_SOURCES_FILES}
-  )
-endif()
-
 if (${PLATFORM_LINUX})
   append(SRC
     main_linux.cpp
   )
 endif()
 
-omim_add_executable(${PROJECT_NAME} MACOSX_BUNDLE ${SRC})
+omim_add_executable(${PROJECT_NAME} ${SRC})
 
 target_link_libraries(${PROJECT_NAME}
   PUBLIC
@@ -54,14 +41,6 @@ if (Vulkan_FOUND)
   target_link_libraries(${PROJECT_NAME} PRIVATE Vulkan::Vulkan)
 endif()
 
-if(PLATFORM_MAC)
-  target_embed_metal_shader_libraries(${PROJECT_NAME} shaders_metal)
-endif()
-
-target_compile_definitions(${PROJECT_NAME} PUBLIC GL_SILENCE_DEPRECATION)
-if (PLATFORM_MAC)
-  set_target_properties(${PROJECT_NAME} PROPERTIES XCODE_ATTRIBUTE_CLANG_ENABLE_OBJC_ARC YES)
-endif()
 
 if (PLATFORM_LINUX)
   target_compile_definitions(${PROJECT_NAME} PRIVATE VK_USE_PLATFORM_XLIB_KHR)

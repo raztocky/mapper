@@ -183,10 +183,7 @@ void PostprocessRenderer::SetStaticTextures(drape_ptr<PostprocessStaticTextures>
 bool PostprocessRenderer::IsEnabled() const
 {
   // Do not use post processing in routing following mode by energy-saving reasons.
-  // For Metal rendering to the texture is more efficient,
-  // since nextDrawable will be requested later.
-
-  if (m_apiVersion != dp::ApiVersion::Metal && m_isRouteFollowingActive)
+  if (m_isRouteFollowingActive)
     return false;
 
   return IsSupported(m_mainFramebuffer);
@@ -282,7 +279,7 @@ bool PostprocessRenderer::EndFrame(ref_ptr<dp::GraphicsContext> context, ref_ptr
       TRACE_SECTION("[drape][SMAA] Edges rendering");
       context->SetFramebuffer(make_ref(m_edgesFramebuffer));
       context->Clear(dp::ClearBits::ColorBit, dp::ClearBits::ColorBit | dp::ClearBits::StencilBit /* storeBits */);
-      if (m_apiVersion == dp::ApiVersion::Metal || m_apiVersion == dp::ApiVersion::Vulkan)
+      if (m_apiVersion == dp::ApiVersion::Vulkan)
         context->SetStencilFunction(dp::StencilFace::FrontAndBack, dp::TestFunction::Greater);
       else
         context->SetStencilFunction(dp::StencilFace::FrontAndBack, dp::TestFunction::NotEqual);

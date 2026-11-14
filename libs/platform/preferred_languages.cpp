@@ -9,10 +9,7 @@
 #include <cstring>  // strlen
 #include <string>
 
-#if defined(OMIM_OS_MAC) || defined(OMIM_OS_IPHONE)
-#include <CoreFoundation/CFLocale.h>
-#include <CoreFoundation/CFString.h>
-#elif defined(OMIM_OS_WINDOWS)
+#if   defined(OMIM_OS_WINDOWS)
 #include "base/assert.hpp"
 #include "base/macros.hpp"
 #include "std/windows.hpp"
@@ -443,7 +440,7 @@ struct SystemLanguages
     // m_langs.push_back("hi");
     // return;
 
-#if defined(OMIM_OS_MAC) || defined(OMIM_OS_IPHONE) || defined(OMIM_OS_LINUX)
+#if defined(OMIM_OS_LINUX)
     // check environment variables
     char const * p = std::getenv("LANGUAGE");
     if (p && strlen(p))  // LANGUAGE can contain several values divided by ':'
@@ -455,21 +452,6 @@ struct SystemLanguages
     else if ((p = getenv("LANG")))
       m_langs.push_back(p);
 
-#if defined(OMIM_OS_MAC) || defined(OMIM_OS_IPHONE)
-    else
-    {
-      // Mac and iOS implementation
-      CFArrayRef langs = CFLocaleCopyPreferredLanguages();
-      char buf[30];
-      for (CFIndex i = 0; i < CFArrayGetCount(langs); ++i)
-      {
-        CFStringRef strRef = (CFStringRef)CFArrayGetValueAtIndex(langs, i);
-        CFStringGetCString(strRef, buf, 30, kCFStringEncodingUTF8);
-        m_langs.push_back(buf);
-      }
-      CFRelease(langs);
-    }
-#endif
 
 #elif defined(OMIM_OS_WINDOWS)
     // if we're on Vista or above, take list of preferred languages

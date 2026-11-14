@@ -53,9 +53,9 @@ while getopts ":cdrRxtaigjlp:n:" opt; do
       echo -e "-R  Build release with debug info"
       echo -e "-x  Use precompiled headers"
       echo -e "-c  Clean before building"
-      echo -e "-t  Build Qt based designer tool (Linux/MacOS only)"
-      echo -e "-a  Build Qt based standalone desktop app (Linux/MacOS only)"
-      echo -e "-g  Force use GCC (Linux/MacOS only)"
+      echo -e "-t  Build Qt based designer tool (Linux only)"
+      echo -e "-a  Build Qt based standalone desktop app (Linux only)"
+      echo -e "-g  Force use GCC (Linux only)"
       echo -e "-p  Directory for built binaries"
       echo -e "-n  Number of parallel processes"
       echo -e "-j  Generate compile_commands.json"
@@ -107,25 +107,13 @@ fi
 source "$OMIM_PATH/tools/autobuild/detect_cmake.sh"
 
 # OS-specific parameters
-if [ "$(uname -s)" == "Darwin" ]; then
-  PROCESSES=$(sysctl -n hw.ncpu)
-
-  if [ -n "$OPT_GCC" ]; then
-    GCC="$(ls /usr/local/bin | grep '^gcc-[6-9][0-9]\?' -m 1)" || true
-    GPP="$(ls /usr/local/bin | grep '^g++-[6-9][0-9]\?' -m 1)" || true
-    [ -z "$GCC" -o -z "$GPP" ] \
-    && echo "Either GCC or G++ is not found. (The minimum supported GCC version is 6)." \
-    && exit 2
-    CMAKE_CONFIG="${CMAKE_CONFIG:-} -DCMAKE_C_COMPILER=/usr/local/bin/$GCC \
-                                    -DCMAKE_CXX_COMPILER=/usr/local/bin/$GPP"
-  fi
-elif [ "$(uname -s)" == "Linux" ]; then
+if [ "$(uname -s)" == "Linux" ]; then
   PROCESSES=$(nproc)
 else
   [ -n "$OPT_DESIGNER" ] \
-  && echo "Designer tool is only supported on Linux or MacOS" && exit 2
+  && echo "Designer tool is only supported on Linux" && exit 2
   [ -n "$OPT_STANDALONE" ] \
-  && echo "Standalone desktop app is only supported on Linux or MacOS" && exit 2
+  && echo "Standalone desktop app is only supported on Linux" && exit 2
   PROCESSES=$(nproc)
 fi
 

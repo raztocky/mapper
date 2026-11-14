@@ -472,7 +472,7 @@ void GLFunctions::glDisable(glConst mode)
 void GLFunctions::glClearDepthValue(double depth)
 {
   ASSERT_EQUAL(CurrentApiVersion, dp::ApiVersion::OpenGLES3, ());
-#if defined(OMIM_OS_IPHONE) || defined(OMIM_OS_ANDROID) || defined(OMIM_OS_LINUX)
+#if defined(OMIM_OS_ANDROID) || defined(OMIM_OS_LINUX)
   GLCHECK(::glClearDepthf(static_cast<GLclampf>(depth)));
 #else
   GLCHECK(::glClearDepth(depth));

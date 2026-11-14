@@ -7,7 +7,7 @@
 namespace gpu
 {
 // Programs in enum are in the order of rendering priority.
-// Each program should have shaders assigned in GL/shader_index.txt and metal_program_pool.mm
+// Each program should have shaders assigned in GL/shader_index.txt
 enum class Program
 {
   ColoredSymbol = 0,

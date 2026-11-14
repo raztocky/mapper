@@ -5,12 +5,8 @@ echo "Converting Serbian Cyrillic resource files to Serbian Latin"
 REPO_ROOT="$(cd "$(dirname "$0")/../.." && pwd)"
 ANDROID="$REPO_ROOT/android"
 
-if [ "$(uname)" = "Darwin" ]; then
-  export PATH="$(brew --prefix icu4c)/bin:$PATH"
-fi
-
 if ! command -v uconv >/dev/null 2>&1; then
-  echo "Error: uconv not found. On macOS: brew install icu4c. On Linux, check your package manager for a package providing uconv (often part of ICU)." >&2
+  echo "Error: uconv not found. Check your package manager for a package providing uconv (often part of ICU)." >&2
   exit 1
 fi
 
@@ -37,19 +33,6 @@ convert "$ANDROID/sdk/src/main/res/values-sr/strings.xml" \
         "$ANDROID/sdk/src/main/res/values-b+sr+Latn/strings.xml"
 convert "$ANDROID/sdk/src/main/res/values-sr/types_strings.xml" \
         "$ANDROID/sdk/src/main/res/values-b+sr+Latn/types_strings.xml"
-
-IPHONE_SR="$REPO_ROOT/iphone/Maps/LocalizedStrings/sr.lproj"
-IPHONE_SR_LATN="$REPO_ROOT/iphone/Maps/LocalizedStrings/sr-Latn.lproj"
-
-mkdir -p "$IPHONE_SR_LATN"
-convert "$IPHONE_SR/Localizable.strings" \
-        "$IPHONE_SR_LATN/Localizable.strings"
-convert "$IPHONE_SR/InfoPlist.strings" \
-        "$IPHONE_SR_LATN/InfoPlist.strings"
-convert "$IPHONE_SR/LocalizableTypes.strings" \
-        "$IPHONE_SR_LATN/LocalizableTypes.strings"
-convert "$IPHONE_SR/Localizable.stringsdict" \
-        "$IPHONE_SR_LATN/Localizable.stringsdict"
 
 mkdir -p "$REPO_ROOT/data/countries-strings/sr_Latn.json"
 convert "$REPO_ROOT/data/countries-strings/sr.json/localize.json" \

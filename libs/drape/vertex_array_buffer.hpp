@@ -41,11 +41,6 @@ public:
   virtual void AddBindingInfo(dp::BindingInfo const & bindingInfo) {}
 };
 
-namespace metal
-{
-class MetalVertexArrayBufferImpl;
-}  // namespace metal
-
 namespace vulkan
 {
 class VulkanVertexArrayBufferImpl;
@@ -53,7 +48,6 @@ class VulkanVertexArrayBufferImpl;
 
 class VertexArrayBuffer
 {
-  friend class metal::MetalVertexArrayBufferImpl;
   friend class vulkan::VulkanVertexArrayBufferImpl;
 
 public:
@@ -104,9 +98,6 @@ private:
   void PreflushImpl(ref_ptr<GraphicsContext> context);
 
   void CollectBindingInfo(dp::BindingInfo const & bindingInfo);
-
-  // Definition of this method is in a .mm-file.
-  drape_ptr<VertexArrayBufferImpl> CreateImplForMetal(ref_ptr<VertexArrayBuffer> buffer);
 
   // Definition of this method is in a separate .cpp-file.
   drape_ptr<VertexArrayBufferImpl> CreateImplForVulkan(ref_ptr<GraphicsContext> context,

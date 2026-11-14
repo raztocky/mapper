@@ -25,13 +25,8 @@ char const * const kInstanceExtensions[] = {
     "VK_KHR_android_surface",
     kDebugReportExtension,
     kValidationFeaturesExtension,
-#if defined(OMIM_OS_MAC) || defined(OMIM_OS_LINUX)
+#if defined(OMIM_OS_LINUX)
     "VK_EXT_debug_utils",
-#endif
-#if defined(OMIM_OS_MAC)
-    "VK_KHR_portability_enumeration",
-    "VK_MVK_macos_surface",
-    "VK_KHR_get_physical_device_properties2",
 #endif
 #if defined(OMIM_OS_LINUX)
     "VK_KHR_xlib_surface",
@@ -40,9 +35,6 @@ char const * const kInstanceExtensions[] = {
 
 char const * const kDeviceExtensions[] = {
     "VK_KHR_swapchain",
-#if defined(OMIM_OS_MAC)
-    "VK_KHR_portability_subset",
-#endif
 };
 
 char const * const kValidationLayers[] = {

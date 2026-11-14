@@ -104,9 +104,6 @@ VulkanContextFactory::VulkanContextFactory(uint32_t appVersionCode, int sdkVersi
   instanceCreateInfo.ppEnabledExtensionNames = m_layers->GetInstanceExtensions();
   instanceCreateInfo.enabledLayerCount = m_layers->GetInstanceLayersCount();
   instanceCreateInfo.ppEnabledLayerNames = m_layers->GetInstanceLayers();
-#if defined(OMIM_OS_MAC)
-  instanceCreateInfo.flags = VK_INSTANCE_CREATE_ENUMERATE_PORTABILITY_BIT_KHR;
-#endif
 
   // Enable extra validation features.
   VkValidationFeaturesEXT validationFeatures = {};
@@ -325,7 +322,7 @@ bool VulkanContextFactory::QuerySurfaceSize()
   uint32_t chosenFormat;
   for (chosenFormat = 0; chosenFormat < formatCount; chosenFormat++)
   {
-#if defined(OMIM_OS_MAC) || defined(OMIM_OS_LINUX)
+#if defined(OMIM_OS_LINUX)
     if (formats[chosenFormat].format == VK_FORMAT_B8G8R8A8_UNORM)
       break;
 #else

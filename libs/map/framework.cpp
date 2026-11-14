@@ -3078,13 +3078,6 @@ bool Framework::ParseDrapeDebugCommand(string const & query)
     m_drapeEngine->EnableDebugRectRendering(false /* shown */);
     return true;
   }
-#if defined(OMIM_METAL_AVAILABLE)
-  if (query == "?metal")
-  {
-    SavePreferredGraphicsAPI(dp::ApiVersion::Metal);
-    return true;
-  }
-#endif
 #if defined(OMIM_OS_ANDROID)
   if (query == "?vulkan")
   {

@@ -22,23 +22,15 @@
 #include "drape/drape_tests/gl_mock_functions.hpp"
 #endif
 
-#ifdef OMIM_OS_IPHONE
-#include <CoreFoundation/CoreFoundation.h>
-#endif
 
 #ifndef OMIM_UNIT_TEST_DISABLE_PLATFORM_INIT
 #include "platform/platform.hpp"
 #endif
 
-#if defined(OMIM_UNIT_TEST_WITH_QT_EVENT_LOOP) && !defined(OMIM_OS_IPHONE)
+#if defined(OMIM_UNIT_TEST_WITH_QT_EVENT_LOOP)
 #include <QtCore/Qt>
-#ifdef OMIM_OS_MAC  // on Mac OS X native run loop works only for QApplication :(
-#include <QtWidgets/QApplication>
-#define QAPP QApplication
-#else
 #include <QtCore/QCoreApplication>
 #define QAPP QCoreApplication
-#endif
 #endif
 
 namespace testing
@@ -49,18 +41,14 @@ base::Waiter g_waiter;
 
 void RunEventLoop()
 {
-#if defined(OMIM_OS_IPHONE)
-  CFRunLoopRun();
-#elif defined(QAPP)
+#if   defined(QAPP)
   QAPP::exec();
 #endif
 }
 
 void StopEventLoop()
 {
-#if defined(OMIM_OS_IPHONE)
-  CFRunLoopStop(CFRunLoopGetMain());
-#elif defined(QAPP)
+#if   defined(QAPP)
   QAPP::exit();
 #endif
 }
@@ -154,7 +142,7 @@ CommandLineOptions const & GetTestingOptions()
 
 int main(int argc, char * argv[])
 {
-#if defined(OMIM_UNIT_TEST_WITH_QT_EVENT_LOOP) && !defined(OMIM_OS_IPHONE)
+#if defined(OMIM_UNIT_TEST_WITH_QT_EVENT_LOOP)
   QAPP theApp(argc, argv);
   UNUSED_VALUE(theApp);
 #else
@@ -163,7 +151,7 @@ int main(int argc, char * argv[])
 #endif
 
   base::ScopedLogLevelChanger const infoLogLevel(LINFO);
-#if defined(OMIM_OS_DESKTOP) || defined(OMIM_OS_IPHONE)
+#if defined(OMIM_OS_DESKTOP)
   base::SetLogMessageFn(base::LogMessageTests);
 #endif
 

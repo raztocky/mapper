@@ -1,53 +1,42 @@
 #!/usr/bin/env python3
 """
-Generate localized_types_map.cpp from LocalizableTypes.strings
-
-This script converts the iOS LocalizableTypes.strings file format to the desktop
-localized_types_map.cpp C++ map by:
-- Removing comments (/* ... */)
-- Removing empty lines
-- Converting from "key" = "value"; format to key=value format
-- Removing unnecessary quotes and spaces
+Generate libs/platform/localized_types_map.cpp from the Android English types strings
+(android/sdk/src/main/res/values/types_strings.xml).
 """
 
-import re
-import os
 import sys
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
-def parse_localizable_types_line(line):
-    line = line.strip()
-    if not line:
-        return None
-    
-    if line.startswith('/*') or line.startswith('//') or line.startswith('/****'):
-        return None
-    
-    # Match pattern: "key" = "value";
-    match = re.match(r'^"([^"]+)"\s*=\s*"([^"]*)"\s*;?\s*$', line)
-    if match:
-        key = match.group(1)
-        value = match.group(2)
-        return (key, value)
-    
-    return None
+
+def unescape_android(value):
+    # Android resource escapes: \' \" \\ \n \t and @/? prefixes.
+    out = []
+    i = 0
+    while i < len(value):
+        c = value[i]
+        if c == '\\' and i + 1 < len(value):
+            nxt = value[i + 1]
+            out.append({'n': '\n', 't': '\t'}.get(nxt, nxt))
+            i += 2
+            continue
+        out.append(c)
+        i += 1
+    return ''.join(out)
+
+
+def escape_cpp(value):
+    return value.replace('\\', '\\\\').replace('"', '\\"').replace('\n', '\\n').replace('\t', '\\t')
 
 
 def convert_to_localized_types_cpp(input_file, output_file):
-    with open(input_file, 'r', encoding='utf-8') as f:
-        lines = f.readlines()
-
+    root = ET.parse(input_file).getroot()
     entries = []
-    for line_num, line in enumerate(lines, 1):
-        try:
-            parsed = parse_localizable_types_line(line)
-            if parsed:
-                key, value = parsed
-                entries.append((key, value))
-        except Exception as e:
-            print(f"Warning: Error parsing line {line_num}: {e}")
-            print(f"  Line content: {line.strip()}")
+    for node in root.iter('string'):
+        key = node.get('name')
+        if not key:
             continue
+        entries.append((key, unescape_android(''.join(node.itertext()))))
 
     with open(output_file, 'w', encoding='utf-8') as f:
         f.write('#pragma once\n\n')
@@ -59,16 +48,16 @@ def convert_to_localized_types_cpp(input_file, output_file):
         f.write('const Type2LocalizedType g_type2localizedType = {\n')
         for i, (key, value) in enumerate(entries):
             comma = ',' if i < len(entries) - 1 else ''
-            f.write(f'  {{"{key}", "{value}"}}{comma}\n')
+            f.write(f'  {{"{key}", "{escape_cpp(value)}"}}{comma}\n')
         f.write('};\n')
     print(f"Successfully converted {len(entries)} entries from '{input_file}' to '{output_file}'")
 
 
 def main():
-    input_file = Path('iphone/Maps/LocalizedStrings/en.lproj/LocalizableTypes.strings')
+    input_file = Path('android/sdk/src/main/res/values/types_strings.xml')
     output_file = Path('libs/platform/localized_types_map.cpp')
     convert_to_localized_types_cpp(str(input_file), str(output_file))
-    
+
 
 if __name__ == '__main__':
     sys.exit(main())

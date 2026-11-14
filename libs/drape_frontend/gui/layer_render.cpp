@@ -191,9 +191,7 @@ public:
       m_fps = helper.GetFps();
       m_isPaused = helper.IsPaused();
       std::stringstream ss;
-#ifndef OMIM_OS_IPHONE
       ss << m_apiLabel << ": ";
-#endif
       ss << "Zoom " << m_scale << " | " << m_fps << " FPS";
       if (m_isPaused)
         ss << " (PAUSED)";
@@ -378,7 +376,6 @@ void LayerCacher::CacheScaleFpsLabel(ref_ptr<dp::GraphicsContext> context, Posit
     switch (apiVersion)
     {
     case dp::ApiVersion::OpenGLES3: apiLabel = "GL3"; break;
-    case dp::ApiVersion::Metal: apiLabel = "M"; break;
     case dp::ApiVersion::Vulkan: apiLabel = "V"; break;
     case dp::ApiVersion::Invalid: CHECK(false, ("Invalid API version.")); break;
     }

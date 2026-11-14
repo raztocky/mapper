@@ -29,21 +29,6 @@ void BuildDrawingRulesImpl(QString const & mapcssFile, QString const & outputDir
   env.insert("PROTOBUF_EGG_PATH", GetProtobufEggPath());
 
   // Run the script
-#if defined(OMIM_OS_MAC)
-  (void)ExecProcess("python3",
-                    {
-                        GetExternalPath("libkomwm.py", "kothic/src", "../tools/kothic/src"),
-                        "-s",
-                        mapcssFile,
-                        "-o",
-                        outputTemplate,
-                        "-p",
-                        prioDir,
-                        "-x",
-                        "True",
-                    },
-                    &env);
-#else
   (void)ExecProcess("python",
                     {
                         GetExternalPath("libkomwm.py", "kothic/src", "../tools/kothic/src"),
@@ -57,7 +42,6 @@ void BuildDrawingRulesImpl(QString const & mapcssFile, QString const & outputDir
                         "True",
                     },
                     &env);
-#endif
 
   // Ensure that generated file is not empty.
   if (QFile(outputFile).size() == 0)

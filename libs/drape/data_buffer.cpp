@@ -35,15 +35,6 @@ void DataBuffer::MoveToGPU(ref_ptr<GraphicsContext> context, GPUBuffer::Target t
                                              batcherHash);
     }
   }
-  else if (apiVersion == dp::ApiVersion::Metal)
-  {
-#if defined(OMIM_METAL_AVAILABLE)
-    if (currentSize != 0)
-      m_impl = CreateImplForMetal(context, m_impl->Data(), m_impl->GetElementSize(), currentSize);
-    else
-      m_impl = CreateImplForMetal(context, nullptr, m_impl->GetElementSize(), m_impl->GetAvailableSize());
-#endif
-  }
   else if (apiVersion == dp::ApiVersion::Vulkan)
   {
     if (currentSize != 0)

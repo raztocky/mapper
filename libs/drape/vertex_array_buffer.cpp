@@ -144,7 +144,6 @@ void VertexArrayBuffer::PreflushImpl(ref_ptr<GraphicsContext> context)
   m_indexBuffer->MoveToGPU(context, GPUBuffer::IndexBuffer, m_batcherHash);
 
   // Preflush can be called on BR, where impl is not initialized.
-  // For Metal rendering this code has no meaning.
   auto const apiVersion = context->GetApiVersion();
   if (apiVersion == dp::ApiVersion::OpenGLES3)
   {
@@ -193,12 +192,6 @@ void VertexArrayBuffer::Build(ref_ptr<GraphicsContext> context, ref_ptr<GpuProgr
     if (apiVersion == dp::ApiVersion::OpenGLES3)
     {
       m_impl = make_unique_dp<GLVertexArrayBufferImpl>();
-    }
-    else if (apiVersion == dp::ApiVersion::Metal)
-    {
-#if defined(OMIM_METAL_AVAILABLE)
-      m_impl = CreateImplForMetal(make_ref(this));
-#endif
     }
     else if (apiVersion == dp::ApiVersion::Vulkan)
     {

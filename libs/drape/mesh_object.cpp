@@ -162,12 +162,6 @@ MeshObject::MeshObject(ref_ptr<dp::GraphicsContext> context, DrawPrimitive drawP
   {
     InitForOpenGL();
   }
-  else if (apiVersion == dp::ApiVersion::Metal)
-  {
-#if defined(OMIM_METAL_AVAILABLE)
-    InitForMetal();
-#endif
-  }
   else if (apiVersion == dp::ApiVersion::Vulkan)
   {
     InitForVulkan(context);

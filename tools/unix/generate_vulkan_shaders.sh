@@ -13,10 +13,7 @@ then
     echo "Can't find NDK root path"; exit 1 
 fi
 KERNEL_NAME="$( uname -s )"
-if [[ $KERNEL_NAME == 'Darwin' ]]
-then
-    GLSLC_PATH="$NDK_ROOT/shader-tools/darwin-x86_64/glslc"
-elif [[ $KERNEL_NAME == 'Linux' ]]
+if [[ $KERNEL_NAME == 'Linux' ]]
 then
     GLSLC_PATH="$NDK_ROOT/shader-tools/linux-x86_64/glslc"
 else

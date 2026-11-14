@@ -5,12 +5,13 @@ import re
 import json
 from string import digits
 
-CONTENT_REGEX = re.compile(r'/\*.*?\*/', re.DOTALL)
-TYPE_ENTRIES_REGEX = re.compile(r'"(.*?)"\s*=\s*"(.*?)"')
+CONTENT_REGEX = re.compile(r'<!--.*?-->', re.DOTALL)
+TYPE_ENTRIES_REGEX = re.compile(r'<string name="(.*?)">(.*?)</string>')
 SINGLE_REPLACE = False
 
 def main(lang, data_en):
-    strings_file_path = os.path.join('iphone', 'Maps', 'LocalizedStrings', f'{lang}.lproj', 'LocalizableTypes.strings')
+    values_dir = 'values' if lang == 'en' else 'values-' + lang.replace('-', '-r')
+    strings_file_path = os.path.join('android', 'sdk', 'src', 'main', 'res', values_dir, 'types_strings.xml')
     json_file_path = os.path.join('data', 'translations', 'categories-strings', f'{lang}.json', 'localize.json')
 
     with open(strings_file_path, 'r', encoding='utf-8') as f:

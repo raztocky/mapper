@@ -151,7 +151,7 @@ echo "Generating search categories / synonyms..."
 ./tools/unix/generate_categories.sh
 
 if [ -z "$SKIP_GENERATE_STRINGS" ]; then
-  if Diff data/strings_hash iphone/Maps/LocalizedStrings/en.lproj/LocalizableTypes.strings || [ ! -z "$STRINGS_NOT_GENERATED" ]; then
+  if Diff data/strings_hash android/sdk/src/main/res/values/types_strings.xml || [ ! -z "$STRINGS_NOT_GENERATED" ]; then
     echo "Generating Desktop UI strings..."
     ./tools/unix/generate_desktop_ui_strings.sh
   fi

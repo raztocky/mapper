@@ -14,11 +14,7 @@
 #include <sys/types.h>
 #include <unistd.h>
 
-#if defined(OMIM_OS_MAC) || defined(OMIM_OS_IPHONE)
-#include <sys/mount.h>
-#else
 #include <sys/vfs.h>
-#endif
 
 namespace
 {
@@ -62,10 +58,8 @@ bool Platform::IsFileExistsByFullPath(std::string const & filePath)
   return stat(filePath.c_str(), &s) == 0;
 }
 
-#if !defined(OMIM_OS_IPHONE)
 // static
 void Platform::DisableBackupForFile(std::string const & /*filePath*/) {}
-#endif
 
 // static
 std::string Platform::GetCurrentWorkingDirectory() noexcept

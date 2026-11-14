@@ -14,9 +14,7 @@ set(CMAKE_VISIBILITY_INLINES_HIDDEN ON)
 
 # Set build-id explicitly to ensure build reproducibility,
 # depends on path prefixes stripping set later.
-if (NOT APPLE)
-  add_link_options("LINKER:--build-id=sha1")
-endif()
+add_link_options("LINKER:--build-id=sha1")
 
 # Fixes warning ld: warning: ignoring duplicate libraries on Mac and Windows.
 if (POLICY CMP0156)
@@ -35,21 +33,6 @@ include(OmimConfig)
 include(OmimHelpers)
 include(OmimTesting)
 
-if (APPLE AND NOT ("${CMAKE_SYSTEM_NAME}" STREQUAL Android))
-  # OBJC/OBJCXX are needed to skip m/mm files in Unity builds.
-  # https://gitlab.kitware.com/cmake/cmake/-/issues/21963
-  enable_language(OBJC)
-  set(CMAKE_OBJC_EXTENSIONS OFF)
-  set(CMAKE_OBJC_STANDARD 23)
-  set(CMAKE_OBJC_FLAGS -fobjc-arc)
-  set(CMAKE_OBJC_VISIBILITY_PRESET hidden)
-  enable_language(OBJCXX)
-  set(CMAKE_OBJCXX_EXTENSIONS OFF)
-  set(CMAKE_OBJCXX_STANDARD 23)
-  set(CMAKE_OBJCXX_FLAGS -fobjc-arc)
-  set(CMAKE_OBJCXX_VISIBILITY_PRESET hidden)
-endif()
-
 message(STATUS "Using compiler ${CMAKE_CXX_COMPILER_ID} ${CMAKE_CXX_COMPILER_VERSION}")
 
 if (CMAKE_UNITY_BUILD)
@@ -64,20 +47,6 @@ if (USE_CCACHE)
     set_property(GLOBAL PROPERTY RULE_LAUNCH_LINK "${CCACHE_PROGRAM}")
     set(CMAKE_C_COMPILER_LAUNCHER   "${CCACHE_PROGRAM}")
     set(CMAKE_CXX_COMPILER_LAUNCHER "${CCACHE_PROGRAM}")
-  endif()
-endif()
-
-if(${PLATFORM_MAC})
-  set(XCODE_ATTRIBUTE_CLANG_ENABLE_OBJC_ARC YES)
-
-  # Metal language support
-  list(APPEND CMAKE_MODULE_PATH ${OMIM_ROOT}/3party/CMake-MetalShaderSupport/cmake)
-  include(CheckLanguage)
-  include(CMakeMetalInformation)
-  include(MetalShaderSupport)
-  check_language(Metal)
-  if(CMAKE_Metal_COMPILER)
-    enable_language(Metal)
   endif()
 endif()
 
@@ -141,7 +110,7 @@ find_package(Threads REQUIRED)
 
 # Scripts
 
-if (NOT PLATFORM_IPHONE AND NOT PLATFORM_ANDROID)
+if (NOT PLATFORM_ANDROID)
   list(APPEND qt_components Core Network)
   if (NOT SKIP_QT_GUI OR NOT SKIP_TESTS OR PYBINDINGS)
     list(APPEND qt_components Widgets)

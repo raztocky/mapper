@@ -159,12 +159,8 @@ VkFormat VulkanFormatUnpacker::Unpack(TextureFormat format)
   case TextureFormat::RGBA8: return VK_FORMAT_R8G8B8A8_UNORM;
   case TextureFormat::Red: return VK_FORMAT_R8_UNORM;
   case TextureFormat::RedGreen: return VK_FORMAT_R8G8_UNORM;
-#if defined(OMIM_OS_MAC)
-  case TextureFormat::DepthStencil: return VK_FORMAT_D32_SFLOAT_S8_UINT;
-#else
   case TextureFormat::DepthStencil:
     return gUse32bitDepth8bitStencil ? VK_FORMAT_D32_SFLOAT_S8_UINT : VK_FORMAT_D24_UNORM_S8_UINT;
-#endif
   case TextureFormat::Depth: return m_bestDepthFormat;
   case TextureFormat::Unspecified: CHECK(false, ()); return VK_FORMAT_UNDEFINED;
   }

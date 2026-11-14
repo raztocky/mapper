@@ -10,7 +10,6 @@
 *.cxx  text
 *.cc   text
 *.java text
-*.mm   text
 
 # Declare files that will always have LF line endings on checkout.
 *.txt    text eol=lf

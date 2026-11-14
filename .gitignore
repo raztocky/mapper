@@ -63,41 +63,9 @@ omim.sdf
 *.pdb
 out/
 
-# XCode
-xcode/keys/*
-xcode/build/*
-xcode/metadata/review_information/*
-xcode/fastlane/report.xml
-xcode/fastlane/README.md
-iphone/*/*.xcodeproj/*.pbxuser
-iphone/*/*.xcodeproj/*.perspectivev3
-iphone/*/*.xcodeproj/project.xcworkspace/*
-iphone/*/build/*
-tools/emacsmode/build
-**/DerivedData/*
-**/xcshareddata/*
-!iphone/Maps/Maps.xcodeproj/xcshareddata/xcschemes/CoMaps.xcscheme
-**/xcuserdata
-**/xcschemes
-iphone/**/*.moved-aside
-iphone/**/*.swp
-iphone/**/*.mode1v3
-iphone/**/*.mode2v3
-iphone/**/*.perspectivev3
-*.xcresult
-*.xcarchive
-*.ipa
 Payload/
 
 # Carthage
-iphone/Maps/3party/Carthage/Checkouts
-iphone/Maps/3party/Carthage/Build/Mac/*.bcsymbolmap
-iphone/Maps/3party/Carthage/Build/Mac/*.dSYM
-iphone/Maps/3party/Carthage/Build/tvOS
-iphone/Maps/3party/Carthage/Build/watchOS
-iphone/Maps/3party/Carthage/Build/iOS/*.bcsymbolmap
-iphone/Maps/3party/Carthage/Build/iOS/*.dSYM
-iphone/Maps/3party/Carthage/Build/*.version
 
 # GeneratedFiles
 tools/win/MapsWithMe*
@@ -161,7 +129,6 @@ android/google-play.json
 android/huawei-appgallery.json
 android/res/xml/network_security_config.xml
 ./server/
-iphone/Maps/app.omaps/
 # Generated file
 libs/platform/localized_types_map.cpp
 
@@ -204,7 +171,6 @@ tools/python/*/venv/
 android/app/src/fdroid/play/listings/sr-Latn/
 android/app/src/main/res/values-b+sr+Latn/
 android/sdk/src/main/res/values-b+sr+Latn/
-iphone/Maps/LocalizedStrings/sr-Latn.lproj/
 data/countries-strings/sr_Latn.json/
 
 # Configs

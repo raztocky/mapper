@@ -14,10 +14,6 @@ if [ -z "${GENERATOR_TOOL-}" -o ! -x "${GENERATOR_TOOL-}" ]; then
     IT_PATHS_ARRAY+=("$i/generator_tool")
   done
 
-  if [ -d "$OMIM_PATH/../omim-xcode-build" ]; then
-    IT_PATHS_ARRAY+=("$OMIM_PATH/../omim-xcode-build/Release" "$OMIM_PATH/../omim-xcode-build/Debug")
-  fi
-
   for i in "${BUILD_PATH:+$BUILD_PATH/generator_tool}" "${IT_PATHS_ARRAY[@]}"; do
     if [ -x "$i" ]; then
       GENERATOR_TOOL="$i"

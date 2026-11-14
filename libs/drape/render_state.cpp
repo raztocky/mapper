@@ -19,19 +19,10 @@ std::string const kColorTextureName = "u_colorTex";
 std::string const kMaskTextureName = "u_maskTex";
 }  // namespace
 
-#if defined(OMIM_METAL_AVAILABLE)
-// Definitions of these methods are in a .mm-file.
-extern void ApplyDepthStencilStateForMetal(ref_ptr<GraphicsContext> context);
-extern void ApplyPipelineStateForMetal(ref_ptr<GraphicsContext> context, ref_ptr<GpuProgram> program,
-                                       bool blendingEnabled);
-extern void ApplyTexturesForMetal(ref_ptr<GraphicsContext> context, ref_ptr<GpuProgram> program,
-                                  RenderState const & state);
-#endif
 
 // static
 void AlphaBlendingState::Apply(ref_ptr<GraphicsContext> context)
 {
-  // For Metal Rendering these settings must be set in the pipeline state.
   auto const apiVersion = context->GetApiVersion();
   if (apiVersion == dp::ApiVersion::OpenGLES3)
   {
@@ -44,7 +35,6 @@ Blending::Blending(bool isEnabled) : m_isEnabled(isEnabled) {}
 
 void Blending::Apply(ref_ptr<GraphicsContext> context, ref_ptr<GpuProgram> program) const
 {
-  // For Metal Rendering these settings must be set in the pipeline state.
   auto const apiVersion = context->GetApiVersion();
   if (apiVersion == dp::ApiVersion::OpenGLES3)
     if (m_isEnabled)
@@ -231,12 +221,6 @@ void TextureState::ApplyTextures(ref_ptr<GraphicsContext> context, RenderState c
       }
     }
   }
-  else if (apiVersion == dp::ApiVersion::Metal)
-  {
-#if defined(OMIM_METAL_AVAILABLE)
-    ApplyTexturesForMetal(context, program, state);
-#endif
-  }
   else if (apiVersion == dp::ApiVersion::Vulkan)
   {
     ref_ptr<dp::vulkan::VulkanBaseContext> vulkanContext = context;
@@ -290,14 +274,7 @@ void ApplyState(ref_ptr<GraphicsContext> context, ref_ptr<GpuProgram> program, R
   TextureState::ApplyTextures(context, state, program);
 
   // Apply blending state.
-  if (apiVersion == dp::ApiVersion::Metal)
-  {
-    // For Metal rendering blending state is a part of the pipeline state.
-#if defined(OMIM_METAL_AVAILABLE)
-    ApplyPipelineStateForMetal(context, program, state.GetBlending().m_isEnabled);
-#endif
-  }
-  else if (apiVersion == dp::ApiVersion::Vulkan)
+  if (apiVersion == dp::ApiVersion::Vulkan)
   {
     ref_ptr<dp::vulkan::VulkanBaseContext> vulkanContext = context;
     vulkanContext->SetProgram(program);
@@ -312,24 +289,12 @@ void ApplyState(ref_ptr<GraphicsContext> context, ref_ptr<GpuProgram> program, R
   context->SetDepthTestEnabled(state.GetDepthTestEnabled());
   if (state.GetDepthTestEnabled())
     context->SetDepthTestFunction(state.GetDepthFunction());
-  if (apiVersion == dp::ApiVersion::Metal)
-  {
-    // For Metal rendering we have to apply depth-stencil state after SetX functions calls.
-#if defined(OMIM_METAL_AVAILABLE)
-    ApplyDepthStencilStateForMetal(context);
-#endif
-  }
-
   if (state.GetDrawAsLine())
   {
     if (apiVersion == dp::ApiVersion::OpenGLES3)
     {
       ASSERT_GREATER_OR_EQUAL(state.GetLineWidth(), 0, ());
       GLFunctions::glLineWidth(static_cast<uint32_t>(state.GetLineWidth()));
-    }
-    else if (apiVersion == dp::ApiVersion::Metal)
-    {
-      // Do nothing. Metal does not support line width.
     }
     else if (apiVersion == dp::ApiVersion::Vulkan)
     {

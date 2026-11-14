@@ -53,10 +53,3 @@ target_link_libraries(${PROJECT_NAME}
     gflags::gflags
 )
 
-# if (PLATFORM_MAC)
-#   set_target_properties(
-#     ${PROJECT_NAME}
-#     PROPERTIES
-#     MACOSX_BUNDLE_INFO_PLIST ${PROJECT_SOURCE_DIR}/Info.plist
-#   )
-# endif()

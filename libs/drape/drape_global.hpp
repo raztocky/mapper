@@ -14,9 +14,6 @@
 #include <cstdint>
 #include <functional>
 
-#if defined(__APPLE__)
-#define OMIM_METAL_AVAILABLE
-#endif
 
 namespace gpu
 {
@@ -28,9 +25,8 @@ namespace dp
 enum class ApiVersion
 {
   Invalid = -1,
-  OpenGLES3,
-  Metal,
-  Vulkan
+  OpenGLES3 = 0,
+  Vulkan = 2  // 1 was Metal (removed); keep value stable.
 };
 
 /// @todo We have in code: if (anchor & dp::Center) which is not consistent with Center == 0.
@@ -107,7 +103,6 @@ inline std::string DebugPrint(dp::ApiVersion apiVersion)
   {
   case dp::ApiVersion::Invalid: return "Invalid";
   case dp::ApiVersion::OpenGLES3: return "OpenGLES3";
-  case dp::ApiVersion::Metal: return "Metal";
   case dp::ApiVersion::Vulkan: return "Vulkan";
   }
   return "Unknown";
@@ -115,10 +110,6 @@ inline std::string DebugPrint(dp::ApiVersion apiVersion)
 
 inline dp::ApiVersion ApiVersionFromString(std::string const & str)
 {
-#if defined(OMIM_METAL_AVAILABLE)
-  if (str == "Metal")
-    return dp::ApiVersion::Metal;
-#endif
 
 #if defined(OMIM_OS_ANDROID)
   if (str == "Vulkan")
@@ -130,9 +121,7 @@ inline dp::ApiVersion ApiVersionFromString(std::string const & str)
 
   // Default behavior for different OS. Appropriate fallback will be chosen
   // if default API is not supported.
-#if defined(OMIM_METAL_AVAILABLE)
-  return dp::ApiVersion::Metal;
-#elif defined(OMIM_OS_ANDROID)
+#if   defined(OMIM_OS_ANDROID)
   return dp::ApiVersion::Vulkan;
 #else
   return dp::ApiVersion::OpenGLES3;

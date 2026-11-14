@@ -48,18 +48,10 @@ set(SRC
   storage_helpers.hpp
 )
 
-if (PLATFORM_IPHONE)
-  append(SRC
-    background_downloading/downloader_adapter_ios.h
-    background_downloading/downloader_adapter_ios.mm
-    background_downloading/downloader_queue.hpp
-  )
-else()
-  append(SRC
-    http_map_files_downloader.cpp
-    http_map_files_downloader.hpp
-  )
-endif()
+append(SRC
+  http_map_files_downloader.cpp
+  http_map_files_downloader.hpp
+)
 
 omim_add_library(${PROJECT_NAME} ${SRC})
 

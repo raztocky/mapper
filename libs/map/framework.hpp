@@ -733,9 +733,6 @@ public:
     return m_parsedMapApi.SetUrlAndParse(url);
   }
 
-#if defined(OMIM_OS_MAC) || defined(OMIM_OS_IPHONE)
-  url_scheme::ParsedMapApi::UrlType ParseGeoNav(std::string const & raw) { return m_parsedMapApi.ParseGeoNav(raw); }
-#endif
 
   struct ParsedRoutingData
   {

@@ -2,19 +2,13 @@
 
 namespace dp
 {
-std::array<float, 16> MakeProjection(dp::ApiVersion apiVersion, float left, float right, float bottom, float top)
+std::array<float, 16> MakeProjection([[maybe_unused]] dp::ApiVersion apiVersion, float left, float right, float bottom, float top)
 {
   std::array<float, 16> result = {};
 
-  // Projection matrix is calculated for [-1;1] depth-space, in some APIs (e.g. Metal)
-  // depth-space is [0;1], so we have to remap projection matrix.
-  float depthScale = 1.0f;
-  float depthOffset = 0.0f;
-  if (apiVersion == dp::ApiVersion::Metal)
-  {
-    depthScale = 0.5f;
-    depthOffset = 0.5f;
-  }
+  // Projection matrix is calculated for [-1;1] depth-space.
+  float constexpr depthScale = 1.0f;
+  float constexpr depthOffset = 0.0f;
 
   float const width = right - left;
   float const height = top - bottom;

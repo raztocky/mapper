@@ -17,11 +17,6 @@ class GpuProgram;
 class GraphicsContext;
 class MeshObjectImpl;
 
-namespace metal
-{
-class MetalMeshObjectImpl;
-}  // namespace metal
-
 namespace vulkan
 {
 class VulkanMeshObjectImpl;
@@ -33,7 +28,6 @@ class MeshObject
 {
   friend class MeshObjectImpl;
   friend class GLMeshObjectImpl;
-  friend class metal::MetalMeshObjectImpl;
   friend class vulkan::VulkanMeshObjectImpl;
 
 public:
@@ -177,10 +171,6 @@ private:
   void InitForOpenGL();
   void InitForVulkan(ref_ptr<dp::GraphicsContext> context);
 
-#if defined(OMIM_METAL_AVAILABLE)
-  // Definition of this method is in a .mm-file.
-  void InitForMetal();
-#endif
 
   void UpdateImpl(ref_ptr<dp::GraphicsContext> context, uint32_t bufferInd);
 

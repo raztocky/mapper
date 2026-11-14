@@ -64,28 +64,7 @@ set(SRC
   utm_mgrs_utils.hpp
 )
 
-if (PLATFORM_IPHONE)
-  append(SRC
-    background_downloader_ios.h
-    background_downloader_ios.mm
-    gui_thread_apple.mm
-    http_thread_apple.h
-    http_thread_apple.mm
-    http_client_apple.mm
-    http_uploader_apple.mm
-    http_user_agent_ios.mm
-    localization.mm
-    locale.mm
-    network_policy_ios.h
-    network_policy_ios.mm
-    platform_ios.mm
-    platform_unix_impl.cpp
-    platform_unix_impl.hpp
-    secure_storage_ios.mm
-    socket_apple.mm
-    crypto/ed25519_apple.mm
-  )
-elseif(${PLATFORM_ANDROID})
+if (${PLATFORM_ANDROID})
   append(SRC
     platform_android.cpp
     platform_unix_impl.cpp
@@ -93,7 +72,7 @@ elseif(${PLATFORM_ANDROID})
     trace_android.cpp
     crypto/ed25519_monocypher.cpp
   )
-else() # neither iPhone nor Android
+else() # desktop
   # Find bash first, on Windows it can be either in Git or in WSL
   find_program(BASH bash REQUIRED HINTS "$ENV{ProgramFiles}/Git/bin")
   # Generate version header file.
@@ -133,23 +112,6 @@ else() # neither iPhone nor Android
       secure_storage_dummy.cpp
       crypto/ed25519_monocypher.cpp
     )
-  elseif(${PLATFORM_MAC})
-    append(SRC
-      gui_thread_apple.mm
-      http_client_apple.mm
-      http_thread_apple.h
-      http_thread_apple.mm
-      http_uploader_apple.mm
-      http_uploader_background_dummy.cpp
-      locale.mm
-      platform_mac.mm
-      platform_unix_impl.cpp
-      platform_unix_impl.hpp
-      secure_storage_qt.cpp
-      socket_apple.mm
-      http_session_manager.mm
-      crypto/ed25519_monocypher.cpp
-    )
   elseif(${PLATFORM_LINUX})
     append(SRC
       gui_thread_qt.cpp
@@ -170,17 +132,11 @@ endif()
 
 omim_add_library(${PROJECT_NAME} ${SRC})
 
-if (APPLE)
-  target_compile_options(${PROJECT_NAME} PRIVATE -fobjc-arc -Wno-nullability-completeness)
-endif()
-
 if (PLATFORM_LINUX OR PLATFORM_WIN)
   set_target_properties(${PROJECT_NAME} PROPERTIES AUTOMOC ON)
 endif()
 
-if (NOT PLATFORM_IPHONE)
-  target_link_libraries(${PROJECT_NAME} PUBLIC monocypher)
-endif()
+target_link_libraries(${PROJECT_NAME} PUBLIC monocypher)
 
 target_link_libraries(${PROJECT_NAME}
   PUBLIC
@@ -197,12 +153,6 @@ target_link_libraries(${PROJECT_NAME}
     $<$<BOOL:${PLATFORM_LINUX}>:Qt6::Network>
     $<$<BOOL:${PLATFORM_WIN}>:Qt6::Network>
     $<$<BOOL:${PLATFORM_WIN}>:shlwapi>  # PathIsDirectoryEmptyA
-    $<$<BOOL:${PLATFORM_MAC}>:
-      -framework\ Foundation
-      -framework\ SystemConfiguration
-      -framework\ CFNetwork
-      -framework\ Security  # SecPKCS12Import
-      >
 )
 
 omim_add_test_subdirectory(platform_tests_support)
@@ -211,5 +161,3 @@ if (NOT SKIP_QT_GUI)
   add_subdirectory(location_service)
 endif()
 
-# strings::UniChar clashes with Apple's definition.
-set_property(SOURCE preferred_languages.cpp PROPERTY SKIP_UNITY_BUILD_INCLUSION ON)

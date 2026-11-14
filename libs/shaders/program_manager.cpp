@@ -24,12 +24,6 @@ void ProgramManager::Init(ref_ptr<dp::GraphicsContext> context)
   {
     InitForOpenGL(context);
   }
-  else if (apiVersion == dp::ApiVersion::Metal)
-  {
-#if defined(OMIM_METAL_AVAILABLE)
-    InitForMetal(context);
-#endif
-  }
   else if (apiVersion == dp::ApiVersion::Vulkan)
   {
     InitForVulkan(context);
@@ -44,13 +38,7 @@ void ProgramManager::Destroy(ref_ptr<dp::GraphicsContext> context)
 {
   CHECK_THREAD_CHECKER(m_threadChecker, ());
   auto const apiVersion = context->GetApiVersion();
-  if (apiVersion == dp::ApiVersion::Metal)
-  {
-#if defined(OMIM_METAL_AVAILABLE)
-    DestroyForMetal(context);
-#endif
-  }
-  else if (apiVersion == dp::ApiVersion::Vulkan)
+  if (apiVersion == dp::ApiVersion::Vulkan)
   {
     DestroyForVulkan(context);
   }

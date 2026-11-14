@@ -460,7 +460,7 @@ void Arrow3d::RenderArrow(ref_ptr<dp::GraphicsContext> context, ref_ptr<gpu::Pro
 }
 
 std::pair<glsl::mat4, glsl::mat4> Arrow3d::CalculateTransform(ScreenBase const & screen, float dz, float scaleFactor,
-                                                              dp::ApiVersion apiVersion) const
+                                                              [[maybe_unused]] dp::ApiVersion apiVersion) const
 {
   double arrowScale = VisualParams::Instance().GetVisualScale() * arrow3d::kArrowSize * scaleFactor;
   if (screen.isPerspective())
@@ -501,12 +501,6 @@ std::pair<glsl::mat4, glsl::mat4> Arrow3d::CalculateTransform(ScreenBase const &
     glm::mat4 pTo3dView = glm::make_mat4x4(screen.Pto3dMatrix().m_data);
     auto postProjectionPerspective = pTo3dView * modelTransform;
     return std::make_pair(postProjectionPerspective, normalMatrix);
-  }
-
-  if (apiVersion == dp::ApiVersion::Metal)
-  {
-    modelTransform[3][2] = modelTransform[3][2] + 0.5f;
-    modelTransform[2][2] = modelTransform[2][2] * 0.5f;
   }
 
   return std::make_pair(modelTransform, normalMatrix);

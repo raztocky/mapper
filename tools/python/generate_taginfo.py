@@ -29,7 +29,7 @@ ROUTING_MODEL_FILES: list[Path] = [
     SCRIPT_DIR / "../../libs/routing_common/pedestrian_model.cpp",
 ]
 
-TYPE_NAMES_FILE: Path = SCRIPT_DIR / "../../iphone/Maps/LocalizedStrings/en.lproj/LocalizableTypes.strings"
+TYPE_NAMES_FILE: Path = SCRIPT_DIR / "../../android/sdk/src/main/res/values/types_strings.xml"
 INTERNAL_KEYS: set[str] = {"hwtag", "psurface", "_path_grade", "city", "dont", "isoline", "mapswithme", "complex_entry"}
 WILDCARD_VALUES: set[str] = {"*", "!", "~", "!r", "~r"}
 
@@ -184,7 +184,10 @@ def parse_mapcss(text: str, colors: dict[str, dict] = {}) -> list[dict[str, any]
 
 
 def parse_type_names(text: str) -> dict[str, str]:
-    return dict(re.findall(r'^"type\.([^"]+)" = "([^"]*)";', text, re.MULTILINE))
+    return {
+        key: value.replace("\\'", "'").replace('\\"', '"')
+        for key, value in re.findall(r'<string name="type\.([^"]+)">([^<]*)</string>', text)
+    }
 
 
 def parse_mapping_csv(text: str, type_names: dict[str, str]) -> list[tuple[str, str | None, str]]:

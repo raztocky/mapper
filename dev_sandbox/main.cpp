@@ -28,8 +28,6 @@
 #define GLFW_EXPOSE_NATIVE_WIN32
 #elif defined(OMIM_OS_LINUX)
 #define GLFW_EXPOSE_NATIVE_X11
-#elif defined(OMIM_OS_MAC)
-#define GLFW_EXPOSE_NATIVE_COCOA
 #else
 #error Unsupported plaform
 #endif
@@ -45,7 +43,7 @@ DEFINE_string(log_abort_level, base::ToString(base::GetDefaultLogAbortLevel()),
 DEFINE_string(resources_path, "", "Path to resources directory.");
 DEFINE_string(lang, "", "Device language.");
 
-#if defined(OMIM_OS_MAC) || defined(OMIM_OS_LINUX)
+#if defined(OMIM_OS_LINUX)
 drape_ptr<dp::GraphicsContextFactory> CreateContextFactory(GLFWwindow * window, dp::ApiVersion api, m2::PointU size);
 void PrepareDestroyContextFactory(ref_ptr<dp::GraphicsContextFactory> contextFactory);
 void OnCreateDrapeEngine(GLFWwindow * window, dp::ApiVersion api, ref_ptr<dp::GraphicsContextFactory> contextFactory);
@@ -160,8 +158,6 @@ std::string_view GetMyPoisitionText(location::EMyPositionMode mode)
 dp::ApiVersion GetApiVersion(char const * apiLabel)
 {
   std::string_view v(apiLabel);
-  if (v == "Metal")
-    return dp::ApiVersion::Metal;
   if (v == "Vulkan")
     return dp::ApiVersion::Vulkan;
   if (v == "OpenGL")
@@ -272,11 +268,7 @@ int main(int argc, char * argv[])
 
   ImguiRenderer imguiRenderer;
   Framework::DrapeCreationParams drapeParams{
-#if defined(OMIM_OS_MAC)
-      .m_apiVersion = dp::ApiVersion::Metal,
-#else
       .m_apiVersion = dp::ApiVersion::Vulkan,
-#endif
       .m_visualScale = visualScale,
       .m_surfaceWidth = fbWidth,
       .m_surfaceHeight = fbHeight,
@@ -345,16 +337,9 @@ int main(int argc, char * argv[])
 
     int w = 0, h = 0;
     glfwGetWindowSize(window, &w, &h);
-#if defined(OMIM_OS_MAC)
-    w *= xscale;
-    h *= yscale;
-#endif
 
     if (w != fbWidth || h != fbHeight)
     {
-#if defined(OMIM_OS_MAC)
-      UpdateContentScale(window, xscale);
-#endif
       fbWidth = w;
       fbHeight = h;
       UpdateSize(make_ref(contextFactory), fbWidth, fbHeight);
@@ -460,10 +445,6 @@ int main(int argc, char * argv[])
       return;
     }
 
-#if defined(OMIM_OS_MAC)
-    x *= visualScale;
-    y *= visualScale;
-#endif
     lastLatLon = mercator::ToLatLon(framework.PtoG(m2::PointD(x, y)));
 
     if (setUpLocationByLeftClick)
@@ -503,10 +484,6 @@ int main(int argc, char * argv[])
       framework.MakeFrameActive();
 
     if (touchActive)
-#if defined(OMIM_OS_MAC)
-      x *= visualScale;
-    y *= visualScale;
-#endif
     framework.TouchEvent(GetTouchEvent(framework, x, y, touchMods, df::TouchEvent::TOUCH_MOVE));
   };
   glfwSetCursorPosCallback(window, [](GLFWwindow *, double x, double y) { handlers.onMouseMove(x, y); });
@@ -523,10 +500,6 @@ int main(int argc, char * argv[])
       return;
     }
 
-#if defined(OMIM_OS_MAC)
-    x *= visualScale;
-    y *= visualScale;
-#endif
     constexpr double kSensitivity = 0.01;
     double const factor = yOffset * kSensitivity;
     framework.Scale(exp(factor), m2::PointD(x, y), false);
@@ -553,9 +526,7 @@ int main(int argc, char * argv[])
 
     // Drape controls
     char const * apiLabels[] = {
-#if defined(OMIM_OS_MAC)
-        "Metal", "Vulkan", "OpenGL"
-#elif defined(OMIM_OS_LINUX)
+#if   defined(OMIM_OS_LINUX)
         "Vulkan", "OpenGL"
 #endif
     };

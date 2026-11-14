@@ -58,11 +58,7 @@ bool IsEnoughSpaceForUpdate(CountryId const & countryId, Storage const & storage
   // 2. For the current "download and replace" strategy:
   // - Android and Desktop has 1 simultaneous download
   // - iOS has unlimited simultaneous downloads
-#ifdef OMIM_OS_IPHONE
-  return IsEnoughSpaceForDownload(updateInfo.m_totalDownloadSizeInBytes);
-#else
   return IsEnoughSpaceForDownload(diff + updateInfo.m_maxFileSizeInBytes);
-#endif  // OMIM_OS_IPHONE
 }
 
 m2::RectD CalcLimitRect(CountryId const & countryId, Storage const & storage,

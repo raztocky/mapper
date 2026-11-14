@@ -40,12 +40,6 @@ void SupportManager::Init(ref_ptr<GraphicsContext> context)
     m_maxLineWidth = static_cast<float>(std::max(1, GLFunctions::glGetMaxLineWidth()));
     m_maxTextureSize = static_cast<uint32_t>(GLFunctions::glGetInteger(gl_const::GLMaxTextureSize));
   }
-  else if (apiVersion == dp::ApiVersion::Metal)
-  {
-    // Metal does not support thick lines.
-    m_maxLineWidth = 1.0f;
-    m_maxTextureSize = 4096;
-  }
   else if (apiVersion == dp::ApiVersion::Vulkan)
   {
     ref_ptr<dp::vulkan::VulkanBaseContext> vulkanContext = context;

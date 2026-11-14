@@ -108,16 +108,6 @@ void RunRecalculationGeometryScript(QString const & mapcssFile)
   CopyFromResources("classificator.txt", geometryToolResourceDir);
   CopyFromResources("types.txt", geometryToolResourceDir);
 
-#if defined(OMIM_OS_MAC)
-  (void)ExecProcess("python3", {
-                                   GetRecalculateGeometryScriptPath(),
-                                   resourceDir,
-                                   writableDir,
-                                   generatorToolPath,
-                                   appPath,
-                                   mapcssFile,
-                               });
-#else
   (void)ExecProcess("python", {
                                   GetRecalculateGeometryScriptPath(),
                                   resourceDir,
@@ -126,7 +116,6 @@ void RunRecalculationGeometryScript(QString const & mapcssFile)
                                   appPath,
                                   mapcssFile,
                               });
-#endif
 }
 
 bool NeedRecalculate = false;

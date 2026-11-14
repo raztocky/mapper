@@ -101,7 +101,7 @@ private:
   }                                                                                                         \
   while (false)
 
-#if defined(OMIM_OS_MAC) || defined(OMIM_OS_LINUX)
+#if defined(OMIM_OS_LINUX)
 #define INIT_DEBUG_NAME_VK(instance, device) \
   do                                         \
   {                                          \

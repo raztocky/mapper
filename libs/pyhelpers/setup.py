@@ -411,7 +411,6 @@ class BuildOmimBindingCommand(build_ext, object):
 
 
 VERSIONS_LOCATIONS = {
-    'xcode/common.xcconfig': 'CURRENT_PROJECT_VERSION',
     'android/gradle.properties': 'propVersionName',
 }
 
