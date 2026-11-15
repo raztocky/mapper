@@ -237,8 +237,6 @@
     <string name="help">ヘルプ</string>
     <!-- Button in the main Help dialog -->
     <string name="faq">よくある質問</string>
-    <!-- Button in the main menu -->
-    <string name="donate">寄付</string>
     <!-- Button in the main Help dialog -->
     <string name="how_to_support_us">ボランティアでCoMapsを改善する</string>
     <!-- Button in the main Help dialog -->
@@ -517,8 +515,6 @@
     <string name="editor_share_to_all_dialog_message_1">個人情報を入力していないことを確認してください。</string>
     <string name="editor_share_to_all_dialog_message_2">OpenStreetMap の編集者が変更を確認し、質問があれば連絡します。</string>
     <string name="navigation_stop_button">停止</string>
-    <!-- Shown as toast when starting the recent track recording -->
-    <string name="track_recording">トラックの記録</string>
     <!-- For the first routing -->
     <string name="accept">了解</string>
     <!-- For the first routing -->
@@ -720,10 +716,6 @@
     <string name="osm_wiki_about_url">https://wiki.openstreetmap.org/wiki/JA:OpenStreetMap_について</string>
     <!-- App Tip #00 -->
     <string name="app_tip_00">私たちのコミュニティが作った地図をご利用いただき、ありがとうございます！</string>
-    <!-- App tip #01 -->
-    <string name="app_tip_01">あなたの寄付とサポートがあれば、世界で最高の地図を作成できます！</string>
-    <!-- App tip #02 -->
-    <string name="app_tip_02">私たちのアプリは気に入っていますか? 開発をサポートするために寄付をお願いします！ まだ気に入らないですか？ お知らせください。修正させていただきます！</string>
     <!-- App tip #03 -->
     <string name="app_tip_03">ソフトウェア開発者を知っている場合は、必要な機能を実装するように依頼できます。</string>
     <!-- App tip #04 -->
@@ -783,20 +775,6 @@
     <string name="select_option">オプションを選択する</string>
     <!-- To indicate if restaurant or other place has outdoor seating -->
     <string name="outdoor_seating">屋外席</string>
-    <!-- Disclaimer summary shown when Power Saving Mode is enabled -->
-    <string name="power_save_dialog_summary">最も正確なナビゲーションのためには、携帯電話のバッテリー設定で省電力モードを無効にすることをお勧めする。</string>
-    <!-- Prompt to start recording a track. -->
-    <string name="start_track_recording">トラックを記録する</string>
-    <!-- Prompt for stopping a track recording. -->
-    <string name="stop_track_recording">トラック記録を停止しますか</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="stop_without_saving">保存せずに停止</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="continue_recording">録画を続ける</string>
-    <!-- Title for the alert when saving a track recording. -->
-    <string name="track_recording_alert_title">ブックマークとトラックに保存しますか？</string>
-    <!-- Message for the toast when saving the track recording is finished but nothing to save. -->
-    <string name="track_recording_toast_nothing_to_save">ルートが空です - 保存するものがありません</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">デバイスに適切なアプリがインストールされていないため、フォルダ選択ダイアログを表示できません。ファイルマネージャーアプリをインストールして再度お試しください。</string>
     <string name="choose_color">色を選択</string>

@@ -4,6 +4,7 @@
 #include "map/routing_mark.hpp"
 #include "map/transit/transit_display.hpp"
 
+#include "routing/async_router.hpp"
 #include "routing/route.hpp"
 #include "routing/router.hpp"
 #include "routing/router_delegate.hpp"
@@ -13,6 +14,8 @@
 #include "routing/turns.hpp"
 
 #include "storage/storage_defines.hpp"
+
+#include "traffic/traffic_cache.hpp"
 
 #include "drape_frontend/drape_engine_safe_ptr.hpp"
 
@@ -141,6 +144,15 @@ public:
   ~RoutingManager();
 
   void Init(std::shared_ptr<routing::NumMwmIds> ptr);
+
+  /// Called on the GUI thread with the estimated driving time in seconds, or std::nullopt if the route can't be built
+  /// (no maps, no route, timeout, ...).
+  using CarEtaCallback = std::function<void(std::optional<double> etaSeconds)>;
+  /// Estimates the driving time from |from| to |to| (mercator points).
+  /// Uses a dedicated AsyncRouter with its own car IndexRouter: it never touches |m_routingSession|, route points,
+  /// markers or the drape engine, so it is safe to call while the user is planning or following another route.
+  /// A new request cancels the previous unfinished one (its callback is not called).
+  void EstimateCarEta(m2::PointD const & from, m2::PointD const & to, CarEtaCallback && callback);
 
   void SetBookmarkManager(BookmarkManager * bmManager);
   void SetTransitManager(TransitReadManager * transitManager);
@@ -415,6 +427,10 @@ private:
   routing::RouterType m_currentRouterType = routing::RouterType::Count;
   bool m_loadAltitudes = false;
   routing::RoutingSession m_routingSession;
+
+  // Dedicated router for EstimateCarEta(). The traffic cache must outlive the router that references it.
+  traffic::TrafficCache m_carEtaTrafficCache;
+  std::unique_ptr<routing::AsyncRouter> m_carEtaRouter;
   Delegate & m_delegate;
 
   /// the segment index of the currently previewed turn, or no value if no turn

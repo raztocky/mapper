@@ -38,7 +38,7 @@ java {
     }
 }
 
-val appName = "CoMaps"
+val appName = "SlopMap"
 val appId = "app.comaps"
 // These are properly set in the 'secure.properties.*' files but must be declared here for build sync to succeed.
 project.ext["secretTestStoreFile"] = "comaps-test.keystore"
@@ -200,7 +200,7 @@ android {
         getByName("debug") {
             storeFile = project.projectDir.resolve(File(comapsDebugKeystorePath))
             storePassword = "12345678"
-            keyAlias = "$appName Debug"
+            keyAlias = "CoMaps Debug" // Alias inside the bundled debug keystore; not the display name.
             keyPassword = "12345678"
         }
         create("test") {
@@ -232,7 +232,7 @@ android {
             applicationIdSuffix = ".debug" // Allows installing debug and release builds together.
             versionNameSuffix = "-debug"
             signingConfig = signingConfigs["debug"]
-            resValue("string", "app_name", "$appName Debug")
+            resValue("string", "app_name", appName)
         }
         release {
             if (taskName.contains("release")) {

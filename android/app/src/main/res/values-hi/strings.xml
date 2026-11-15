@@ -233,8 +233,6 @@
     <string name="help">सहायता</string>
     <!-- Button in the main Help dialog -->
     <string name="faq">अक्सर पूछे जाने वाले प्रश्नों</string>
-    <!-- Button in the main menu -->
-    <string name="donate">दान देना</string>
     <!-- Button in the main Help dialog -->
     <string name="how_to_support_us">परियोजना का समर्थन करें</string>
     <!-- Button in the main Help dialog -->
@@ -358,8 +356,6 @@
     <string name="editor_remove_place_button">मिटाना</string>
     <string name="editor_place_doesnt_exist">जगह मौजूद नहीं है</string>
     <string name="placepage_add_place_button">OpenStreetMap में स्थान जोड़ें</string>
-    <!-- Shown as toast when starting the recent track recording -->
-    <string name="track_recording">ट्रैक रिकॉर्ड करना</string>
     <!-- For the first routing -->
     <string name="accept">मुझे स्वीकार है</string>
     <!-- For the first routing -->
@@ -462,10 +458,6 @@
     <string name="translated_om_site_url">https://comaps.app/hi/</string>
     <!-- App Tip #00 -->
     <string name="app_tip_00">हमारे समुदाय-निर्मित मानचित्रों का उपयोग करने के लिए धन्यवाद!</string>
-    <!-- App tip #01 -->
-    <string name="app_tip_01">आपके दान और समर्थन से, हम दुनिया में सबसे अच्छे मानचित्र बना सकते हैं!</string>
-    <!-- App tip #02 -->
-    <string name="app_tip_02">क्या आपको हमारा ऐप पसंद है? कृपया विकास का समर्थन करने के लिए दान करें! अभी तक यह पसंद नहीं आया? कृपया हमें बताएं, और हम इसे ठीक कर देंगे!</string>
     <!-- App tip #03 -->
     <string name="app_tip_03">यदि आप किसी सॉफ़्टवेयर डेवलपर को जानते हैं, तो आप उससे वह सुविधा लागू करने के लिए कह सकते हैं जिसकी आपको आवश्यकता है।</string>
     <!-- App tip #04 -->
@@ -525,20 +517,6 @@
     <string name="select_option">विकल्प चुनें</string>
     <!-- To indicate if restaurant or other place has outdoor seating -->
     <string name="outdoor_seating">घर के बाहर बैठने</string>
-    <!-- Disclaimer summary shown when Power Saving Mode is enabled -->
-    <string name="power_save_dialog_summary">सबसे सटीक नेविगेशन के लिए, हम फ़ोन की बैटरी सेटिंग्स में पावर सेविंग मोड को अक्षम करने की सलाह देते हैं।</string>
-    <!-- Prompt to start recording a track. -->
-    <string name="start_track_recording">ट्रैक रिकॉर्ड करें</string>
-    <!-- Prompt for stopping a track recording. -->
-    <string name="stop_track_recording">ट्रैक रिकॉर्डिंग रोकें</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="stop_without_saving">बिना सहेजे रुकें</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="continue_recording">रिकॉर्डिंग जारी रखें</string>
-    <!-- Title for the alert when saving a track recording. -->
-    <string name="track_recording_alert_title">मार्ग रिकॉर्डिंग बुकमार्क और ट्रैक में सहेजें?</string>
-    <!-- Message for the toast when saving the track recording is finished but nothing to save. -->
-    <string name="track_recording_toast_nothing_to_save">मार्ग खाली है - बचाने के लिए कुछ नहीं</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">फ़ोल्डर चयन संवाद प्रदर्शित करने में असमर्थ क्योंकि आपके डिवाइस पर कोई उपयुक्त ऐप इंस्टॉल नहीं है। कृपया एक फ़ाइल प्रबंधक ऐप इंस्टॉल करें और पुनः प्रयास करें।</string>
     <string name="choose_color">रंग चुनें</string>

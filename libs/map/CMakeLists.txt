@@ -25,16 +25,6 @@ set(SRC
   features_fetcher.hpp
   framework.cpp
   framework.hpp
-  gps_track_collection.cpp
-  gps_track_collection.hpp
-  gps_track_filter.cpp
-  gps_track_filter.hpp
-  gps_track_storage.cpp
-  gps_track_storage.hpp
-  gps_track.cpp
-  gps_track.hpp
-  gps_tracker.cpp
-  gps_tracker.hpp
   isolines_manager.cpp
   isolines_manager.hpp
   mwm_url.cpp

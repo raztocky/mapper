@@ -487,17 +487,6 @@ public class Utils
     return StringUtils.formatUsingUsLocale("%d:%02d", time.getHour(), time.getMinute());
   }
 
-  @NonNull
-  public static String getDonateUrl(@NonNull Context context)
-  {
-    final String url = Config.getDonateUrl();
-    // Enable donations by default if not Google or Huawei. Replace comaps.app/donate/ with localized page.
-    if ((url.isEmpty() && !BuildConfig.FLAVOR.equals("google") && !BuildConfig.FLAVOR.equals("huawei"))
-        || url.endsWith("comaps.app/donate/"))
-      return context.getString(R.string.app_site_url) + "donate/";
-    return url;
-  }
-
   public static boolean isAndroidAutoSupported(Context context)
   {
     String appID = BuildConfig.APPLICATION_ID;

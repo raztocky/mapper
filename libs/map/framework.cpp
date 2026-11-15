@@ -3,9 +3,6 @@
 #include "map/benchmark_tools.hpp"
 #include "map/bookmark.hpp"
 #include "map/bookmark_helpers.hpp"
-#include "map/gps_track.hpp"
-#include "map/gps_track_filter.hpp"
-#include "map/gps_tracker.hpp"
 #include "map/place_page_info.hpp"
 #include "map/power_management/power_management_schemas.hpp"
 #include "map/track_mark.hpp"
@@ -34,7 +31,6 @@
 
 #include "drape_frontend/color_constants.hpp"
 #include "drape_frontend/frontend_renderer.hpp"
-#include "drape_frontend/gps_track_point.hpp"
 #include "drape_frontend/map_data_provider.hpp"
 #include "drape_frontend/postprocess_renderer.hpp"
 #include "drape_frontend/selection_shape.hpp"
@@ -145,29 +141,6 @@ std::string_view constexpr kOldOutdoorsEnabledKey = "OutdoorsEnabled";
 
 size_t constexpr kMaxTrafficCacheSizeBytes = 64 /* Mb */ * 1024 * 1024;
 double constexpr kCloseDistance = 1.0;
-
-// TODO!
-// To adjust GpsTrackFilter was added secret command "?gpstrackaccuracy:xxx;"
-// where xxx is a new value for horizontal accuracy.
-// This is temporary solution while we don't have a good filter.
-bool ParseSetGpsTrackMinAccuracyCommand(string const & query)
-{
-  char constexpr kGpsAccuracy[] = "?gpstrackaccuracy:";
-  if (!query.starts_with(kGpsAccuracy))
-    return false;
-
-  size_t const end = query.find(';', sizeof(kGpsAccuracy) - 1);
-  if (end == string::npos)
-    return false;
-
-  string s(query.begin() + sizeof(kGpsAccuracy) - 1, query.begin() + end);
-  double value;
-  if (!strings::to_double(s, value))
-    return false;
-
-  GpsTrackFilter::StoreMinHorizontalAccuracy(value);
-  return true;
-}
 }  // namespace
 
 pair<MwmSet::MwmId, MwmSet::RegResult> Framework::RegisterMap(LocalCountryFile const & file)
@@ -353,8 +326,6 @@ Framework::Framework(FrameworkParams const & params, bool loadMaps)
     mapStyle = MapStyleFromSettings(mapStyleStr);
   GetStyleReader().SetCurrentStyle(mapStyle);
   df::LoadTransitColors();
-
-  m_connectToGpsTrack = GpsTracker::Instance().IsEnabled();
 
   // Init strings bundle.
   // @TODO. There are hardcoded strings below which are defined in strings.txt as well.
@@ -1631,9 +1602,6 @@ void Framework::CreateDrapeEngine(ref_ptr<dp::GraphicsContextFactory> contextFac
 
   LoadViewport();
 
-  if (m_connectToGpsTrack)
-    GpsTracker::Instance().Connect(bind(&Framework::OnUpdateGpsTrackPointsCallback, this, _1, _2, _3));
-
   GetBookmarkManager().SetDrapeEngine(make_ref(m_drapeEngine));
   m_drapeApi.SetDrapeEngine(make_ref(m_drapeEngine));
   m_routingManager.SetDrapeEngine(make_ref(m_drapeEngine), allow3d);
@@ -1719,7 +1687,6 @@ void Framework::DestroyDrapeEngine()
     GetBookmarkManager().SetDrapeEngine(nullptr);
 
     m_trafficManager.Teardown();
-    GpsTracker::Instance().Disconnect();
     m_drapeEngine.reset();
   }
 }
@@ -1749,117 +1716,11 @@ void Framework::EnableDebugRectRendering(bool enabled)
     m_drapeEngine->EnableDebugRectRendering(enabled);
 }
 
-void Framework::ConnectToGpsTracker()
-{
-  m_connectToGpsTrack = true;
-  if (m_drapeEngine)
-  {
-    m_drapeEngine->ClearGpsTrackPoints();
-    GpsTracker::Instance().Connect(bind(&Framework::OnUpdateGpsTrackPointsCallback, this, _1, _2, _3));
-  }
-}
-
-void Framework::DisconnectFromGpsTracker()
-{
-  m_connectToGpsTrack = false;
-  auto & tracker = GpsTracker::Instance();
-  tracker.Disconnect();
-  tracker.SetEnabled(false);
-}
-
-void Framework::StartTrackRecording()
-{
-  auto & tracker = GpsTracker::Instance();
-  if (!tracker.IsEnabled())
-    tracker.SetEnabled(true);
-  m_connectToGpsTrack = true;
-  if (m_drapeEngine)
-  {
-    m_drapeEngine->ClearGpsTrackPoints();
-    tracker.Connect(bind(&Framework::OnUpdateGpsTrackPointsCallback, this, _1, _2, _3));
-  }
-}
-
-void Framework::SetTrackRecordingUpdateHandler(TrackRecordingUpdateHandler && trackRecordingDidUpdate)
-{
-  m_trackRecordingUpdateHandler = std::move(trackRecordingDidUpdate);
-  if (m_trackRecordingUpdateHandler)
-    m_trackRecordingUpdateHandler(GpsTracker::Instance().GetTrackStatistics());
-}
-
-ElevationInfo Framework::GetTrackRecordingElevationInfo()
-{
-  return GpsTracker::Instance().GetElevationInfo();
-}
-
-void Framework::StopTrackRecording()
-{
-  m_connectToGpsTrack = false;
-  auto & tracker = GpsTracker::Instance();
-  tracker.Disconnect();
-  tracker.SetEnabled(false);
-  if (m_drapeEngine)
-    m_drapeEngine->ClearGpsTrackPoints();
-}
-
-void Framework::SaveTrackRecordingWithName(std::string const & name)
-{
-  auto const trackId = GetBookmarkManager().SaveTrackRecording(name);
-  if (m_drapeEngine)
-    m_drapeEngine->ClearGpsTrackPoints();
-  ShowTrack(trackId);
-  GpsTracker::Instance().Clear();
-}
-
-bool Framework::IsTrackRecordingEmpty() const
-{
-  return GpsTracker::Instance().IsEmpty();
-}
-
-bool Framework::IsTrackRecordingEnabled() const
-{
-  return GpsTracker::Instance().IsEnabled();
-}
-
 void Framework::SaveRoute()
 {
   auto const trackId = m_routingManager.SaveRoute();
   if (trackId != kml::kInvalidTrackId)
     ShowTrack(trackId);
-}
-
-void Framework::OnUpdateGpsTrackPointsCallback(vector<pair<size_t, location::GpsInfo>> && toAdd,
-                                               pair<size_t, size_t> const & toRemove,
-                                               TrackStatistics const & trackStatistics)
-{
-  ASSERT(m_drapeEngine.get() != nullptr, ());
-
-  vector<df::GpsTrackPoint> pointsAdd;
-  pointsAdd.reserve(toAdd.size());
-  for (auto const & ip : toAdd)
-  {
-    df::GpsTrackPoint pt;
-    ASSERT_LESS(ip.first, static_cast<size_t>(numeric_limits<uint32_t>::max()), ());
-    pt.m_id = static_cast<uint32_t>(ip.first);
-    pt.m_speedMPS = ip.second.m_speed;
-    pt.m_timestamp = ip.second.m_timestamp;
-    pt.m_point = mercator::FromLatLon(ip.second.m_latitude, ip.second.m_longitude);
-    pointsAdd.emplace_back(pt);
-  }
-
-  vector<uint32_t> indicesRemove;
-  if (toRemove.first != GpsTrack::kInvalidId)
-  {
-    ASSERT_LESS_OR_EQUAL(toRemove.first, toRemove.second, ());
-    indicesRemove.reserve(toRemove.second - toRemove.first + 1);
-    for (size_t i = toRemove.first; i <= toRemove.second; ++i)
-      indicesRemove.emplace_back(i);
-  }
-
-  m_drapeEngine->UpdateGpsTrackPoints(std::move(pointsAdd), std::move(indicesRemove));
-
-  if (m_trackRecordingUpdateHandler)
-    m_trackRecordingUpdateHandler(trackStatistics);
 }
 
 void Framework::MarkMapStyle(MapStyle mapStyle)
@@ -3564,8 +3425,6 @@ std::optional<m2::PointD> Framework::GetCurrentPosition() const
 bool Framework::ParseSearchQueryCommand(search::SearchParams const & params)
 {
   if (ParseDrapeDebugCommand(params.m_query))
-    return true;
-  if (ParseSetGpsTrackMinAccuracyCommand(params.m_query))
     return true;
   if (ParseEditorDebugCommand(params))
     return true;

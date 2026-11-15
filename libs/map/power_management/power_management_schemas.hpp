@@ -13,7 +13,6 @@ enum class Facility : uint8_t
 {
   Buildings3d,
   PerspectiveView,
-  TrackRecording,
   TrafficJams,
   GpsTrackingForTraffic,
   OsmEditsUploading,

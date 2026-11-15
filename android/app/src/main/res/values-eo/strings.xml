@@ -114,7 +114,6 @@
     <string name="load_kmz_successful">Ŝargado de favoratoj sukcesis! Vi povas trovi ilin sur la mapo aŭ en la fenestro de favoratoj.</string>
     <string name="pref_backup_now_summary_empty_lists">Neniu favorato por sekurkopii</string>
     <string name="pref_backup_title">Sekurkopii favoratojn</string>
-    <string name="track_recording_alert_title">Ĉu konservi en Favoratojn?</string>
     <string name="bookmarks_export">Eksporti ĉiujn favoratojn</string>
     <string name="load_kmz_failed">Malsukcesis ŝargi favoratojn. La dosiero eble estas difektita.</string>
     <string name="bookmarks_import">Importi favoratojn</string>
@@ -176,7 +175,6 @@
     <string name="downloader_downloaded_subtitle">Elŝutitaj</string>
     <string name="website">Retejo</string>
     <string name="help">Helpo</string>
-    <string name="donate">Donaci</string>
     <string name="report_a_bug">Raporti cimon</string>
     <string name="downloader_download_all_button">Elŝuti ĉion</string>
     <string name="downloader_retry">Reprovi</string>
@@ -507,7 +505,6 @@
     <string name="editor_share_to_all_dialog_title">Ĉu vi volas publikigi ĝin al ĉiuj uzantoj?</string>
     <string name="editor_share_to_all_dialog_message_1">Certigu, ke vi ne enigis privatajn aŭ personajn datumojn.</string>
     <string name="editor_share_to_all_dialog_message_2">OpenStreetMap-redaktistoj kontrolos la ŝanĝojn kaj kontaktos vin se ili havos demandojn.</string>
-    <string name="track_recording">Trako estas registrata</string>
     <string name="mobile_data_dialog">Ĉu vi uzas poŝtelefonan interreton?</string>
     <string name="mobile_data_option_always">Uzu ĉiam</string>
     <string name="mobile_data_option_today">Nur hodiaŭ</string>
@@ -629,8 +626,6 @@
     <string name="disk_error">Ne eblas krei dosierujon kaj movi dosierojn en la internan stokadon aŭ sur la SD-karto</string>
     <string name="enable_show_on_lock_screen_description">Kiam ŝaltita, la aplikaĵo funkcios sur la ŝlosekrano eĉ kiam la aparato estas ŝlosita.</string>
     <string name="app_tip_00">Dankon por la uzo de niaj komunum-kreitaj mapoj!</string>
-    <string name="app_tip_01">Per viaj donacoj kaj subteno, ni povas krei la plej bonajn mapojn en la mondo!</string>
-    <string name="app_tip_02">Ĉu vi ŝatas nian aplikaĵon? Bonvolu donaci por subteni ĝian evoluigon! Ĉu ĝi ankoraŭ ne plaĉas al vi? Bonvolu diri al ni kial, kaj ni riparos ĝin!</string>
     <string name="app_tip_03">Se vi konas programiston, vi povas peti lin aŭ ŝin aldoni funkcion, kiun vi bezonas.</string>
     <string name="app_tip_04">Frapu ie ajn sur la mapo por elekti ion ajn. Longa frapo estas uzata por kaŝi kaj montri la interfacon.</string>
     <string name="app_tip_05">Ĉu vi sciis, ke vi povas elekti vian nunan lokon sur la mapo?</string>
@@ -658,12 +653,6 @@
     <string name="self_service">Memserva</string>
     <string name="select_option">Elekti opcion</string>
     <string name="outdoor_seating">Eksteraj sidlokoj</string>
-    <string name="power_save_dialog_summary">Por la plej preciza navigado, ni rekomendas malŝalti la energisparreĝimon en la bateriaj agordoj de la telefono.</string>
-    <string name="start_track_recording">Registri trakon</string>
-    <string name="stop_track_recording">Fini trakregistradon</string>
-    <string name="stop_without_saving">Fini sen konservi</string>
-    <string name="continue_recording">Daŭrigi registradon</string>
-    <string name="track_recording_toast_nothing_to_save">La trako estas malplena – estas nenio por konservi</string>
     <string name="error_no_file_manager_app">Ne eblas montri la dialogon por elekti dosierujon, ĉar neniu taŭga aplikaĵo estas instalita en via aparato. Bonvolu instali dosieradministran aplikaĵon kaj reprovi.</string>
     <string name="edit_track">Redakti trakon</string>
     <string name="uri_open_location_failed">Neniu aplikaĵo estas instalita, kiu povas malfermi la lokon</string>

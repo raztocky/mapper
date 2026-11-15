@@ -244,6 +244,21 @@ public class Framework
 
   public static native void nativeSetRoutingListener(@NonNull RoutingListener listener);
 
+  public interface CarEtaListener
+  {
+    /**
+     * @param seconds estimated driving time, or a negative value if it is unknown. Called on the UI thread.
+     */
+    void onCarEta(double seconds);
+  }
+
+  /**
+   * Estimates the driving time between two points using a dedicated router. It does not affect the current route,
+   * route planning or navigation state in any way.
+   */
+  public static native void nativeEstimateCarEta(double fromLat, double fromLon, double toLat, double toLon,
+                                                 @NonNull CarEtaListener listener);
+
   public static native void nativeSetRouteProgressListener(@NonNull RoutingProgressListener listener);
 
   public static native void nativeSetRoutingRecommendationListener(@NonNull RoutingRecommendationListener listener);

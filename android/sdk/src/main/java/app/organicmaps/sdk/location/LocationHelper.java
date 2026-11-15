@@ -31,7 +31,6 @@ import org.chromium.base.ObserverList;
 public class LocationHelper implements BaseLocationProvider.Listener
 {
   private static final long INTERVAL_MS = 500;
-  private static final long INTERVAL_TRACK_RECORDING = 1000;
 
   private static final long AGPS_EXPIRATION_TIME_MS = 16 * 60 * 60 * 1000; // 16 hours
   private static final long LOCATION_UPDATE_TIMEOUT_MS = 30 * 1000; // 30 seconds
@@ -389,9 +388,6 @@ public class LocationHelper implements BaseLocationProvider.Listener
 
   private long calcLocationUpdatesInterval()
   {
-    if (TrackRecorder.nativeIsTrackRecordingEnabled())
-      return INTERVAL_TRACK_RECORDING;
-
     return INTERVAL_MS;
   }
 

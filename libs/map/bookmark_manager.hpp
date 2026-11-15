@@ -467,9 +467,8 @@ public:
   bool IsCompilation(kml::MarkGroupId id) const;
   kml::CompilationType GetCompilationType(kml::MarkGroupId id) const;
 
-  kml::TrackId SaveTrackRecording(std::string trackName);
-  std::string GenerateTrackRecordingName() const;
-  dp::Color GenerateTrackRecordingColor() const;
+  std::string GenerateDefaultTrackName() const;
+  dp::Color GenerateDefaultTrackColor() const;
 
   kml::TrackId SaveRoute(std::vector<geometry::PointWithAltitude> points, std::string const & from,
                          std::string const & to);

@@ -1529,6 +1529,21 @@ JNIEXPORT void JNICALL Java_app_organicmaps_sdk_Framework_nativeSetRoutingListen
   { CallTurnPreviewChangedListener(rf, isPreviewing, segmentIndex); });
 }
 
+JNIEXPORT void JNICALL Java_app_organicmaps_sdk_Framework_nativeEstimateCarEta(
+    JNIEnv * env, jclass, jdouble fromLat, jdouble fromLon, jdouble toLat, jdouble toLon, jobject listener)
+{
+  CHECK(g_framework, ("Framework isn't created yet!"));
+  auto const rf = jni::make_global_ref(listener);
+  frm()->GetRoutingManager().EstimateCarEta(mercator::FromLatLon(fromLat, fromLon), mercator::FromLatLon(toLat, toLon),
+                                            [rf](std::optional<double> etaSeconds)
+  {
+    JNIEnv * env = jni::GetEnv();
+    jmethodID const methodId = jni::GetMethodID(env, *rf, "onCarEta", "(D)V");
+    // A negative value means "unknown".
+    env->CallVoidMethod(*rf, methodId, static_cast<jdouble>(etaSeconds ? *etaSeconds : -1.0));
+  });
+}
+
 JNIEXPORT void JNICALL Java_app_organicmaps_sdk_Framework_nativeSetRouteProgressListener(JNIEnv * env, jclass,
                                                                                          jobject listener)
 {

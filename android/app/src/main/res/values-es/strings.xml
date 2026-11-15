@@ -242,8 +242,6 @@
     <string name="help">Ayuda</string>
     <!-- Button in the main Help dialog -->
     <string name="faq">Preguntas frecuentes</string>
-    <!-- Button in the main menu -->
-    <string name="donate">Donar</string>
     <!-- Button in the main Help dialog -->
     <string name="how_to_support_us">Apoya y mejora el proyecto CoMaps</string>
     <!-- Button in the main Help dialog -->
@@ -520,8 +518,6 @@
     <string name="editor_share_to_all_dialog_message_1">Asegúrate de que no has introducido ningún dato privado o personal.</string>
     <string name="editor_share_to_all_dialog_message_2">Los editores de OpenStreetMap comprobarán los cambios y se pondrán en contacto contigo si tienen alguna pregunta.</string>
     <string name="navigation_stop_button">Detener</string>
-    <!-- Shown as toast when starting the recent track recording -->
-    <string name="track_recording">Grabando el trayecto</string>
     <!-- For the first routing -->
     <string name="accept">Aceptar</string>
     <!-- For the first routing -->
@@ -733,10 +729,6 @@
     <string name="osm_wiki_about_url">https://wiki.openstreetmap.org/wiki/ES:Acerca_de_OpenStreetMap</string>
     <!-- App Tip #00 -->
     <string name="app_tip_00">¡Gracias por utilizar nuestros mapas creados por la comunidad!</string>
-    <!-- App tip #01 -->
-    <string name="app_tip_01">¡Con tus donaciones y apoyo, podemos crear los mejores mapas del mundo!</string>
-    <!-- App tip #02 -->
-    <string name="app_tip_02">¿Te gusta nuestra aplicación? ¡Por favor dona para apoyar su desarrollo! ¿Todavía no te gusta? ¡Dinos por qué y lo arreglaremos!</string>
     <!-- App tip #03 -->
     <string name="app_tip_03">Si conoce a algún desarrollador o desarrolladora de software, le puede pedir que implemente alguna funcionalidad que usted necesite.</string>
     <!-- App tip #04 -->
@@ -796,20 +788,6 @@
     <string name="select_option">Selecciona la opción</string>
     <!-- To indicate if restaurant or other place has outdoor seating -->
     <string name="outdoor_seating">Asientos al aire libre</string>
-    <!-- Disclaimer summary shown when Power Saving Mode is enabled -->
-    <string name="power_save_dialog_summary">Para una navegación más precisa, recomendamos que desactive el modo de ahorro de energía en la configuración de la batería del teléfono.</string>
-    <!-- Prompt to start recording a track. -->
-    <string name="start_track_recording">Grabar trayecto</string>
-    <!-- Prompt for stopping a track recording. -->
-    <string name="stop_track_recording">Detener grabación de trayecto</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="stop_without_saving">Parar sin guardar</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="continue_recording">Continuar grabación</string>
-    <!-- Title for the alert when saving a track recording. -->
-    <string name="track_recording_alert_title">¿Guardar en Favoritos?</string>
-    <!-- Message for the toast when saving the track recording is finished but nothing to save. -->
-    <string name="track_recording_toast_nothing_to_save">El trayecto está vacío; no hay nada que guardar</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">No se puede mostrar el diálogo de selección de carpetas porque no hay ninguna aplicación adecuada instalada en el dispositivo. Instale un gestor de archivos e inténtelo de nuevo.</string>
     <string name="choose_color">Elegir color</string>

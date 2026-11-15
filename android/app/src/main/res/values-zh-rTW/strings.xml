@@ -244,8 +244,6 @@
     <string name="help">幫助</string>
     <!-- Button in the main Help dialog -->
     <string name="faq">問題和解答</string>
-    <!-- Button in the main menu -->
-    <string name="donate">捐助我們</string>
     <!-- Button in the main Help dialog -->
     <string name="how_to_support_us">志工與改進 CoMaps</string>
     <!-- Button in the main Help dialog -->
@@ -526,8 +524,6 @@
     <string name="editor_share_to_all_dialog_message_1">確保您沒有輸入任何隱私或是個人資料。</string>
     <string name="editor_share_to_all_dialog_message_2">開放街圖編輯將檢查更改並在有任何問題時與您聯繫。</string>
     <string name="navigation_stop_button">停止</string>
-    <!-- Shown as toast when starting the recent track recording -->
-    <string name="track_recording">記錄軌跡</string>
     <!-- For the first routing -->
     <string name="accept">接受</string>
     <!-- For the first routing -->
@@ -731,10 +727,6 @@
     <string name="osm_wiki_about_url">https://wiki.openstreetmap.org/wiki/Zh-hant:關於OpenStreetMap</string>
     <!-- App Tip #00 -->
     <string name="app_tip_00">感謝您使用我們社區構建的地圖！</string>
-    <!-- App tip #01 -->
-    <string name="app_tip_01">有了您的捐贈和支持，我們可以創造世界上最好的地圖！</string>
-    <!-- App tip #02 -->
-    <string name="app_tip_02">您喜歡我們的應用嗎？請捐款以支持發展！還不喜歡嗎？請告訴我們，我們會修復您提到的問題！</string>
     <!-- App tip #03 -->
     <string name="app_tip_03">如果您認識軟體開發人員，您可以要求他實現您需要的功能。</string>
     <!-- App tip #04 -->
@@ -794,20 +786,6 @@
     <string name="select_option">選擇選項</string>
     <!-- To indicate if restaurant or other place has outdoor seating -->
     <string name="outdoor_seating">戶外座位</string>
-    <!-- Disclaimer summary shown when Power Saving Mode is enabled -->
-    <string name="power_save_dialog_summary">為了獲得最準確的導航，我們建議在手機電池設定中停用省電模式。</string>
-    <!-- Prompt to start recording a track. -->
-    <string name="start_track_recording">錄製軌跡</string>
-    <!-- Prompt for stopping a track recording. -->
-    <string name="stop_track_recording">停止軌跡記錄</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="stop_without_saving">停止而不保存</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="continue_recording">繼續錄製</string>
-    <!-- Title for the alert when saving a track recording. -->
-    <string name="track_recording_alert_title">儲存到最愛？</string>
-    <!-- Message for the toast when saving the track recording is finished but nothing to save. -->
-    <string name="track_recording_toast_nothing_to_save">軌跡為空 - 沒有可保存的內容</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">無法顯示資料夾選擇對話框，因為您的裝置上沒有安裝合適的應用程式。請安裝檔案總管應用並重試。</string>
     <string name="choose_color">選擇顏色</string>

@@ -18,7 +18,6 @@ import androidx.preference.PreferenceManager;
 import app.organicmaps.background.OsmUploadWork;
 import app.organicmaps.downloader.DownloaderNotifier;
 import app.organicmaps.location.LocationProviderFactoryImpl;
-import app.organicmaps.location.TrackRecordingService;
 import app.organicmaps.routing.NavigationService;
 import app.organicmaps.sdk.Map;
 import app.organicmaps.sdk.OrganicMaps;
@@ -26,7 +25,6 @@ import app.organicmaps.sdk.display.DisplayManager;
 import app.organicmaps.sdk.location.LocationHelper;
 import app.organicmaps.sdk.location.LocationState;
 import app.organicmaps.sdk.location.SensorHelper;
-import app.organicmaps.sdk.location.TrackRecorder;
 import app.organicmaps.sdk.maplayer.isolines.IsolinesManager;
 import app.organicmaps.sdk.maplayer.subway.SubwayManager;
 import app.organicmaps.sdk.routing.RoutingController;
@@ -139,7 +137,6 @@ public class MwmApplication extends Application implements Application.ActivityL
 
     DownloaderNotifier.createNotificationChannel(this);
     NavigationService.createNotificationChannel(this);
-    TrackRecordingService.createNotificationChannel(this);
 
     registerActivityLifecycleCallbacks(this);
     mDisplayManager = new DisplayManager();
@@ -228,8 +225,6 @@ public class MwmApplication extends Application implements Application.ActivityL
       Logger.i(LOCATION_TAG, "Navigation is in progress, keeping location in the background");
     else if (!Map.isEngineCreated() || LocationState.getMode() == LocationState.PENDING_POSITION)
       Logger.i(LOCATION_TAG, "PENDING_POSITION mode, keeping location in the background");
-    else if (TrackRecorder.nativeIsTrackRecordingEnabled())
-      Logger.i(LOCATION_TAG, "Track Recordr is active, keeping location in the background");
     else
     {
       Logger.i(LOCATION_TAG, "Stopping location in the background");

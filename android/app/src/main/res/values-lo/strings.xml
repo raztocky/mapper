@@ -146,7 +146,6 @@
     <string name="rate_the_app">ໃຫ້ຄະແນນແອັບ</string>
     <string name="help">ຊ່ວຍເຫຼືອ</string>
     <string name="faq">ຄຳຖາມທີ່ພົບເລື້ອຍ</string>
-    <string name="donate">ບໍລິຈາກ</string>
     <string name="how_to_support_us">ເປັນອາສາສະໝັກ ແລະ ຊ່ວຍພັດທະນາ CoMaps</string>
     <string name="copyright">ລິຂະສິດ</string>
     <string name="report_a_bug">ລາຍງານບັກ</string>
@@ -391,7 +390,6 @@
     <string name="editor_share_to_all_dialog_message_1">ກວດສອບໃຫ້ແນ່ໃຈວ່າເຈົ້າບໍ່ໄດ້ປ້ອນຂໍ້ມູນສ່ວນຕົວໃດໆ.</string>
     <string name="editor_share_to_all_dialog_message_2">ຜູ້ກວດສອບ OpenStreetMap ຈະກວດສອບການປ່ຽນແປງ ແລະ ຕິດຕໍ່ຫາເຈົ້າຖ້າມີຄຳຖາມ.</string>
     <string name="navigation_stop_button">ຢຸດ</string>
-    <string name="track_recording">ກຳລັງບັນທຶກເສັ້ນທາງ</string>
     <string name="accept">ຍອມຮັບ</string>
     <string name="decline">ປະຕິເສດ</string>
     <string name="mobile_data_dialog">ໃຊ້ອິນເຕີເນັດມືຖືເພື່ອສະແດງຂໍ້ມູນລະອຽດບໍ?</string>
@@ -576,8 +574,6 @@
     <string name="osm_wiki_about_url">https://wiki.openstreetmap.org/wiki/About_OpenStreetMap</string>
     <string name="comma_separated_pair">%1$s, %2$s</string>
     <string name="app_tip_00">ຂອບໃຈທີ່ໃຊ້ແຜນທີ່ທີ່ສ້າງຂຶ້ນໂດຍຊຸມຊົນຂອງພວກເຮົາ!</string>
-    <string name="app_tip_01">ດ້ວຍການບໍລິຈາກ ແລະ ການສະໜັບສະໜູນຂອງທ່ານ, ພວກເຮົາສາມາດສ້າງແຜນທີ່ທີ່ດີທີ່ສຸດໃນໂລກໄດ້!</string>
-    <string name="app_tip_02">ເຈົ້າມັກແອັບຂອງພວກເຮົາບໍ? ກະລຸນາບໍລິຈາກເພື່ອສະໜັບສະໜູນການພັດທະນາ! ຖ້າຍັງບໍ່ມັກ, ກະລຸນາບອກໃຫ້ພວກເຮົາຮູ້ວ່າເປັນຫຍັງ ແລະ ພວກເຮົາຈະປັບປຸງມັນ!</string>
     <string name="app_tip_03">ຖ້າເຈົ້າຮູ້ຈັກນັກພັດທະນາຊອບແວ, ເຈົ້າສາມາດຂໍໃຫ້ພວກເຂົາຊ່ວຍເພີ່ມຟີເຈີທີ່ເຈົ້າຕ້ອງການໄດ້.</string>
     <string name="app_tip_04">ແຕະບ່ອນໃດກໍໄດ້ເທິງແຜນທີ່ເພື່ອເລືອກວັດຖຸ. ການແຕະຄ້າງໄວ້ແມ່ນໃຊ້ເພື່ອເຊື່ອງ ແລະ ສະແດງແຖບເຄື່ອງມື.</string>
     <string name="app_tip_05">ເຈົ້າຮູ້ບໍວ່າເຈົ້າສາມາດເລືອກຕຳແໜ່ງປັດຈຸບັນຂອງເຈົ້າເທິງແຜນທີ່ໄດ້?</string>
@@ -610,13 +606,6 @@
     <string name="self_service">ບໍລິການຕົນເອງ</string>
     <string name="select_option">ເລືອກຕົວເລືອກ</string>
     <string name="outdoor_seating">ບ່ອນນັ່ງກາງແຈ້ງ</string>
-    <string name="power_save_dialog_summary">ເພື່ອການນຳທາງທີ່ຊັດເຈນທີ່ສຸດ, ພວກເຮົາແນະນຳໃຫ້ປິດໂໝດປະຢັດພະລັງງານໃນການຕັ້ງຄ່າແບັດເຕີຣີຂອງໂທລະສັບ.</string>
-    <string name="start_track_recording">ບັນທຶກເສັ້ນທາງ</string>
-    <string name="stop_track_recording">ຢຸດການບັນທຶກເສັ້ນທາງ</string>
-    <string name="stop_without_saving">ຢຸດໂດຍບໍ່ບັນທຶກ</string>
-    <string name="continue_recording">ບັນທຶກຕໍ່</string>
-    <string name="track_recording_alert_title">ບັນທຶກໃນລາຍການທີ່ມັກບໍ?</string>
-    <string name="track_recording_toast_nothing_to_save">ເສັ້ນທາງວ່າງເປົ່າ - ບໍ່ມີຫຍັງໃຫ້ບັນທຶກ</string>
     <string name="error_no_file_manager_app">ບໍ່ສາມາດສະແດງໜ້າຕ່າງເລືອກໂຟນເດີໄດ້ ເນື່ອງຈາກບໍ່ມີແອັບທີ່ເໝາະສົມຕິດຕັ້ງໃນອຸປະກອນຂອງທ່ານ. ກະລຸນາຕິດຕັ້ງແອັບຈັດການໄຟລ໌ແລ້ວລອງໃໝ່.</string>
     <string name="choose_color">ເລືອກສີ</string>
     <string name="edit_track">ແກ້ໄຂເສັ້ນທາງ</string>

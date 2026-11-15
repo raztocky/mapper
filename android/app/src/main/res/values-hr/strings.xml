@@ -48,7 +48,6 @@
     <string name="menu">Izbornik</string>
     <string name="news">Novosti</string>
     <string name="help">Pomoć</string>
-    <string name="donate">Doniraj</string>
     <string name="copyright">Autorska prava</string>
     <string name="yellow">Žuta</string>
     <string name="blue">Plava</string>
@@ -189,7 +188,6 @@
     <string name="tracks_title">Rute</string>
     <string name="category_hotel">Hotel</string>
     <string name="category_toilet">WC</string>
-    <string name="track_recording">Snimanje Rute</string>
     <string name="bookmarks_import">Uvoz favorita</string>
     <plurals name="tracks">
         <item quantity="one">%d ruta</item>
@@ -197,10 +195,6 @@
         <item quantity="other">%d ruta</item>
     </plurals>
     <string name="bookmarks_export">Izvoz svih Mjesta i Ruta</string>
-    <string name="start_track_recording">Snimi Rutu</string>
-    <string name="stop_track_recording">Zaustavi snimanje Rute</string>
-    <string name="track_recording_alert_title">Spremi u favorite?</string>
-    <string name="track_recording_toast_nothing_to_save">Ruta je prazna - nema ništa za spremiti</string>
     <string name="edit_track">Izmijeni Rutu</string>
     <string name="pref_backup_title">Sigurnosna kopija favorita</string>
     <string name="pref_backup_now_summary_empty_lists">Nema Mjesta i Ruta za izradu sigurnosne kopije</string>
@@ -528,8 +522,6 @@
     <string name="pref_maplanguage_local">Lokalni jezik</string>
     <string name="splash_subtitle">Podaci karte iz OpenStreetMapa</string>
     <string name="app_tip_00">Hvala vam što koristite karte koje je izradila naša zajednica!</string>
-    <string name="app_tip_01">Uz vaše donacije i podršku, možemo stvoriti najbolje karte na svijetu!</string>
-    <string name="app_tip_02">Sviđa li vam se naša aplikacija? Donirajte kako biste podržali razvoj! Još vam se ne sviđa? Javite nam zašto i mi ćemo to popraviti!</string>
     <string name="app_tip_03">Ako poznajete programera softvera, možete ga zamoliti da implementira značajku koja vam je potrebna.</string>
     <string name="app_tip_04">Dodirnite bilo gdje na karti da biste nešto odabrali. Dugi dodir koristi se za skrivanje i prikaz sučelja.</string>
     <string name="app_tip_05">Jeste li znali da se vaša trenutna lokacija na karti može odabrati?</string>
@@ -579,9 +571,6 @@
     <string name="open_in_app">Otvori u drugoj aplikaciji</string>
     <string name="select_option">Odaberite opciju</string>
     <string name="outdoor_seating">Vanjski prostor za sjedenje</string>
-    <string name="power_save_dialog_summary">Za najtočniju navigaciju preporučujemo isključivanje načina uštede energije u postavkama baterije telefona.</string>
-    <string name="stop_without_saving">Zaustavi bez spremanja</string>
-    <string name="continue_recording">Nastavi snimanje</string>
     <string name="error_no_file_manager_app">Dijalog za odabir mape nije moguće prikazati jer na vašem uređaju nije instalirana odgovarajuća aplikacija. Instalirajte aplikaciju za upravljanje datotekama i pokušajte ponovno.</string>
     <string name="choose_color">Odaberi boju</string>
     <string name="uri_open_location_failed">Nije instalirana aplikacija koja može otvoriti lokaciju</string>

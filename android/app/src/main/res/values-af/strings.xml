@@ -221,8 +221,6 @@
     <string name="help">Help</string>
     <!-- Button in the main Help dialog -->
     <string name="faq">Gereelde vrae</string>
-    <!-- Button in the main menu -->
-    <string name="donate">Skenk</string>
     <!-- Button in the main Help dialog -->
     <string name="how_to_support_us">Ondersteun die projek</string>
     <!-- Button in the main Help dialog -->
@@ -494,8 +492,6 @@
     <!-- Dialog before publishing the modifications to the public map. -->
     <string name="editor_share_to_all_dialog_message_1">Maak seker u het geen privaat of persoonlike data ingevoer nie.</string>
     <string name="editor_share_to_all_dialog_message_2">OpenStreetMap-redigeerders sal die verandeirnge nagaan en u kontak indien hulle vrae het.</string>
-    <!-- Shown as toast when starting the recent track recording -->
-    <string name="track_recording">Opname van die spoor</string>
     <!-- For the first routing -->
     <string name="accept">Aanvaar</string>
     <!-- For the first routing -->
@@ -713,20 +709,6 @@
     <string name="select_option">Kies opsie</string>
     <!-- To indicate if restaurant or other place has outdoor seating -->
     <string name="outdoor_seating">Buitelug sitplek</string>
-    <!-- Disclaimer summary shown when Power Saving Mode is enabled -->
-    <string name="power_save_dialog_summary">Vir die mees akkurate navigasie, beveel ons aan dat u kragbesparingsmodus in die foon se batteryinstellings deaktiveer.</string>
-    <!-- Prompt to start recording a track. -->
-    <string name="start_track_recording">Registreer roete</string>
-    <!-- Prompt for stopping a track recording. -->
-    <string name="stop_track_recording">Stop roete-opname</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="stop_without_saving">Stop sonder om te stoor</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="continue_recording">Voortgaan met Opname</string>
-    <!-- Title for the alert when saving a track recording. -->
-    <string name="track_recording_alert_title">Stoor na Boekmerke en paaie?</string>
-    <!-- Message for the toast when saving the track recording is finished but nothing to save. -->
-    <string name="track_recording_toast_nothing_to_save">Roete is leeg - niks om te red nie</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Kan nie vouerkeusedialoog vertoon nie, want geen geskikte toepassing is op jou toestel geïnstalleer nie. Installeer asseblief \'n lêerbestuurder-toepassing en probeer weer</string>
     <string name="choose_color">Kies Kleur</string>

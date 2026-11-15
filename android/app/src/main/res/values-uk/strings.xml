@@ -242,8 +242,6 @@
     <string name="help">Допомога</string>
     <!-- Button in the main Help dialog -->
     <string name="faq">Питання та відповіді</string>
-    <!-- Button in the main menu -->
-    <string name="donate">Підтримати грошима</string>
     <!-- Button in the main Help dialog -->
     <string name="how_to_support_us">Станьте волонтером та покращте CoMaps</string>
     <!-- Button in the main Help dialog -->
@@ -515,8 +513,6 @@
     <string name="editor_share_to_all_dialog_message_1">Переконайтеся, що ви не ввели жодних приватних або персональних даних.</string>
     <string name="editor_share_to_all_dialog_message_2">Редактори OpenStreetMap перевірять зміни та зв’яжуться з вами, якщо у них виникнуть запитання.</string>
     <string name="navigation_stop_button">Cтоп</string>
-    <!-- Shown as toast when starting the recent track recording -->
-    <string name="track_recording">Запис маршруту</string>
     <!-- For the first routing -->
     <string name="accept">Прийняти</string>
     <!-- For the first routing -->
@@ -729,10 +725,6 @@
     <string name="osm_wiki_about_url">https://wiki.openstreetmap.org/wiki/Uk:Про_проект</string>
     <!-- App Tip #00 -->
     <string name="app_tip_00">Дякуємо, що користуєтесь нашими мапами, створеними спільнотою!</string>
-    <!-- App tip #01 -->
-    <string name="app_tip_01">Завдяки вашим пожертвам і підтримці ми зможемо створити найкращі мапи світу!</string>
-    <!-- App tip #02 -->
-    <string name="app_tip_02">Вам подобається наш застосунок? Підтримайте його розвиток грошима! Поки ще не подобається? Повідомте нам, чому, і ми це виправимо!</string>
     <!-- App tip #03 -->
     <string name="app_tip_03">Якщо у вас є знайомий розробник програмного забезпечення, ви можете попросити його реалізувати потрібну вам функцію.</string>
     <!-- App tip #04 -->
@@ -792,20 +784,6 @@
     <string name="select_option">Виберіть варіант</string>
     <!-- To indicate if restaurant or other place has outdoor seating -->
     <string name="outdoor_seating">Сидіння на відкритому повітрі</string>
-    <!-- Disclaimer summary shown when Power Saving Mode is enabled -->
-    <string name="power_save_dialog_summary">Для найбільш точної навігації ми рекомендуємо вимкнути режим енергозбереження в налаштуваннях батареї телефону.</string>
-    <!-- Prompt to start recording a track. -->
-    <string name="start_track_recording">Записати маршрут</string>
-    <!-- Prompt for stopping a track recording. -->
-    <string name="stop_track_recording">Зупинити запис маршруту</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="stop_without_saving">Зупинити без збереження</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="continue_recording">Продовжити запис</string>
-    <!-- Title for the alert when saving a track recording. -->
-    <string name="track_recording_alert_title">Зберегти в улюблене?</string>
-    <!-- Message for the toast when saving the track recording is finished but nothing to save. -->
-    <string name="track_recording_toast_nothing_to_save">Маршрут порожній - нічого зберігати</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Неможливо відобразити діалогове вікно вибору теки, оскільки на вашому пристрої не встановлено відповідний застосунок. Встановіть файловий менеджер і спробуйте ще раз.</string>
     <string name="choose_color">Виберіть колір</string>

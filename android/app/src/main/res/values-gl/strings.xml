@@ -219,7 +219,6 @@
     <string name="feedback">Comentarios</string>
     <string name="rate_the_app">Valore a aplicación</string>
     <string name="faq">Preguntas frecuentes</string>
-    <string name="donate">Doar</string>
     <string name="how_to_support_us">Voluntariado para mellorar CoMaps</string>
     <string name="copyright">Dereitos de autor</string>
     <string name="report_a_bug">Informar dun fallo</string>
@@ -351,7 +350,6 @@
     <string name="error_enter_correct_vk_page">Introducir un enderezo web ou un nome de conta de VK válidos</string>
     <string name="error_enter_correct_line_page">Introducir un enderezo web ou IDE de LINE válidos</string>
     <string name="placepage_add_place_button">Engadir lugar a OpenStreetMap</string>
-    <string name="track_recording">Gravando o traxecto</string>
     <string name="mobile_data_dialog">Usar Internet móbil para amosar información detallada?</string>
     <string name="mobile_data_option_always">Usar sempre</string>
     <string name="mobile_data_option_today">Só hoxe</string>
@@ -427,8 +425,6 @@
     <string name="splash_subtitle">Datos do mapa de OpenStreetMap</string>
     <string name="telegram_url">https://t.me/CoMapsApp/</string>
     <string name="app_tip_00">Grazas por utilizar os nosos mapas creados pola comunidade!</string>
-    <string name="app_tip_01">Coas súas doazóns e apoio, podemos crear os mellores mapas do mundo!</string>
-    <string name="app_tip_02">Gústalle a nosa aplicación? Por favor doe para apoiar o seu desenvolvemento! Aínda non lle gusta? Díganos por que e arranxarémolo!</string>
     <string name="app_tip_03">Se coñece a algún desarrollador ou desarrolladora de software, pódelle pedir que implemente algunha funcionalidade que vostede necesite.</string>
     <string name="app_tip_04">Toque en calquera lugar do mapa para seleccionar calquera elemento. Manteña pulsado para ocultar e volver amosar a interface.</string>
     <string name="app_tip_05">Sabía que a súa localización actual no mapa pódese seleccionar?</string>
@@ -450,11 +446,6 @@
     <string name="zoom_out">Afastar</string>
     <string name="website_menu">Enlace ao menú</string>
     <string name="open_in_app">Abrir noutra aplicación</string>
-    <string name="power_save_dialog_summary">Para unha navegación máis precisa, recomendamos que desactive o modo de aforro de enerxía na configuración da batería do teléfono.</string>
-    <string name="stop_track_recording">Deter gravación de traxecto</string>
-    <string name="stop_without_saving">Deter sen gardar</string>
-    <string name="track_recording_alert_title">Gardar a Favoritos?</string>
-    <string name="track_recording_toast_nothing_to_save">O traxecto está baleiro</string>
     <string name="error_no_file_manager_app">Non se pode mostrar o diálogo de selección de cartafoles porque non hai ningunha aplicación adecuada instalada no dispositivo. Instale un xestor de arquivos e ténteo de novo.</string>
     <string name="choose_color">Elixir cor</string>
     <string name="bookmark_lists">Listas Favoritas</string>
@@ -497,7 +488,6 @@
     <string name="swim_places">Natación</string>
     <string name="animals">Animais</string>
     <string name="phone_number">Número de teléfono</string>
-    <string name="continue_recording">Continuar gravación</string>
     <string name="money">Diñeiro</string>
     <string name="shops">Tendas</string>
     <string name="osm_wiki_about_url">https://wiki.openstreetmap.org/wiki/Gl:Acerca_do_OpenStreetMap</string>
@@ -535,7 +525,6 @@
     <string name="by_distance">Por distancia</string>
     <string name="by_date">Por data</string>
     <string name="outdoor_seating">Asentos ao aire libre</string>
-    <string name="start_track_recording">Gravar traxecto</string>
     <string name="bookmarks_and_tracks">Favoritos</string>
     <string name="register_at_openstreetmap">Rexistrarse en OpenStreetMap</string>
     <string name="downloader_of">%1$d de %2$d</string>

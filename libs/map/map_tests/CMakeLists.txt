@@ -8,9 +8,6 @@ set(SRC
   countries_names_tests.cpp
   extrapolator_tests.cpp
   feature_getters_tests.cpp
-  gps_track_collection_test.cpp
-  gps_track_storage_test.cpp
-  gps_track_test.cpp
   kmz_unarchive_test.cpp
   mwm_url_tests.cpp
   power_manager_tests.cpp

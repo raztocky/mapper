@@ -226,8 +226,6 @@
     <string name="help">Žinynas</string>
     <!-- Button in the main Help dialog -->
     <string name="faq">Dažnai užduodami klausimai</string>
-    <!-- Button in the main menu -->
-    <string name="donate">Paaukoti</string>
     <!-- Button in the main Help dialog -->
     <string name="how_to_support_us">Prisidėti prie „CoMaps“ tobulinimo</string>
     <!-- Button in the main Help dialog -->
@@ -506,8 +504,6 @@
     <string name="editor_share_to_all_dialog_message_1">Įsitikinkite, kad neįvedėte jokių asmeninių duomenų.</string>
     <string name="editor_share_to_all_dialog_message_2">„OpenStreetMap“ redaktoriai peržiūrės pakeitimus ir su jumis susisieks, jei kiltų klausimų.</string>
     <string name="navigation_stop_button">Stabdyti</string>
-    <!-- Shown as toast when starting the recent track recording -->
-    <string name="track_recording">Trasa įrašoma</string>
     <!-- For the first routing -->
     <string name="accept">Priimti</string>
     <!-- For the first routing -->
@@ -725,20 +721,6 @@
     <string name="select_option">Pasirinkite</string>
     <!-- To indicate if restaurant or other place has outdoor seating -->
     <string name="outdoor_seating">Sėdimosios vietos lauke</string>
-    <!-- Disclaimer summary shown when Power Saving Mode is enabled -->
-    <string name="power_save_dialog_summary">Tikslesnei navigacijai pasiekti, rekomenduojame išjungti energijos taupymo veikseną telefono akumuliatoriaus nustatymuose.</string>
-    <!-- Prompt to start recording a track. -->
-    <string name="start_track_recording">Įrašyti trasą</string>
-    <!-- Prompt for stopping a track recording. -->
-    <string name="stop_track_recording">Stabdyti trasos įrašymą</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="stop_without_saving">Stabdyti neįrašant</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="continue_recording">Tęsti įrašymą</string>
-    <!-- Title for the alert when saving a track recording. -->
-    <string name="track_recording_alert_title">Pridėti žymę?</string>
-    <!-- Message for the toast when saving the track recording is finished but nothing to save. -->
-    <string name="track_recording_toast_nothing_to_save">Trasa tuščia – nėra ką įrašyti</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Nepavyko parodyti aplanko pasirinkimo dialogo, nes jūsų įrenginyje neįdiegta tinkama programa. Įdiekite failų tvarkyklės programą ir bandykite dar kartą.</string>
     <string name="choose_color">Pasirinkite spalvą</string>
@@ -765,7 +747,6 @@
     <string name="enable_keep_screen_on">Laikyti ekraną įjungtą</string>
     <string name="tts_info_link">https://www.comaps.app/support/tts-configuration-guide-for-android/</string>
     <string name="app_tip_00">Dėkojame, kad naudojatės mūsų bendruomenės sukurtais žemėlapiais!</string>
-    <string name="app_tip_02">Patinka šį programėlė? Paremkite, paaukodami jos vystymui! Dar ne? Papasakokite mums, kodėl, ir mes pasistengsime tai pataisyti!</string>
     <string name="app_tip_05">Ar žinote, jog galite pasirinkti savo dabartinę vietą žemėlapyje?</string>
     <string name="app_tip_06">Galite padėti išversti šią programėlę į savo kalbą.</string>
     <string name="app_tip_08">Galite pataisyti ar papildyti žemėlapio duomenis.</string>
@@ -778,7 +759,6 @@
         <item quantity="many">%d pasižymėtų vietų</item>
         <item quantity="other">%d pasižymėtų vietų</item>
     </plurals>
-    <string name="app_tip_01">Su jūsų parama ir palaikymu mes galime sukurti geriausius žemėlapius pasaulyje!</string>
     <string name="enable_keep_screen_on_description">Įgalinus šią parinktį, ekranas visada liks įjungtas, kol rodomas žemėlapis.</string>
     <plurals name="bookmarks_detect_message">
         <item quantity="one">Aptiktas %d failas. Jį (juos) galėsite pamatyti, atlikus konvertavimą.</item>

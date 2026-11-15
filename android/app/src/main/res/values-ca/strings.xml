@@ -240,8 +240,6 @@
     <string name="help">Ajuda</string>
     <!-- Button in the main Help dialog -->
     <string name="faq">Preguntes més freqüents</string>
-    <!-- Button in the main menu -->
-    <string name="donate">Donatiu</string>
     <!-- Button in the main Help dialog -->
     <string name="how_to_support_us">Feu-vos voluntaris i milloreu CoMaps</string>
     <!-- Button in the main Help dialog -->
@@ -517,8 +515,6 @@
     <string name="editor_share_to_all_dialog_message_1">Assegureu-vos que no heu introduït cap dada privada o personal.</string>
     <string name="editor_share_to_all_dialog_message_2">Els editors d\'OpenStreetMap revisaran els canvis. Et contactaran si tenen cap pregunta.</string>
     <string name="navigation_stop_button">Atura</string>
-    <!-- Shown as toast when starting the recent track recording -->
-    <string name="track_recording">S’està enregistrant el recorregut</string>
     <!-- For the first routing -->
     <string name="accept">Accepta</string>
     <!-- For the first routing -->
@@ -728,10 +724,6 @@
     <string name="osm_wiki_about_url">https://wiki.openstreetmap.org/wiki/Ca:About_OpenStreetMap</string>
     <!-- App Tip #00 -->
     <string name="app_tip_00">Gràcies per utilitzar els nostres mapes creats per la comunitat!</string>
-    <!-- App tip #01 -->
-    <string name="app_tip_01">Amb les vostres donacions i suport, podem crear els millors mapes del món!</string>
-    <!-- App tip #02 -->
-    <string name="app_tip_02">Us agrada la nostra aplicació? Feu una donació per donar suport al desenvolupament! Encara no us agrada? Si us plau, feu-nos-ho saber i ho solucionarem!</string>
     <!-- App tip #03 -->
     <string name="app_tip_03">Si coneixeu un desenvolupador de programari, podeu demanar-li que implementi una funcionalitat que necessiteu.</string>
     <!-- App tip #04 -->
@@ -791,20 +783,6 @@
     <string name="select_option">Seleccioneu l\'opció</string>
     <!-- To indicate if restaurant or other place has outdoor seating -->
     <string name="outdoor_seating">Seients a l\'aire lliure</string>
-    <!-- Disclaimer summary shown when Power Saving Mode is enabled -->
-    <string name="power_save_dialog_summary">Per a una navegació més precisa, recomanem desactivar el mode d\'estalvi d\'energia a la configuració de la bateria del telèfon.</string>
-    <!-- Prompt to start recording a track. -->
-    <string name="start_track_recording">Enregistra el recorregut</string>
-    <!-- Prompt for stopping a track recording. -->
-    <string name="stop_track_recording">Atura l’enregistrament del recorregut</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="stop_without_saving">Atura sense desar</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="continue_recording">Continuar enregistrant</string>
-    <!-- Title for the alert when saving a track recording. -->
-    <string name="track_recording_alert_title">Desar en preferits?</string>
-    <!-- Message for the toast when saving the track recording is finished but nothing to save. -->
-    <string name="track_recording_toast_nothing_to_save">El recorregut està buit; no hi ha res a desar</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">No es pot mostrar el diàleg de selecció de carpetes perquè no hi ha cap aplicació adequada instal·lada al vostre dispositiu. Instal·leu una aplicació de gestió de fitxers i torneu-ho a provar.</string>
     <string name="choose_color">Tria el color</string>

@@ -90,10 +90,7 @@
         <item quantity="other">%d trayeutos</item>
     </plurals>
     <string name="bookmarks_export">Esportar tolos marcadores y trayeutos</string>
-    <string name="start_track_recording">Grabar trayeutu</string>
-    <string name="track_recording_alert_title">¿Quies guardalu en Marcadores y trayeutos?</string>
     <string name="bookmarks_import">Importar marcadores y trayeutos</string>
-    <string name="track_recording">Grabando’l trayeutu</string>
     <string name="edit_track">Editar trayeutu</string>
     <string name="trip_finished">Aportesti.</string>
     <string name="details">Detalles</string>
@@ -120,9 +117,6 @@
     <string name="downloader_downloading">Baxando:</string>
     <string name="editor_time_advanced">Mou avanzáu</string>
     <string name="downloader_loading_ios">Baxando</string>
-    <string name="stop_without_saving">Parar ensin guardar</string>
-    <string name="continue_recording">Siguir grabando</string>
-    <string name="stop_track_recording">Parar grabación del trayeutu</string>
     <string name="downloader_no_space_message">Desanicia los datos imprecisos</string>
     <string name="editor_osm_history">El to historial d’ediciones</string>
     <string name="download_resources_continue">Dir al mapa</string>

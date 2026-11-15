@@ -76,7 +76,6 @@
     <string name="rate_the_app">பயன்பாட்டை மதிப்பிடு</string>
     <string name="help">உதவி</string>
     <string name="faq">அடிக்கடி கேட்கப்படும் கேள்விகள்</string>
-    <string name="donate">நன்கொடை</string>
     <string name="copyright">பதிப்புரிமை</string>
     <string name="report_a_bug">பிழையைப் புகாரளி</string>
     <string name="enable_long_tap_fullscreen_description">இடைமுகத்தைப் பார்க்க மீண்டும் வரைபடத்தில் நீண்ட நேரம் தட்டவும்</string>
@@ -326,8 +325,6 @@
     <string name="isolines_toast_zooms_1_10">ஐசோலைன்களை ஆராய பெரிதாக்கவும்</string>
     <string name="downloader_loading_ios">பதிவிறக்குகிறது</string>
     <string name="app_tip_00">எங்கள் சமூகத்தால் உருவாக்கப்பட்ட வரைபடங்களைப் பயன்படுத்தியதற்கு நன்றி!</string>
-    <string name="app_tip_01">உங்கள் நன்கொடைகள் மற்றும் ஆதரவுடன், உலகில் சிறந்த வரைபடங்களை உருவாக்க முடியும்!</string>
-    <string name="app_tip_02">எங்கள் பயன்பாட்டை விரும்புகிறீர்களா? வளர்ச்சிக்கு ஆதரவளிக்க நன்கொடை வழங்குங்கள்! இன்னும் பிடிக்கவில்லையா? ஏன் என்று எங்களுக்குத் தெரியப்படுத்துங்கள், நாங்கள் அதை சரிசெய்வோம்!</string>
     <string name="app_tip_03">உங்களுக்கு ஒரு மென்பொருள் உருவாக்குநரைத் தெரிந்திருந்தால், உங்களுக்குத் தேவையான அம்சத்தை செயல்படுத்தும்படி அவரிடம் அல்லது அவளிடம் கேட்கலாம்.</string>
     <string name="app_tip_04">எதையும் தேர்ந்தெடுக்க வரைபடத்தில் எங்கும் தட்டவும். இடைமுகத்தை மறைக்க மற்றும் காட்ட ஒரு நீண்ட தட்டு பயன்படுத்தப்படுகிறது.</string>
     <string name="app_tip_05">வரைபடத்தில் உங்கள் தற்போதைய இருப்பிடத்தைத் தேர்ந்தெடுக்க முடியும் என்பது உங்களுக்குத் தெரியுமா?</string>
@@ -347,12 +344,6 @@
     <string name="self_service">தன்வய பணி</string>
     <string name="outdoor_seating">வெளிப்புற இருக்கை</string>
     <string name="clear">தெளிவு</string>
-    <string name="start_track_recording">பதிவு தடம்</string>
-    <string name="stop_track_recording">ட்ராக் ரெக்கார்டிங்கை நிறுத்துங்கள்</string>
-    <string name="stop_without_saving">சேமிக்காமல் நிறுத்து</string>
-    <string name="continue_recording">பதிவைத் தொடரவும்</string>
-    <string name="track_recording_alert_title">பிடித்தவைகளில் சேமிக்கவா?</string>
-    <string name="track_recording_toast_nothing_to_save">ட்ராக் காலியாக உள்ளது - சேமிக்க எதுவும் இல்லை</string>
     <string name="edit_track">தடத்தை திருத்து</string>
     <string name="app_site_url">https://comaps.app/</string>
     <string name="back">பின்</string>
@@ -496,7 +487,6 @@
     <string name="osm_note_toast">குறிப்பு OpenStreetMap க்கு அனுப்பப்படும்</string>
     <string name="editor_share_to_all_dialog_message_1">நீங்கள் எந்தத் தனிப்பட்ட அல்லது தனிப்பட்ட தரவையும் உள்ளிடவில்லை என்பதை உறுதிப்படுத்து.</string>
     <string name="editor_share_to_all_dialog_message_2">திறந்ததெருவரைபடம் திருத்திகள் மாற்றங்களைச் சரிபார்த்து, அவர்களுக்கு ஏதேனும் கேள்விகள் இருந்தால் உங்களைத் தொடர்புகொள்வார்கள்.</string>
-    <string name="track_recording">தடத்தை பதிவு செய்தல்</string>
     <string name="mobile_data_description">வரைபட புதுப்பிப்பு அறிவிப்புகள் மற்றும் திருத்தங்களைப் பதிவேற்ற கைபேசி இணையம் தேவை</string>
     <string name="traffic_update_maps_text">போக்குவரத்து தரவைக் காட்ட, வரைபடங்கள் புதுப்பிக்கப்பட வேண்டும்</string>
     <string name="traffic_update_app">CoMaps ஐப் புதுப்பிக்கவும்</string>
@@ -576,7 +566,6 @@
     <string name="zoom_out">சிறிதாக்கு</string>
     <string name="view_menu">மெனுவைப் பார்க்கவும்</string>
     <string name="select_option">விருப்பத்தைத் தேர்ந்தெடுக்கவும்</string>
-    <string name="power_save_dialog_summary">மிகவும் துல்லியமான வழிசெலுத்தலுக்கு, தொலைபேசியின் பேட்டரி அமைப்புகளில் மின் சேமிப்பு பயன்முறையை முடக்க பரிந்துரைக்கிறோம்.</string>
     <string name="error_no_file_manager_app">உங்கள் சாதனத்தில் பொருத்தமான பயன்பாடு எதுவும் நிறுவப்படாததால் கோப்புறை தேர்வு உரையாடலைக் காட்ட முடியவில்லை. கோப்பு மேலாளர் பயன்பாட்டை நிறுவி மீண்டும் முயற்சிக்கவும்.</string>
     <string name="choose_color">வண்ணத்தைத் தேர்ந்தெடுக்கவும்</string>
     <string name="uri_open_location_failed">இருப்பிடத்தைத் திறக்கக்கூடிய பயன்பாடு எதுவும் நிறுவப்படவில்லை</string>

@@ -1,5 +1,4 @@
 #include "map/bookmark_manager.hpp"
-#include "map/gps_tracker.hpp"
 #include "map/search_api.hpp"
 #include "map/track_mark.hpp"
 #include "map/user_mark_id_storage.hpp"
@@ -1107,60 +1106,13 @@ kml::CompilationType BookmarkManager::GetCompilationType(kml::MarkGroupId id) co
   return compilation->second->GetCategoryData().m_type;
 }
 
-kml::TrackId BookmarkManager::SaveTrackRecording(std::string trackName)
-{
-  CHECK_THREAD_CHECKER(m_threadChecker, ());
-  auto const & tracker = GpsTracker::Instance();
-  CHECK(!tracker.IsEmpty(), ("Track recording should be not be empty"));
-
-  kml::MultiGeometry geometry;
-  geometry.m_lines.emplace_back();
-  geometry.m_timestamps.emplace_back();
-  auto & line = geometry.m_lines.back();
-  auto & timestamps = geometry.m_timestamps.back();
-  auto const trackSize = tracker.GetTrackSize();
-  line.reserve(trackSize);
-  timestamps.reserve(trackSize);
-
-  tracker.ForEachTrackPoint([&line, &timestamps](location::GpsInfo const & pt, size_t id) -> bool
-  {
-    line.emplace_back(mercator::FromLatLon(pt.m_latitude, pt.m_longitude), pt.m_altitude);
-    timestamps.emplace_back(pt.m_timestamp);
-    return true;
-  });
-
-  kml::TrackData trackData;
-  trackData.m_geometry = std::move(geometry);
-
-  if (trackName.empty())
-    trackName = GenerateTrackRecordingName();
-  kml::SetDefaultStr(trackData.m_name, trackName);
-
-  kml::ColorData colorData;
-  colorData.m_rgba = GenerateTrackRecordingColor().GetRGBA();
-  kml::TrackLayer layer;
-  layer.m_color = std::move(colorData);
-
-  std::vector<kml::TrackLayer> m_layers;
-  m_layers.emplace_back(layer);
-  trackData.m_layers = std::move(m_layers);
-  trackData.m_timestamp = kml::TimestampClock::now();
-
-  auto editSession = GetEditSession();
-  auto const track = editSession.CreateTrack(std::move(trackData));
-  auto const groupId = LastEditedBMCategory();
-  auto const trackId = track->GetId();
-  AttachTrack(trackId, groupId);
-  return trackId;
-}
-
-std::string BookmarkManager::GenerateTrackRecordingName() const
+std::string BookmarkManager::GenerateDefaultTrackName() const
 {
   /// @TODO(KK): - improve the track name generation
   return platform::GetLocalizedMyPositionBookmarkName();
 }
 
-dp::Color BookmarkManager::GenerateTrackRecordingColor() const
+dp::Color BookmarkManager::GenerateDefaultTrackColor() const
 {
   /// @TODO(KK): - improve the color generation
   return kml::ColorFromPredefinedColor(kml::GetRandomPredefinedColor());
@@ -1174,7 +1126,7 @@ std::string BookmarkManager::GenerateSavedRouteName(std::string const & from, st
     return from;
   if (!to.empty())
     return to;
-  return GenerateTrackRecordingName();
+  return GenerateDefaultTrackName();
 }
 
 kml::TrackId BookmarkManager::SaveRoute(std::vector<geometry::PointWithAltitude> points, std::string const & from,
@@ -1189,7 +1141,7 @@ kml::TrackId BookmarkManager::SaveRoute(std::vector<geometry::PointWithAltitude>
   kml::SetDefaultStr(trackData.m_name, GenerateSavedRouteName(from, to));
 
   kml::ColorData colorData;
-  colorData.m_rgba = GenerateTrackRecordingColor().GetRGBA();
+  colorData.m_rgba = GenerateDefaultTrackColor().GetRGBA();
   kml::TrackLayer layer;
   layer.m_color = colorData;
 

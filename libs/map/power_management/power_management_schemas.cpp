@@ -13,7 +13,6 @@ ankerl::unordered_dense::map<Scheme, FacilitiesState> const kSchemeToState = {
      {{
          /* Buildings3d */ true,
          /* PerspectiveView */ true,
-         /* TrackRecording */ true,
          /* TrafficJams */ true,
          /* GpsTrackingForTraffic */ true,
          /* OsmEditsUploading */ true,
@@ -25,7 +24,6 @@ ankerl::unordered_dense::map<Scheme, FacilitiesState> const kSchemeToState = {
      {{
          /* Buildings3d */ true,
          /* PerspectiveView */ false,
-         /* TrackRecording */ true,
          /* TrafficJams */ true,
          /* GpsTrackingForTraffic */ true,
          /* OsmEditsUploading */ true,
@@ -37,7 +35,6 @@ ankerl::unordered_dense::map<Scheme, FacilitiesState> const kSchemeToState = {
      {{
          /* Buildings3d */ false,
          /* PerspectiveView */ false,
-         /* TrackRecording */ false,
          /* TrafficJams */ false,
          /* GpsTrackingForTraffic */ false,
          /* OsmEditsUploading */ false,
@@ -52,7 +49,6 @@ ankerl::unordered_dense::map<AutoScheme, FacilitiesState> const kAutoSchemeToSta
      {{
          /* Buildings3d */ true,
          /* PerspectiveView */ true,
-         /* TrackRecording */ true,
          /* TrafficJams */ true,
          /* GpsTrackingForTraffic */ true,
          /* OsmEditsUploading */ true,
@@ -64,7 +60,6 @@ ankerl::unordered_dense::map<AutoScheme, FacilitiesState> const kAutoSchemeToSta
      {{
          /* Buildings3d */ true,
          /* PerspectiveView */ false,
-         /* TrackRecording */ true,
          /* TrafficJams */ true,
          /* GpsTrackingForTraffic */ false,
          /* OsmEditsUploading */ true,
@@ -76,7 +71,6 @@ ankerl::unordered_dense::map<AutoScheme, FacilitiesState> const kAutoSchemeToSta
      {{
          /* Buildings3d */ false,
          /* PerspectiveView */ false,
-         /* TrackRecording */ false,
          /* TrafficJams */ false,
          /* GpsTrackingForTraffic */ false,
          /* OsmEditsUploading */ false,
@@ -108,7 +102,6 @@ std::string DebugPrint(Facility const facility)
   {
   case Facility::Buildings3d: return "Buildings3d";
   case Facility::PerspectiveView: return "PerspectiveView";
-  case Facility::TrackRecording: return "TrackRecording";
   case Facility::TrafficJams: return "TrafficJams";
   case Facility::GpsTrackingForTraffic: return "GpsTrackingForTraffic";
   case Facility::OsmEditsUploading: return "OsmEditsUploading";

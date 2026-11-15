@@ -8,7 +8,6 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 import app.organicmaps.R;
-import app.organicmaps.sdk.location.TrackRecorder;
 import com.google.android.material.imageview.ShapeableImageView;
 import com.google.android.material.textview.MaterialTextView;
 import java.util.ArrayList;
@@ -58,13 +57,6 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.ViewHolder>
     else
     {
       badge.setVisibility(View.GONE);
-    }
-
-    if (item.iconRes == R.drawable.ic_track_recording_off && TrackRecorder.nativeIsTrackRecordingEnabled())
-    {
-      iv.setImageResource(R.drawable.ic_track_recording_on);
-      iv.setImageTintMode(null);
-      viewHolder.getTitleTextView().setText(R.string.stop_track_recording);
     }
   }
 

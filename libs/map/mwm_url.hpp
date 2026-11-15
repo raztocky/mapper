@@ -45,7 +45,6 @@ struct InAppFeatureHighlightRequest
   enum class InAppFeatureType
   {
     None = 0,
-    TrackRecorder = 1,
     iCloud = 2,
   };
 

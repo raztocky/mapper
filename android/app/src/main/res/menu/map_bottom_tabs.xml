@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+  <item
+    android:id="@+id/tab_explore"
+    android:icon="@drawable/ic_explore"
+    android:title="@string/tab_explore" />
+  <item
+    android:id="@+id/tab_you"
+    android:icon="@drawable/ic_bookmarks"
+    android:title="@string/tab_you" />
+  <item
+    android:id="@+id/tab_contribute"
+    android:icon="@drawable/ic_plus"
+    android:title="@string/tab_contribute" />
+</menu>

@@ -70,6 +70,7 @@
   <color name="bg_dialog_translucent">#BB000000</color>
   <color name="bg_text_translucent">#99FFFFFF</color>
 
+  <color name="bg_tab_bar">#FFFFFFFF</color>
   <color name="bg_menu">#CCFFFFFF</color>
 
   <color name="bg_statusbar">#004120</color>
@@ -125,7 +126,6 @@
   <color name="elevation_profile_dot_enabled">#FF9600</color>
   <color name="elevation_profile">@color/base_accent</color>
 
-  <color name="active_track_recording">#FFFF0000</color>
 
   <color name="material_calendar_surface_dark">#929292</color>
   <color name="notification_warning">#FFC22219</color>

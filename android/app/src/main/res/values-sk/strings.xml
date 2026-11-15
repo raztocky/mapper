@@ -233,8 +233,6 @@
     <string name="help">Nápoveda</string>
     <!-- Button in the main Help dialog -->
     <string name="faq">Otázky a odpovede</string>
-    <!-- Button in the main menu -->
-    <string name="donate">Darovať</string>
     <!-- Button in the main Help dialog -->
     <string name="how_to_support_us">Podporte projekt</string>
     <!-- Button in the main Help dialog -->
@@ -510,8 +508,6 @@
     <!-- Dialog before publishing the modifications to the public map. -->
     <string name="editor_share_to_all_dialog_message_1">Nezadávajte žiadne osobné udaje.</string>
     <string name="editor_share_to_all_dialog_message_2">Redaktori OpenStreetMap skontrolujú zmeny a budú vás kontaktovať, ak budú mať nejaké otázky.</string>
-    <!-- Shown as toast when starting the recent track recording -->
-    <string name="track_recording">Zaznamenávanie trasy</string>
     <!-- For the first routing -->
     <string name="accept">Prijať</string>
     <!-- For the first routing -->
@@ -715,10 +711,6 @@
     <string name="splash_subtitle">Mapové údaje z OpenStreetMap</string>
     <!-- App Tip #00 -->
     <string name="app_tip_00">Ďakujeme, že používate naše mapy vytvorené komunitou!</string>
-    <!-- App tip #01 -->
-    <string name="app_tip_01">S vašimi darmi a podporou môžeme vytvoriť tie najlepšie mapy na svete!</string>
-    <!-- App tip #02 -->
-    <string name="app_tip_02">Páči sa vám naša aplikácia? Prosím, prispejte na podporu rozvoja! Ešte sa ti to nepáči? Dajte nám vedieť a my to napravíme!</string>
     <!-- App tip #03 -->
     <string name="app_tip_03">Ak poznáte vývojára softvéru, môžete ho požiadať, aby implementoval funkciu, ktorú potrebujete.</string>
     <!-- App tip #04 -->
@@ -778,20 +770,6 @@
     <string name="select_option">Vyberte možnosť</string>
     <!-- To indicate if restaurant or other place has outdoor seating -->
     <string name="outdoor_seating">Vonkajšie sedenie</string>
-    <!-- Disclaimer summary shown when Power Saving Mode is enabled -->
-    <string name="power_save_dialog_summary">Pre čo najpresnejšiu navigáciu odporúčame vypnúť režim úspory energie v nastaveniach batérie telefónu.</string>
-    <!-- Prompt to start recording a track. -->
-    <string name="start_track_recording">Nahrať trasu</string>
-    <!-- Prompt for stopping a track recording. -->
-    <string name="stop_track_recording">Zastaviť nahrávanie trasy</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="stop_without_saving">Zastaviť bez uloženia</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="continue_recording">Pokračovať v nahrávaní</string>
-    <!-- Title for the alert when saving a track recording. -->
-    <string name="track_recording_alert_title">Uložiť do záložiek a stôp?</string>
-    <!-- Message for the toast when saving the track recording is finished but nothing to save. -->
-    <string name="track_recording_toast_nothing_to_save">Trasa je prázdna - nie je čo ukladať</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Nie je možné zobraziť dialógové okno výberu priečinka, pretože v zariadení nie je nainštalovaná žiadna vhodná aplikácia. Nainštalujte si aplikáciu správcu súborov a skúste to znova</string>
     <string name="choose_color">Vyberte farbu</string>

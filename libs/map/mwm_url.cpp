@@ -400,8 +400,6 @@ void ParsedMapApi::ParseCommonParam(std::string const & key, std::string const &
 
 InAppFeatureHighlightRequest::InAppFeatureType ParseInAppFeatureType(std::string const & value)
 {
-  if (value == "track-recorder")
-    return InAppFeatureHighlightRequest::InAppFeatureType::TrackRecorder;
   if (value == "icloud")
     return InAppFeatureHighlightRequest::InAppFeatureType::iCloud;
   LOG(LERROR, ("Incorrect InAppFeatureType:", value));

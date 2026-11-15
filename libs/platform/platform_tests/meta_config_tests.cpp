@@ -37,7 +37,7 @@ UNIT_TEST(MetaConfig_JSONParser_NewFormatWithoutProducts)
   std::string newFormatJson = R"({
     "servers": ["http://url1", "http://url2"],
     "settings": {
-      "DonateUrl": "value1",
+      "NY": "value1",
       "key2": "value2"
     }
   })";
@@ -47,7 +47,7 @@ UNIT_TEST(MetaConfig_JSONParser_NewFormatWithoutProducts)
   TEST_EQUAL(result->m_serversList[0], "http://url1", ());
   TEST_EQUAL(result->m_serversList[1], "http://url2", ());
   TEST_EQUAL(result->m_settings.size(), 1, ());
-  TEST_EQUAL(result->m_settings["DonateUrl"], "value1", ());
+  TEST_EQUAL(result->m_settings["NY"], "value1", ());
 }
 
 UNIT_TEST(MetaConfig_JSONParser_MissingServersKey)

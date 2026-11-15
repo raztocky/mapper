@@ -63,8 +63,6 @@
     <string name="news">Habari</string>
     <!-- Button in the main Help dialog -->
     <string name="faq">Maswali na majibu</string>
-    <!-- Button in the main menu -->
-    <string name="donate">Changia</string>
     <!-- Button in the main Help dialog -->
     <string name="how_to_support_us">Saidia mradi</string>
     <!-- Toast text when user hides UI with a long tap anywhere on the map -->
@@ -128,8 +126,6 @@
     <string name="placepage_personal_notes_hint">Vidokezo vya kibinafsi (maandishi au HTML)</string>
     <string name="placepage_add_place_button">Ongeza Mahali kwa OpenStreetMap</string>
     <string name="editor_share_to_all_dialog_message_2">Wahariri wa OpenStreetMap watakagua mabadiliko na kuwasiliana nawe ikiwa wana maswali yoyote.</string>
-    <!-- Shown as toast when starting the recent track recording -->
-    <string name="track_recording">Kurekodi wimbo</string>
     <!-- Settings: "Send general feedback" button -->
     <string name="feedback_general">Maoni Jumla</string>
     <string name="prefs_languages_information">Tunatumia maagizo ya sautii ya TTS ya mfumo. Vifaa vingi vya Android vinatumia Google TTS, unaweza kuipakua au kuisasisha kwenye Google Play (https://play.google.com/store/apps/details?id=com.google.android.tts)</string>
@@ -297,10 +293,6 @@
     <string name="splash_subtitle">Data ya ramani kutoka OpenStreetMap</string>
     <!-- App Tip #00 -->
     <string name="app_tip_00">Asante kwa kutumia ramani zetu zilizojengwa na jumuiya!</string>
-    <!-- App tip #01 -->
-    <string name="app_tip_01">Kwa michango na usaidizi wako, tunaweza kuunda ramani bora zaidi Duniani!</string>
-    <!-- App tip #02 -->
-    <string name="app_tip_02">Je, unapenda programu yetu? Tafadhali toa mchango ili kusaidia maendeleo! Je, huipendi bado? Tafadhali tujulishe, na tutarekebisha!</string>
     <!-- App tip #03 -->
     <string name="app_tip_03">Ikiwa unajua msanidi programu, unaweza kumwomba kutekeleza kipengele unachohitaji.</string>
     <!-- App tip #04 -->
@@ -360,20 +352,6 @@
     <string name="select_option">Chagua chaguo</string>
     <!-- To indicate if restaurant or other place has outdoor seating -->
     <string name="outdoor_seating">Viti vya nje</string>
-    <!-- Disclaimer summary shown when Power Saving Mode is enabled -->
-    <string name="power_save_dialog_summary">Kwa urambazaji sahihi zaidi, tunapendekeza kuzima hali ya kuokoa nishati katika mipangilio ya betri ya simu.</string>
-    <!-- Prompt to start recording a track. -->
-    <string name="start_track_recording">Rekodi njia</string>
-    <!-- Prompt for stopping a track recording. -->
-    <string name="stop_track_recording">Acha kurekodi</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="stop_without_saving">Acha bila kuhifadhi</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="continue_recording">Endelea kurekodi</string>
-    <!-- Title for the alert when saving a track recording. -->
-    <string name="track_recording_alert_title">Ungependa kuhifadhi katika alama na njia?</string>
-    <!-- Message for the toast when saving the track recording is finished but nothing to save. -->
-    <string name="track_recording_toast_nothing_to_save">Njia ni tupu - hakuna cha kuhifadhi</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Haiwezi kuonyesha kidirisha cha kuchagua folda kwa sababu hakuna programu inayofaa iliyosakinishwa kwenye kifaa chako. Tafadhali sakinisha programu ya kidhibiti faili na ujaribu tena</string>
     <string name="choose_color">Chagua Rangi</string>

@@ -138,7 +138,6 @@
     <string name="rate_the_app">অ্যাপটি রেট করুন</string>
     <string name="help">সাহায্য</string>
     <string name="faq">প্রায়শই জিজ্ঞাসিত প্রশ্ন</string>
-    <string name="donate">দান করুন</string>
     <string name="report_a_bug">বাগ রিপোর্ট করুন</string>
     <string name="compass_calibration_recommended">কম্পাসটি ক্যালিব্রেট করার জন্য ফোনটিকে ইংরেজিতে আট চিহ্নে গতিতে নাড়িয়ে তীরের দিক উন্নত করুন।</string>
     <string name="compass_calibration_required">কম্পাসটি ক্যালিব্রেট করার জন্য ফোনটিকে ইংরেজিতে আট চিহ্নে গতিতে নাড়িয়ে মানচিত্রে তীরের দিক উন্নত করুন।</string>
@@ -390,7 +389,6 @@
     <string name="animals">পশুপাখি</string>
     <string name="money">টাকা</string>
     <string name="parkings">পার্কিং</string>
-    <string name="track_recording">ট্র্যাক রেকর্ড হচ্ছে</string>
     <string name="button_plan">পরিকল্পনা করুন</string>
     <string name="restore">পুনরুদ্ধার করুন</string>
     <string name="button_layer_traffic">ট্রাফিক</string>
@@ -425,7 +423,6 @@
     <string name="aa_location_permissions_request">CoMaps-এর অবস্থান অ্যাক্সেসের অনুমতি প্রয়োজন। যখন নিরাপদ হবে, আপনার ফোনের বিজ্ঞপ্তিটি দেখুন।</string>
     <string name="bookmark_color">প্রিয় তালিকার জন্য রঙ</string>
     <string name="connection_failure">সংযোগ ব্যার্থ হয়েছে</string>
-    <string name="continue_recording">রেকর্ড করে যান</string>
     <string name="bookmarks_create_new_group">একটি নতুন তালিকা তৈরি করুন</string>
     <string name="pref_about_summary">সমস্যা রিপোর্ট করুন, সাহায্য পান, দান করুন\nসংস্করণ: v%1$s</string>
     <string name="prefs_group_map_appearance_summary">মানচিত্রের ভাষা, লেবেলের আকার, 2D/3D স্থাপনা</string>

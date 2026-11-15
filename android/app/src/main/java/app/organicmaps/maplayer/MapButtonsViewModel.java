@@ -3,19 +3,19 @@ package app.organicmaps.maplayer;
 import androidx.annotation.Nullable;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
-import app.organicmaps.sdk.location.TrackRecorder;
 
 public class MapButtonsViewModel extends ViewModel
 {
   private final MutableLiveData<Boolean> mButtonsHidden = new MutableLiveData<>(false);
   private final MutableLiveData<Float> mBottomButtonsHeight = new MutableLiveData<>(0f);
-  private final MutableLiveData<Integer> mTopButtonsMarginTop = new MutableLiveData<>(-1);
   private final MutableLiveData<MapButtonsController.LayoutMode> mLayoutMode =
       new MutableLiveData<>(MapButtonsController.LayoutMode.regular);
   private final MutableLiveData<Integer> mMyPositionMode = new MutableLiveData<>();
   private final MutableLiveData<SearchWheel.SearchOption> mSearchOption = new MutableLiveData<>();
-  private final MutableLiveData<Boolean> mTrackRecorderState =
-      new MutableLiveData<>(TrackRecorder.nativeIsTrackRecordingEnabled());
+  // Query currently shown on the map by an interactive search, or null/empty if there is none.
+  private final MutableLiveData<String> mActiveSearchQuery = new MutableLiveData<>(null);
+  // "Home" chip label suffix (e.g. "18 min"), or null to show the bare "Home" chip.
+  private final MutableLiveData<String> mHomeEta = new MutableLiveData<>(null);
   private final MutableLiveData<RoutePreviewControlsState> mRoutePreviewControlsState =
       new MutableLiveData<>(RoutePreviewControlsState.none());
 
@@ -37,16 +37,6 @@ public class MapButtonsViewModel extends ViewModel
   public void setBottomButtonsHeight(float height)
   {
     mBottomButtonsHeight.setValue(height);
-  }
-
-  public MutableLiveData<Integer> getTopButtonsMarginTop()
-  {
-    return mTopButtonsMarginTop;
-  }
-
-  public void setTopButtonsMarginTop(int margin)
-  {
-    mTopButtonsMarginTop.setValue(margin);
   }
 
   public MutableLiveData<MapButtonsController.LayoutMode> getLayoutMode()
@@ -79,14 +69,24 @@ public class MapButtonsViewModel extends ViewModel
     mSearchOption.setValue(searchOption);
   }
 
-  public void setTrackRecorderState(boolean state)
+  public MutableLiveData<String> getActiveSearchQuery()
   {
-    mTrackRecorderState.setValue(state);
+    return mActiveSearchQuery;
   }
 
-  public MutableLiveData<Boolean> getTrackRecorderState()
+  public void setActiveSearchQuery(@Nullable String query)
   {
-    return mTrackRecorderState;
+    mActiveSearchQuery.setValue(query);
+  }
+
+  public MutableLiveData<String> getHomeEta()
+  {
+    return mHomeEta;
+  }
+
+  public void setHomeEta(@Nullable String eta)
+  {
+    mHomeEta.setValue(eta);
   }
 
   public MutableLiveData<RoutePreviewControlsState> getRoutePreviewControlsState()

@@ -577,23 +577,7 @@ private:
   df::OnGraphicsContextInitialized m_onGraphicsContextInitialized;
 
 public:
-  void ConnectToGpsTracker();
-  void DisconnectFromGpsTracker();
-
-  using TrackRecordingUpdateHandler = platform::SafeCallback<void(TrackStatistics const & trackStatistics)>;
-  void StartTrackRecording();
-  void SetTrackRecordingUpdateHandler(TrackRecordingUpdateHandler && trackRecordingDidUpdate);
-  void StopTrackRecording();
-  void SaveTrackRecordingWithName(std::string const & name);
-  bool IsTrackRecordingEmpty() const;
-  bool IsTrackRecordingEnabled() const;
-
   void SaveRoute();
-  /// Returns the elevation profile data of the currently recorded track.
-  /// To get the data on the every track recording state update, this function should be called after receiving the
-  /// callback from the `SetTrackRecordingUpdateHandler`.
-  static ElevationInfo GetTrackRecordingElevationInfo();
-
   void SetupMeasurementSystem();
 
   void SetWidgetLayout(gui::TWidgetsLayoutInfo && layout);
@@ -608,18 +592,10 @@ private:
   void MarkMapStyle(MapStyle mapStyle);
   MapStyle GetMapStyle() const;
 
-  bool m_connectToGpsTrack;  // need to connect to tracker when Drape is being constructed
-
   void OnUpdateCurrentCountry(m2::PointD const & pt, int zoomLevel);
 
   storage::CountryId m_lastReportedCountry;
   TCurrentCountryChanged m_currentCountryChanged;
-
-  void OnUpdateGpsTrackPointsCallback(std::vector<std::pair<size_t, location::GpsInfo>> && toAdd,
-                                      std::pair<size_t, size_t> const & toRemove,
-                                      TrackStatistics const & trackStatistics);
-
-  TrackRecordingUpdateHandler m_trackRecordingUpdateHandler;
 
   CachingRankTableLoader m_popularityLoader;
 

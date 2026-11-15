@@ -57,7 +57,6 @@ UNIT_TEST(Downloader_ParseMetaConfig)
     {
       "servers": [ "https://url1/", "https://url2/" ],
       "settings": {
-        "DonateUrl": "value1",
         "NY": "value2",
         "key3": "value3"
       }
@@ -67,8 +66,7 @@ UNIT_TEST(Downloader_ParseMetaConfig)
   TEST_EQUAL(cfg->m_serversList.size(), 2, ());
   TEST_EQUAL(cfg->m_serversList[0], "https://url1/", ());
   TEST_EQUAL(cfg->m_serversList[1], "https://url2/", ());
-  TEST_EQUAL(cfg->m_settings.size(), 2, ());  // "key3" is ignored
-  TEST_EQUAL(cfg->m_settings["DonateUrl"], "value1", ());
+  TEST_EQUAL(cfg->m_settings.size(), 1, ());  // "key3" is ignored
   TEST_EQUAL(cfg->m_settings["NY"], "value2", ());
 
   TEST(!downloader::ParseMetaConfig(R"(broken json)"), ());

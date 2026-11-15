@@ -2518,7 +2518,8 @@ void FrontendRenderer::Routine::Do()
 
   m_renderer.CreateContext();
 
-#if defined(BUILD_DESIGNER) || defined(DEBUG) || defined(DEBUG_DRAPE_XCODE) || defined(SCENARIO_ENABLE)
+// The zoom/FPS label is hidden by default even in debug builds; type "?debug-info" in search to show it.
+#if defined(BUILD_DESIGNER) || defined(SCENARIO_ENABLE)
   gui::DrapeGui::Instance().GetScaleFpsHelper().SetVisible(true);
 #endif
 

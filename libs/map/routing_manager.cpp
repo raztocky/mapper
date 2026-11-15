@@ -659,6 +659,73 @@ void RoutingManager::SetRouterImpl(RouterType type)
   m_currentRouterType = type;
 }
 
+void RoutingManager::EstimateCarEta(m2::PointD const & from, m2::PointD const & to, CarEtaCallback && callback)
+{
+  CHECK_THREAD_CHECKER(m_threadChecker, ("EstimateCarEta"));
+
+  if (!m_numMwmIDs || !m_numMwmTree)
+  {
+    callback(std::nullopt);
+    return;
+  }
+
+  if (!m_carEtaRouter)
+  {
+    m_carEtaRouter = make_unique<AsyncRouter>(nullptr /* pointCheckCallback */);
+
+    // Mirrors SetRouterImpl() for RouterType::Vehicle, but is completely independent of m_routingSession.
+    auto & dataSource = m_callbacks.m_dataSourceGetter();
+
+    auto const countryFileGetter = [this](m2::PointD const & p)
+    { return m_callbacks.m_countryInfoGetter().GetRegionCountryId(p); };
+
+    auto const localFileChecker = [this, &dataSource](string const & countryFile)
+    {
+      MwmSet::MwmId mwmId = dataSource.GetMwmIdByCountryFile(platform::CountryFile(countryFile));
+      if (!mwmId.IsAlive())
+      {
+        platform::CountryFile parent(m_callbacks.m_countryParentNameGetterFn(countryFile));
+        if (!parent.IsEmpty())
+          mwmId = dataSource.GetMwmIdByCountryFile(parent);
+      }
+      return mwmId.IsAlive();
+    };
+
+    auto const getMwmRectByName = [this](string const & countryId)
+    { return m_callbacks.m_countryInfoGetter().GetLimitRectForLeaf(countryId); };
+
+    auto router = make_unique<IndexRouter>(VehicleType::Car, false /* loadAltitudes */,
+                                           m_callbacks.m_countryParentNameGetterFn, countryFileGetter,
+                                           getMwmRectByName, m_numMwmIDs, m_numMwmTree, m_carEtaTrafficCache,
+                                           dataSource);
+    auto absentFinder = make_unique<AbsentRegionsFinder>(countryFileGetter, localFileChecker, m_numMwmIDs, dataSource);
+    m_carEtaRouter->SetRouter(std::move(router), std::move(absentFinder));
+  }
+
+  // Both the ready and the "need more maps" callbacks are invoked on the GUI thread, so a plain shared flag is enough
+  // to make sure the caller is notified once.
+  auto const done = make_shared<bool>(false);
+  auto const cb = make_shared<CarEtaCallback>(std::move(callback));
+  auto const finish = [done, cb](optional<double> eta)
+  {
+    if (*done)
+      return;
+    *done = true;
+    (*cb)(eta);
+  };
+
+  m_carEtaRouter->CalculateRoute(
+      Checkpoints(from, to), m2::PointD::Zero() /* direction */, false /* adjustToPrevRoute */,
+      [finish](shared_ptr<Route> route, RouterResultCode code)
+  {
+    if (code == RouterResultCode::NoError && route)
+      finish(route->GetTotalTimeSec());
+    else
+      finish(nullopt);
+  }, [finish](uint64_t, set<string> const &) { finish(nullopt); }, [finish](RouterResultCode) { finish(nullopt); },
+      nullptr /* progressCallback */, 15 /* timeoutSec */);
+}
+
 void RoutingManager::RemoveRoute(bool deactivateFollowing)
 {
   ClearPreviewedTurn();

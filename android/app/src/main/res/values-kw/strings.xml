@@ -86,7 +86,6 @@
     <string name="rate_the_app">Breusi an app</string>
     <string name="help">Gweres</string>
     <string name="faq">Govynnow Kemmyn</string>
-    <string name="donate">Argevri</string>
     <string name="copyright">Gwirbryntyans</string>
     <string name="report_a_bug">Derivas kudyn</string>
     <string name="downloader_update_all_button">Nowedhi Oll</string>
@@ -225,7 +224,6 @@
     <string name="osm_note_toast">Noten a vydh danvenys dhe OpenStreetMap</string>
     <string name="editor_share_to_all_dialog_title">A vynnowgh danvon dhe oll devnydhyoryon?</string>
     <string name="navigation_stop_button">Astel</string>
-    <string name="track_recording">Ow rekordya an lergh</string>
     <string name="accept">Amyttya</string>
     <string name="decline">Nagha</string>
     <string name="mobile_data_option_today">Hedhyw Hepken</string>
@@ -321,8 +319,6 @@
     <string name="osm_wiki_about_url">https://wiki.openstreetmap.org/wiki/About_OpenStreetMap</string>
     <string name="comma_separated_pair">%1$s, %2$s</string>
     <string name="app_tip_00">Meur ras rag ow tevnydhya agan mappys drehevys gans an gemeneth!</string>
-    <string name="app_tip_01">Gans agas argevrohow ha skoodhyans, ni a yll gwruthyl an gwella mappys dres oll an bys!</string>
-    <string name="app_tip_02">Yw da genowgh agan app? Argevrewgh rag skoodhya an displegyans mar pleg! Yw na da genes a\'n hwath? Kedhlewgh dhyn prag mar pleg, ha ni a wra ewnhe!</string>
     <string name="app_tip_06">Hwi a yll gweres ow treylya agan app yn agas yeth.</string>
     <string name="aa_connected_title">Yth esowgh junys dhe Android Awto</string>
     <string name="aa_grant_permissions">Grontya Kumyasow</string>
@@ -338,7 +334,6 @@
     <string name="open_in_app">Ygeri yn App Aral</string>
     <string name="select_option">Dewisewgh dewis</string>
     <string name="outdoor_seating">Esedhow yn-mes</string>
-    <string name="start_track_recording">Rekordya Lergh</string>
     <string name="choose_color">Dewis Liw</string>
     <string name="edit_track">Golegi Lergh</string>
     <string name="nav_auto">Awtomatek yn navygacyon</string>
@@ -626,12 +621,6 @@
     <string name="pref_tts_no_system_tts">Settyansow tekst-dhe-areth nag o kevys, owgh hwi sur agas devis a skoodh henna?</string>
     <string name="drive_through">Drivya-dredh</string>
     <string name="self_service">Omwonis</string>
-    <string name="power_save_dialog_summary">Rag navygacyon moggha kewar, ni a gomend ow marowhe fordh batri yn settyansow batri a\'n glapkodh.</string>
-    <string name="stop_track_recording">Finsya Rekordyans Lergh</string>
-    <string name="stop_without_saving">Hedhi Heb ow Sawya</string>
-    <string name="continue_recording">Pesya Ow Rekordya</string>
-    <string name="track_recording_alert_title">Sawya dhe Dhrudh?</string>
-    <string name="track_recording_toast_nothing_to_save">Lergh yw gwag - tra vyth dhe sawya</string>
     <string name="error_no_file_manager_app">Ny yllir diskwedhes fenester dewis restrenva drefen nyns eus app fytti leys war agas devis. Leewgh dyghtyer restrennow hag assayewgh arta mar pleg.</string>
     <string name="uri_open_location_failed">Nyns eus app leys mayth a yll ygeri an tyller</string>
     <string name="pref_left_button_disable">Marowhe</string>

@@ -16,11 +16,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import androidx.lifecycle.ViewModelProvider;
 import androidx.preference.PreferenceManager;
 import app.organicmaps.MwmApplication;
 import app.organicmaps.R;
-import app.organicmaps.maplayer.MapButtonsViewModel;
 import app.organicmaps.sdk.Framework;
 import app.organicmaps.sdk.Router;
 import app.organicmaps.sdk.maplayer.traffic.TrafficManager;
@@ -60,11 +58,8 @@ public class NavigationController implements TrafficManager.TrafficCallback, Nav
   @NonNull
   private final CurrentSpeedView mCurrentSpeed;
 
-  private final MapButtonsViewModel mMapButtonsViewModel;
-
   private final NavMenu mNavMenu;
   View.OnClickListener mOnSettingsClickListener;
-  View.OnClickListener mOnTrackRecordingClickListener;
   private final SharedPreferences mSharedPreferences;
 
   private void addWindowsInsets(@NonNull View topFrame)
@@ -78,17 +73,14 @@ public class NavigationController implements TrafficManager.TrafficCallback, Nav
   }
 
   public NavigationController(AppCompatActivity activity, View.OnClickListener onSettingsClickListener,
-                              View.OnClickListener onTrackRecordingClickListener,
                               NavMenu.OnMenuSizeChangedListener onMenuSizeChangedListener)
   {
     mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(activity);
     boolean mSpeedLimitEnabled = mSharedPreferences.getBoolean(getString(activity, R.string.pref_speedlimit), true);
-    mMapButtonsViewModel = new ViewModelProvider(activity).get(MapButtonsViewModel.class);
 
     mFrame = activity.findViewById(R.id.navigation_frame);
     mNavMenu = new NavMenu(activity, this, onMenuSizeChangedListener);
     mOnSettingsClickListener = onSettingsClickListener;
-    mOnTrackRecordingClickListener = onTrackRecordingClickListener;
 
     // Top frame
     View topFrame = mFrame.findViewById(R.id.nav_top_frame);
@@ -191,16 +183,6 @@ public class NavigationController implements TrafficManager.TrafficCallback, Nav
     UiUtils.visibleIf(hasStreet, mStreetFrame);
     if (hasStreet)
       mNextStreet.setText(instruction);
-    int margin = dimen(mFrame.getContext(), R.dimen.nav_frame_padding);
-    final boolean hasLanes = UiUtils.isVisible(mLanesView);
-    if (hasStreet || hasLanes)
-      margin += mStreetFrame.getHeight();
-    if (hasLanes)
-    {
-      final ViewGroup.MarginLayoutParams lanesParams = (ViewGroup.MarginLayoutParams) mLanesView.getLayoutParams();
-      margin += lanesParams.topMargin + lanesParams.height;
-    }
-    mMapButtonsViewModel.setTopButtonsMarginTop(margin);
   }
 
   public void show(boolean show)
@@ -288,11 +270,6 @@ public class NavigationController implements TrafficManager.TrafficCallback, Nav
     mOnSettingsClickListener.onClick(null);
   }
 
-  @Override
-  public void onTrackRecordingClicked()
-  {
-    mOnTrackRecordingClickListener.onClick(null);
-  }
   @Override
   public void onStopClicked()
   {

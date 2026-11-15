@@ -71,7 +71,6 @@ set(SRC
   app/organicmaps/sdk/settings/MapLanguageCode.cpp
   app/organicmaps/sdk/sound/tts.cpp
   app/organicmaps/sdk/subway/SubwayManager.cpp
-  app/organicmaps/sdk/TrackRecorder.cpp
   app/organicmaps/sdk/TrafficState.cpp
   app/organicmaps/sdk/UserMarkHelper.cpp
   app/organicmaps/sdk/opengl/android_gl_utils.cpp

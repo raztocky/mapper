@@ -1,12 +1,8 @@
 package app.organicmaps.maplayer;
 
-import static app.organicmaps.leftbutton.LeftButtonsHolder.DISABLE_BUTTON_CODE;
 
-import android.animation.ArgbEvaluator;
-import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.content.res.ColorStateList;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
@@ -14,6 +10,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.TextView;
+import androidx.annotation.IdRes;
+import androidx.annotation.StringRes;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.chip.Chip;
+import android.text.TextUtils;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.OptIn;
@@ -26,12 +27,9 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import app.organicmaps.MwmActivity;
 import app.organicmaps.R;
-import app.organicmaps.leftbutton.LeftButton;
-import app.organicmaps.leftbutton.LeftToggleButton;
 import app.organicmaps.sdk.Framework;
 import app.organicmaps.sdk.downloader.MapManager;
 import app.organicmaps.sdk.downloader.UpdateInfo;
-import app.organicmaps.sdk.location.TrackRecorder;
 import app.organicmaps.sdk.maplayer.isolines.IsolinesManager;
 import app.organicmaps.sdk.maplayer.subway.SubwayManager;
 import app.organicmaps.sdk.maplayer.traffic.TrafficManager;
@@ -70,11 +68,18 @@ public class MapButtonsController extends Fragment
   @Nullable
   private LayersButton mToggleMapLayerButton;
   @Nullable
-  FloatingActionButton mTrackRecordingStatusButton;
-
-  @Nullable
   private MyPositionButton mNavMyPosition;
   private SearchWheel mSearchWheel;
+  @Nullable
+  private TextView mSearchPillText;
+  @Nullable
+  private View mSearchPillClear;
+  @Nullable
+  private View mHamburger;
+  @Nullable
+  private Chip mHomeChip;
+  @Nullable
+  private BottomNavigationView mBottomTabs;
   private BadgeDrawable mBadgeDrawable;
   private float mContentHeight;
   private float mContentWidth;
@@ -83,21 +88,14 @@ public class MapButtonsController extends Fragment
   private PlacePageViewModel mPlacePageViewModel;
   private MapButtonsViewModel mMapButtonsViewModel;
 
+  private final Observer<String> mActiveSearchQueryObserver = this::updateSearchPill;
+  private final Observer<String> mHomeEtaObserver = this::updateHomeChip;
   private final Observer<Integer> mPlacePageDistanceToTopObserver = this::move;
   private final Observer<Boolean> mButtonHiddenObserver = this::setButtonsHidden;
   private final Observer<Integer> mMyPositionModeObserver = this::updateNavMyPositionButton;
   private final Observer<SearchWheel.SearchOption> mSearchOptionObserver = this::onSearchOptionChange;
-  private final Observer<Boolean> mTrackRecorderObserver = (enable) ->
-  {
-    updateMenuBadge(enable);
-    showButton(enable, MapButtons.trackRecordingStatus);
-    updateLeftButtonToggleState(enable);
-  };
-  private final Observer<Integer> mTopButtonMarginObserver = this::updateTopButtonsMargin;
   private final Observer<MapButtonsViewModel.RoutePreviewControlsState> mRoutePreviewControlsObserver =
       this::updateRoutePreviewControls;
-
-  private LeftButton mLeftButton;
 
   @Nullable
   @Override
@@ -138,6 +136,8 @@ public class MapButtonsController extends Fragment
     mButtonsMap = new HashMap<>();
 
     initBottomButtons();
+    initTopBar();
+    initBottomTabs();
 
     final View zoomFrame = mFrame.findViewById(R.id.zoom_buttons_container);
     mFrame.findViewById(R.id.nav_zoom_in)
@@ -156,12 +156,6 @@ public class MapButtonsController extends Fragment
           view -> mMapButtonClickListener.onMapButtonClick(MapButtons.toggleMapLayer));
       mToggleMapLayerButton.setVisibility(View.VISIBLE);
     }
-    mMapButtonsViewModel.setTopButtonsMarginTop(-1);
-    mTrackRecordingStatusButton = mFrame.findViewById(R.id.track_recording_status);
-    if (mTrackRecordingStatusButton != null)
-      mTrackRecordingStatusButton.setOnClickListener(
-          view -> mMapButtonClickListener.onMapButtonClick(MapButtons.trackRecordingStatus));
-
     mSearchWheel = new SearchWheel(mFrame,
                                    (v)
                                        -> mMapButtonClickListener.onMapButtonClick(MapButtons.search),
@@ -175,17 +169,95 @@ public class MapButtonsController extends Fragment
 
     if (mToggleMapLayerButton != null)
       mButtonsMap.put(MapButtons.toggleMapLayer, mToggleMapLayerButton);
-    if (mTrackRecordingStatusButton != null)
-      mButtonsMap.put(MapButtons.trackRecordingStatus, mTrackRecordingStatusButton);
-    showButton(false, MapButtons.trackRecordingStatus);
     return mFrame;
+  }
+
+  private void initTopBar()
+  {
+    final View pill = mFrame.findViewById(R.id.search_pill);
+    if (pill == null)
+      return;
+
+    mSearchPillText = mFrame.findViewById(R.id.search_pill_text);
+    mSearchPillClear = mFrame.findViewById(R.id.search_pill_clear);
+    mHamburger = mFrame.findViewById(R.id.hamburger_button);
+
+    // Tapping the pill reopens search with the current query (if any).
+    pill.setOnClickListener(v -> mMapButtonClickListener.onMapButtonClick(MapButtons.search));
+    if (mSearchPillText != null)
+      mSearchPillText.setOnClickListener(v -> mMapButtonClickListener.onMapButtonClick(MapButtons.search));
+    if (mSearchPillClear != null)
+      mSearchPillClear.setOnClickListener(v -> mMapButtonClickListener.onSearchCanceled());
+    if (mHamburger != null)
+    {
+      mHamburger.setOnClickListener(v -> mMapButtonClickListener.onMapButtonClick(MapButtons.menu));
+      mButtonsMap.put(MapButtons.menu, mHamburger);
+      // See the comment in initBottomButtons(): the badge can't be attached before the first layout pass.
+      mHamburger.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+        @Override
+        public void onGlobalLayout()
+        {
+          updateMenuBadge();
+          mHamburger.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+        }
+      });
+    }
+
+    mHomeChip = mFrame.findViewById(R.id.chip_home);
+    if (mHomeChip != null)
+      mHomeChip.setOnClickListener(v -> mMapButtonClickListener.onMapButtonClick(MapButtons.home));
+    bindCategoryChip(R.id.chip_gas, R.string.category_fuel);
+    bindCategoryChip(R.id.chip_coffee, app.organicmaps.sdk.R.string.type_amenity_cafe);
+    bindCategoryChip(R.id.chip_playgrounds, app.organicmaps.sdk.R.string.type_leisure_playground);
+    bindCategoryChip(R.id.chip_groceries, R.string.category_food);
+    bindCategoryChip(R.id.chip_restaurants, R.string.category_eat);
+  }
+
+  private void bindCategoryChip(@IdRes int chipId, @StringRes int queryRes)
+  {
+    final View chip = mFrame.findViewById(chipId);
+    if (chip != null)
+      chip.setOnClickListener(v -> mMapButtonClickListener.onCategorySearch(getString(queryRes)));
+  }
+
+  private void initBottomTabs()
+  {
+    final BottomNavigationView tabs = mFrame.findViewById(R.id.bottom_tabs);
+    mBottomTabs = tabs;
+    if (tabs == null)
+      return;
+    tabs.setOnItemSelectedListener(item -> {
+      final int id = item.getItemId();
+      if (id == R.id.tab_you)
+        mMapButtonClickListener.onMapButtonClick(MapButtons.bookmarks);
+      else if (id == R.id.tab_contribute)
+        mMapButtonClickListener.onMapButtonClick(MapButtons.addPlace);
+      // "You" and "Contribute" open other screens, so Explore stays the selected tab.
+      return id == R.id.tab_explore;
+    });
+    tabs.setOnItemReselectedListener(item -> {});
+  }
+
+  private void updateSearchPill(@Nullable String query)
+  {
+    if (mSearchPillText == null)
+      return;
+    final boolean hasQuery = !TextUtils.isEmpty(query);
+    mSearchPillText.setText(hasQuery ? query : getString(R.string.search_here));
+    mSearchPillText.setTextColor(
+        ThemeUtils.getColor(requireContext(), hasQuery ? android.R.attr.textColorPrimary : android.R.attr.textColorSecondary));
+    UiUtils.showIf(hasQuery, mSearchPillClear);
+  }
+
+  private void updateHomeChip(@Nullable String eta)
+  {
+    if (mHomeChip == null)
+      return;
+    mHomeChip.setText(TextUtils.isEmpty(eta) ? getString(R.string.chip_home) : getString(R.string.chip_home_eta, eta));
   }
 
   private void initBottomButtons()
   {
-    // universal button
-    applyLeftButton();
-
     // bookmarks button
     View bookmarksButton = mFrame.findViewById(R.id.btn_bookmarks);
     if (bookmarksButton != null)
@@ -221,36 +293,6 @@ public class MapButtonsController extends Fragment
     }
   }
 
-  private void applyLeftButton()
-  {
-    FloatingActionButton leftButtonView = mFrame.findViewById(R.id.left_button);
-    if (leftButtonView != null && mLeftButton != null && !mLeftButton.getCode().equals(DISABLE_BUTTON_CODE))
-    {
-      UiUtils.show(leftButtonView);
-
-      Context context = getContext();
-      if (context == null)
-        return;
-
-      leftButtonView.setImageTintList(ColorStateList.valueOf(ThemeUtils.getColor(context, R.attr.iconTint)));
-
-      mLeftButton.drawIcon(leftButtonView);
-      leftButtonView.setContentDescription(mLeftButton.getPrefsName());
-      leftButtonView.setOnClickListener((v) -> mLeftButton.onClick(leftButtonView));
-      //      else
-      //      {
-      //        helpButton.setImageResource(R.drawable.ic_launcher);
-      //      }
-      //      // Keep this button colorful in normal theme.
-      //      if (!ThemeUtils.isNightTheme())
-      //        helpButton.getDrawable().setTintList(null);
-    }
-    else if (leftButtonView != null)
-    {
-      UiUtils.hide(leftButtonView);
-    }
-  }
-
   public void showButton(boolean show, MapButtonsController.MapButtons button)
   {
     // TODO(AB): Why do we need this check? Isn't it better to crash and fix the wrong logic ASAP?
@@ -271,23 +313,6 @@ public class MapButtonsController extends Fragment
     case search: mSearchWheel.show(show);
     case bookmarks:
     case menu: UiUtils.showIf(show, buttonView); break;
-    case trackRecordingStatus:
-      UiUtils.showIf(show, buttonView);
-      animateIconBlinking(show, (FloatingActionButton) buttonView);
-    }
-  }
-
-  void animateIconBlinking(boolean show, @NonNull FloatingActionButton button)
-  {
-    if (show)
-    {
-      Drawable drawable = button.getDrawable();
-      ObjectAnimator colorAnimator = ObjectAnimator.ofArgb(drawable, "tint", 0xFF757575, 0xFFFF0000);
-      colorAnimator.setDuration(2500);
-      colorAnimator.setEvaluator(new ArgbEvaluator());
-      colorAnimator.setRepeatCount(ObjectAnimator.INFINITE);
-      colorAnimator.setRepeatMode(ObjectAnimator.REVERSE);
-      colorAnimator.start();
     }
   }
 
@@ -296,44 +321,10 @@ public class MapButtonsController extends Fragment
     return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, context.getResources().getDisplayMetrics());
   }
 
-  private void updateTopButtonsMargin(int margin)
-  {
-    if (margin == -1 || mTrackRecordingStatusButton == null)
-      return;
-    ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) mTrackRecordingStatusButton.getLayoutParams();
-    params.topMargin = margin;
-    mTrackRecordingStatusButton.setLayoutParams(params);
-  }
-
-  @OptIn(markerClass = ExperimentalBadgeUtils.class)
-  private void updateMenuBadge(Boolean enable)
-  {
-    final View menuButton = mButtonsMap.get(MapButtons.menu);
-    final Context context = getContext();
-    // Sometimes the global layout listener fires when the fragment is not attached to a context
-    if (menuButton == null || context == null)
-      return;
-    final UpdateInfo info = MapManager.nativeGetUpdateInfo(null);
-    final int count = (info == null ? 0 : info.filesCount);
-    final int verticalOffset = dpToPx(8, context) + dpToPx(Integer.toString(0).length() * 5, context);
-
-    if (count == 0)
-    {
-      BadgeUtils.detachBadgeDrawable(mBadgeDrawable, menuButton);
-      mBadgeDrawable = BadgeDrawable.create(context);
-      mBadgeDrawable.setMaxCharacterCount(0);
-      mBadgeDrawable.setHorizontalOffset(verticalOffset);
-      mBadgeDrawable.setVerticalOffset(dpToPx(9, context));
-      mBadgeDrawable.setBackgroundColor(ContextCompat.getColor(context, R.color.active_track_recording));
-      mBadgeDrawable.setVisible(enable);
-      BadgeUtils.attachBadgeDrawable(mBadgeDrawable, menuButton);
-    }
-  }
-
   @OptIn(markerClass = com.google.android.material.badge.ExperimentalBadgeUtils.class)
   public void updateMenuBadge()
   {
-    final View menuButton = mButtonsMap.get(MapButtons.menu);
+    final View menuButton = mHamburger != null ? mHamburger : mButtonsMap.get(MapButtons.menu);
     final Context context = getContext();
     // Sometimes the global layout listener fires when the fragment is not attached to a context
     if (menuButton == null || context == null)
@@ -349,8 +340,6 @@ public class MapButtonsController extends Fragment
     mBadgeDrawable.setNumber(count);
     mBadgeDrawable.setVisible(count > 0);
     BadgeUtils.attachBadgeDrawable(mBadgeDrawable, menuButton);
-
-    updateMenuBadge(TrackRecorder.nativeIsTrackRecordingEnabled());
   }
 
   public void updateLayerButton()
@@ -431,7 +420,11 @@ public class MapButtonsController extends Fragment
   private float getBottomButtonsHeight()
   {
     if (mBottomButtonsFrame != null && mFrame != null && UiUtils.isVisible(mFrame))
-      return mBottomButtonsFrame.getMeasuredHeight();
+    {
+      // Callers add the navigation bar height themselves, so leave out the tabs' navigation bar padding.
+      final int navBarPadding = mBottomTabs != null ? mBottomTabs.getPaddingBottom() : 0;
+      return mBottomButtonsFrame.getMeasuredHeight() - navBarPadding;
+    }
     else
       return 0;
   }
@@ -469,8 +462,8 @@ public class MapButtonsController extends Fragment
     mMapButtonsViewModel.getButtonsHidden().observe(activity, mButtonHiddenObserver);
     mMapButtonsViewModel.getMyPositionMode().observe(activity, mMyPositionModeObserver);
     mMapButtonsViewModel.getSearchOption().observe(activity, mSearchOptionObserver);
-    mMapButtonsViewModel.getTrackRecorderState().observe(activity, mTrackRecorderObserver);
-    mMapButtonsViewModel.getTopButtonsMarginTop().observe(activity, mTopButtonMarginObserver);
+    mMapButtonsViewModel.getActiveSearchQuery().observe(activity, mActiveSearchQueryObserver);
+    mMapButtonsViewModel.getHomeEta().observe(activity, mHomeEtaObserver);
     mMapButtonsViewModel.getRoutePreviewControlsState().observe(activity, mRoutePreviewControlsObserver);
   }
 
@@ -484,6 +477,9 @@ public class MapButtonsController extends Fragment
         new WindowInsetUtils.PaddingInsetsListener.Builder()
             .setInsetsTypeMask(WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout())
             .setAllSides()
+            // The bottom tabs (regular mode) handle the navigation bar inset themselves, so their background reaches
+            // the screen edge. Applying it here too would add the inset twice.
+            .setBottom(mBottomTabs == null)
             .build();
     ViewCompat.setOnApplyWindowInsetsListener(mFrame, insetsListener);
     // Fixes insets on older Androids and with a search opened via API on all Androids.
@@ -502,11 +498,12 @@ public class MapButtonsController extends Fragment
   public void onStop()
   {
     super.onStop();
-    mMapButtonsViewModel.getTopButtonsMarginTop().removeObserver(mTopButtonMarginObserver);
     mPlacePageViewModel.getPlacePageDistanceToTop().removeObserver(mPlacePageDistanceToTopObserver);
     mMapButtonsViewModel.getButtonsHidden().removeObserver(mButtonHiddenObserver);
     mMapButtonsViewModel.getMyPositionMode().removeObserver(mMyPositionModeObserver);
     mMapButtonsViewModel.getSearchOption().removeObserver(mSearchOptionObserver);
+    mMapButtonsViewModel.getActiveSearchQuery().removeObserver(mActiveSearchQueryObserver);
+    mMapButtonsViewModel.getHomeEta().removeObserver(mHomeEtaObserver);
     mMapButtonsViewModel.getRoutePreviewControlsState().removeObserver(mRoutePreviewControlsObserver);
   }
 
@@ -536,27 +533,6 @@ public class MapButtonsController extends Fragment
       mSearchWheel.reset();
   }
 
-  public void setLeftButton(LeftButton leftButton)
-  {
-    this.mLeftButton = leftButton;
-  }
-
-  public void reloadLeftButton(LeftButton leftButton)
-  {
-    setLeftButton(leftButton);
-    applyLeftButton();
-  }
-
-  private void updateLeftButtonToggleState(boolean isEnabled)
-  {
-    if (mLeftButton instanceof LeftToggleButton)
-    {
-      ((LeftToggleButton) mLeftButton).setChecked(isEnabled);
-
-      reloadLeftButton(mLeftButton);
-    }
-  }
-
   public enum LayoutMode
   {
     regular,
@@ -575,7 +551,8 @@ public class MapButtonsController extends Fragment
     bookmarks,
     menu,
     help,
-    trackRecordingStatus,
+    home,
+    addPlace,
     routePreviewPrevious,
     routePreviewNext,
     routePreviewCancel
@@ -586,6 +563,8 @@ public class MapButtonsController extends Fragment
     void onMapButtonClick(MapButtons button);
 
     void onSearchCanceled();
+
+    void onCategorySearch(@NonNull String query);
   }
 
   private class ContentViewLayoutChangeListener implements View.OnLayoutChangeListener

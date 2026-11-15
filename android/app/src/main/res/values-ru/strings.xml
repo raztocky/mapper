@@ -242,8 +242,6 @@
     <string name="help">Справка</string>
     <!-- Button in the main Help dialog -->
     <string name="faq">Вопросы и ответы</string>
-    <!-- Button in the main menu -->
-    <string name="donate">Поддержать деньгами</string>
     <!-- Button in the main Help dialog -->
     <string name="how_to_support_us">Помочь и улучшить CoMaps</string>
     <!-- Button in the main Help dialog -->
@@ -522,8 +520,6 @@
     <string name="editor_share_to_all_dialog_message_1">Убедитесь, что вы не указали никаких личных данных.</string>
     <string name="editor_share_to_all_dialog_message_2">Редакторы OpenStreetMap проверят изменения и свяжутся с вами, если у них возникнут вопросы.</string>
     <string name="navigation_stop_button">Cтоп</string>
-    <!-- Shown as toast when starting the recent track recording -->
-    <string name="track_recording">Запись трека</string>
     <!-- For the first routing -->
     <string name="accept">Принять</string>
     <!-- For the first routing -->
@@ -742,10 +738,6 @@
     <string name="osm_wiki_about_url">https://wiki.openstreetmap.org/wiki/RU:О_проекте</string>
     <!-- App Tip #00 -->
     <string name="app_tip_00">Спасибо, что пользуетесь нашими картами, созданными сообществом!</string>
-    <!-- App tip #01 -->
-    <string name="app_tip_01">Благодаря вашим пожертвованиям и поддержке мы сможем создать лучшие карты на свете!</string>
-    <!-- App tip #02 -->
-    <string name="app_tip_02">Вам нравится наше приложение? Поддержите его развитие деньгами! Пока ещё не нравится? Пожалуйста, сообщите нам, почему, и мы это исправим!</string>
     <!-- App tip #03 -->
     <string name="app_tip_03">Если вы знаете толкового разработчика программного обеспечения, попросите его реализовать нужную вам функцию для приложения.</string>
     <!-- App tip #04 -->
@@ -805,20 +797,6 @@
     <string name="select_option">Выберите вариант</string>
     <!-- To indicate if restaurant or other place has outdoor seating -->
     <string name="outdoor_seating">Сидения на открытом воздухе</string>
-    <!-- Disclaimer summary shown when Power Saving Mode is enabled -->
-    <string name="power_save_dialog_summary">Для наиболее точной навигации мы рекомендуем отключить режим энергосбережения в настройках батареи телефона.</string>
-    <!-- Prompt to start recording a track. -->
-    <string name="start_track_recording">Записать трек</string>
-    <!-- Prompt for stopping a track recording. -->
-    <string name="stop_track_recording">Остановить запись трека</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="stop_without_saving">Остановить без сохранения</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="continue_recording">Продолжить запись</string>
-    <!-- Title for the alert when saving a track recording. -->
-    <string name="track_recording_alert_title">Сохранить в Избранные?</string>
-    <!-- Message for the toast when saving the track recording is finished but nothing to save. -->
-    <string name="track_recording_toast_nothing_to_save">Трек пуст - нечего сохранять</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Невозможно отобразить диалог выбора папки, потому что на вашем устройстве не установлено подходящее приложение. Пожалуйста, установите менеджер файлов и повторите попытку.</string>
     <string name="choose_color">Выберите цвет</string>

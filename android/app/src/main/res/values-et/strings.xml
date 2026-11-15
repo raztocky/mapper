@@ -234,8 +234,6 @@
     <string name="help">Abiteave</string>
     <!-- Button in the main Help dialog -->
     <string name="faq">Korduma kippuvad küsimused</string>
-    <!-- Button in the main menu -->
-    <string name="donate">Anneta</string>
     <!-- Button in the main Help dialog -->
     <string name="how_to_support_us">Osale ühistöös CoMapsi täiendamisel</string>
     <!-- Button in the main Help dialog -->
@@ -512,8 +510,6 @@
     <string name="editor_share_to_all_dialog_message_1">Palun kontrolli, et sa ei sisestanud isiklikke andmeid.</string>
     <string name="editor_share_to_all_dialog_message_2">OpenStreetMapi haldajad kontrollivad muudatused üle ja võtavad küsimuste korral sinuga ühendust.</string>
     <string name="navigation_stop_button">Lõpeta</string>
-    <!-- Shown as toast when starting the recent track recording -->
-    <string name="track_recording">Rada on salvestamisel</string>
     <!-- For the first routing -->
     <string name="accept">Nõustu</string>
     <!-- For the first routing -->
@@ -716,10 +712,6 @@
     <string name="splash_subtitle">OpenStreetMapi kaardiandmed</string>
     <!-- App Tip #00 -->
     <string name="app_tip_00">Aitäh, et kasutad meie kogukonna koostatud kaarte!</string>
-    <!-- App tip #01 -->
-    <string name="app_tip_01">Sinu annetuste ja toetusega saame luua maailma parimaid kaarte!</string>
-    <!-- App tip #02 -->
-    <string name="app_tip_02">Kas sulle meeldib meie rakendus? Palun anneta arendustöö toetamiseks! Ei meeldi veel? Palun anna põhjusest meile teada ja me parandame selle!</string>
     <!-- App tip #03 -->
     <string name="app_tip_03">Kui tead mõnda tarkvaraarendajat, võid paluda tal osaleda vajaliku funktsionaalsuse loomisel.</string>
     <!-- App tip #04 -->
@@ -779,20 +771,6 @@
     <string name="select_option">Vali eelistus</string>
     <!-- To indicate if restaurant or other place has outdoor seating -->
     <string name="outdoor_seating">Istekohad õues</string>
-    <!-- Disclaimer summary shown when Power Saving Mode is enabled -->
-    <string name="power_save_dialog_summary">Kõige täpsema tee juhatamise tagamiseks soovitame, et lülitad telefoni akuhalduse seadistused energiasäästurežiimi välja.</string>
-    <!-- Prompt to start recording a track. -->
-    <string name="start_track_recording">Salvesta rada</string>
-    <!-- Prompt for stopping a track recording. -->
-    <string name="stop_track_recording">Peata raja salvestamine</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="stop_without_saving">Lõpeta ilma salvestamata</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="continue_recording">Jätka salvestamist</string>
-    <!-- Title for the alert when saving a track recording. -->
-    <string name="track_recording_alert_title">Kas salvestame lemmikute loendisse?</string>
-    <!-- Message for the toast when saving the track recording is finished but nothing to save. -->
-    <string name="track_recording_toast_nothing_to_save">Rada on tühi - ei ole midagi salvestada</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Kaustavaliku vaadet ei ole võimalik kuvada, sest sinu nutiseadmes ei leidu sobivat rakendust. Palun paigalda failihaldur ja proovi uuesti.</string>
     <string name="choose_color">Vali värv</string>

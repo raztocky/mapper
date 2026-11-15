@@ -234,8 +234,6 @@
     <string name="help">Súgó</string>
     <!-- Button in the main Help dialog -->
     <string name="faq">Gyakran ismételt kérdések</string>
-    <!-- Button in the main menu -->
-    <string name="donate">Adományozás</string>
     <!-- Button in the main Help dialog -->
     <string name="how_to_support_us">Közreműködés</string>
     <!-- Button in the main Help dialog -->
@@ -497,8 +495,6 @@
     <string name="editor_share_to_all_dialog_message_1">Győződjön meg arról, hogy nem ad meg semmilyen magánjellegű vagy személyes adatot.</string>
     <string name="editor_share_to_all_dialog_message_2">Az OpenStreetMap szerkesztői ellenőrzik a változásokat, és felveszik Önnel a kapcsolatot, ha bármilyen kérdésük adódik.</string>
     <string name="navigation_stop_button">Megállítás</string>
-    <!-- Shown as toast when starting the recent track recording -->
-    <string name="track_recording">Nyomvonal rögzítése</string>
     <!-- For the first routing -->
     <string name="accept">Elfogadás</string>
     <!-- For the first routing -->
@@ -696,10 +692,6 @@
     <string name="osm_wiki_about_url">https://wiki.openstreetmap.org/wiki/Hu:Névjegy</string>
     <!-- App Tip #00 -->
     <string name="app_tip_00">Köszönjük, hogy használja a közösség által készített térképeinket!</string>
-    <!-- App tip #01 -->
-    <string name="app_tip_01">Adományaival és támogatásával létrehozhatjuk a világ legjobb térképes alkalmazását!</string>
-    <!-- App tip #02 -->
-    <string name="app_tip_02">Tetszik az alkalmazásunk? Adományozzon, hogy támogassa a fejlesztést! - Mégsem tetszik? Jelezze felénk, hogy miért nem, és mi kijavítjuk!</string>
     <!-- App tip #03 -->
     <string name="app_tip_03">Ha ismer egy szoftverfejlesztőt, megkérheti őt egy olyan funkció megvalósítására, amelyre szüksége van.</string>
     <!-- App tip #04 -->
@@ -759,20 +751,6 @@
     <string name="select_option">Válasszon ki egy beállítást</string>
     <!-- To indicate if restaurant or other place has outdoor seating -->
     <string name="outdoor_seating">Kiülős helyek</string>
-    <!-- Disclaimer summary shown when Power Saving Mode is enabled -->
-    <string name="power_save_dialog_summary">A legpontosabb navigáció érdekében javasoljuk az energiatakarékos üzemmód kikapcsolását az eszköz akkumulátor-beállításaiban.</string>
-    <!-- Prompt to start recording a track. -->
-    <string name="start_track_recording">Nyomvonal rögzítése</string>
-    <!-- Prompt for stopping a track recording. -->
-    <string name="stop_track_recording">Nyomvonal rögzítésének megállítása</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="stop_without_saving">Megállítás mentés nélkül</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="continue_recording">Rögzítés folytatása</string>
-    <!-- Title for the alert when saving a track recording. -->
-    <string name="track_recording_alert_title">Menti a kedvencek közé?</string>
-    <!-- Message for the toast when saving the track recording is finished but nothing to save. -->
-    <string name="track_recording_toast_nothing_to_save">A nyomvonal üres - nincs mit menteni</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Nem lehet megjeleníteni a mappaválasztó párbeszédpanelt, mert nincs megfelelő alkalmazás telepítve az eszközén. Telepítsen egy fájlkezelő alkalmazást, és próbálja meg újra.</string>
     <string name="choose_color">Válasszon színt</string>

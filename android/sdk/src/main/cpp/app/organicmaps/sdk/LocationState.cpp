@@ -1,5 +1,4 @@
 #include "Framework.hpp"
-#include "map/gps_tracker.hpp"
 
 #include "app/organicmaps/sdk/core/jni_helper.hpp"
 
@@ -90,6 +89,5 @@ JNIEXPORT void JNICALL Java_app_organicmaps_sdk_location_LocationState_nativeLoc
     info.m_speed = speed;
 
   g_framework->OnLocationUpdated(info);
-  GpsTracker::Instance().OnLocationUpdated(info);
 }
 }  // extern "C"

@@ -233,8 +233,6 @@
     <string name="help">Hjælp</string>
     <!-- Button in the main Help dialog -->
     <string name="faq">Spørgsmål og svar</string>
-    <!-- Button in the main menu -->
-    <string name="donate">Doner</string>
     <!-- Button in the main Help dialog -->
     <string name="how_to_support_us">Bliv frivillig og forbedr CoMaps</string>
     <!-- Button in the main Help dialog -->
@@ -498,8 +496,6 @@
     <!-- Dialog before publishing the modifications to the public map. -->
     <string name="editor_share_to_all_dialog_message_1">Sørg for, at du ikke har indtastet private eller personlige oplysninger.</string>
     <string name="editor_share_to_all_dialog_message_2">OpenStreetMap-redaktører vil tjekke ændringerne og kontakte dig, hvis de har spørgsmål.</string>
-    <!-- Shown as toast when starting the recent track recording -->
-    <string name="track_recording">Optager sporet</string>
     <!-- For the first routing -->
     <string name="accept">Accepter</string>
     <!-- For the first routing -->
@@ -689,10 +685,6 @@
     <string name="osm_wiki_about_url">https://wiki.openstreetmap.org/wiki/Da:Om_OpenStreetMap</string>
     <!-- App Tip #00 -->
     <string name="app_tip_00">Tak, fordi du bruger vores fællesskabsskabte kort!</string>
-    <!-- App tip #01 -->
-    <string name="app_tip_01">Med dine donationer og støtte kan vi skabe de bedste kort i verden!</string>
-    <!-- App tip #02 -->
-    <string name="app_tip_02">Kan du lide vores app? Donér venligst for at støtte udviklingen! Kan du ikke lide det endnu? Fortæl os det, så ordner vi det!</string>
     <!-- App tip #03 -->
     <string name="app_tip_03">Hvis du kender en softwareudvikler, kan du bede ham eller hende om at implementere en funktion, som du har brug for.</string>
     <!-- App tip #04 -->
@@ -752,20 +744,6 @@
     <string name="select_option">Vælg mulighed</string>
     <!-- To indicate if restaurant or other place has outdoor seating -->
     <string name="outdoor_seating">Udendørs siddepladser</string>
-    <!-- Disclaimer summary shown when Power Saving Mode is enabled -->
-    <string name="power_save_dialog_summary">For at få den mest nøjagtige navigation anbefaler vi at deaktivere strømbesparende tilstand i telefonens batteriindstillinger.</string>
-    <!-- Prompt to start recording a track. -->
-    <string name="start_track_recording">Optag spor</string>
-    <!-- Prompt for stopping a track recording. -->
-    <string name="stop_track_recording">Stop optagelse af spor</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="stop_without_saving">Stop uden at gemme</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="continue_recording">Fortsæt optagelse</string>
-    <!-- Title for the alert when saving a track recording. -->
-    <string name="track_recording_alert_title">Gem i favoritter?</string>
-    <!-- Message for the toast when saving the track recording is finished but nothing to save. -->
-    <string name="track_recording_toast_nothing_to_save">Sporet er tomt - der er ikke noget at gemme</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Kan ikke vise dialogboksen til valg af mappe, fordi der ikke er installeret en passende app på din enhed. Installer venligst en filhåndteringsapp, og prøv igen.</string>
     <string name="choose_color">Vælg farve</string>

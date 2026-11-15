@@ -231,8 +231,6 @@
     <string name="help">Bantuan</string>
     <!-- Button in the main Help dialog -->
     <string name="faq">Pertanyaan Umum (FAQ)</string>
-    <!-- Button in the main menu -->
-    <string name="donate">Donasi</string>
     <!-- Button in the main Help dialog -->
     <string name="how_to_support_us">Menjadi sukarelawan dan perbaiki CoMaps</string>
     <!-- Button in the main Help dialog -->
@@ -495,8 +493,6 @@
     <string name="editor_share_to_all_dialog_message_1">Pastikan Anda tidak memasukkan data pribadi atau privat apa pun.</string>
     <string name="editor_share_to_all_dialog_message_2">Editor OpenStreetMap akan memeriksa perubahan tersebut dan menghubungi Anda jika mereka memiliki pertanyaan.</string>
     <string name="navigation_stop_button">Berhenti</string>
-    <!-- Shown as toast when starting the recent track recording -->
-    <string name="track_recording">Merekam trek</string>
     <!-- For the first routing -->
     <string name="accept">Terima</string>
     <!-- For the first routing -->
@@ -683,10 +679,6 @@
     <string name="translated_om_site_url">https://comaps.app/</string>
     <!-- App Tip #00 -->
     <string name="app_tip_00">Terima kasih telah menggunakan peta buatan komunitas kami!</string>
-    <!-- App tip #01 -->
-    <string name="app_tip_01">Dengan donasi dan dukungan Anda, kami dapat membuat peta terbaik di Dunia!</string>
-    <!-- App tip #02 -->
-    <string name="app_tip_02">Apakah Anda menyukai aplikasi kami? Silakan berdonasi untuk mendukung pengembangannya! Belum menyukainya? Beri tahu kami alasannya, dan kami akan memperbaikinya!</string>
     <!-- App tip #03 -->
     <string name="app_tip_03">Jika Anda mengenal pengembang perangkat lunak, Anda dapat meminta mereka untuk mengimplementasikan fitur yang Anda butuhkan.</string>
     <!-- App tip #04 -->
@@ -746,20 +738,6 @@
     <string name="select_option">Pilih opsi</string>
     <!-- To indicate if restaurant or other place has outdoor seating -->
     <string name="outdoor_seating">Tempat duduk luar ruangan</string>
-    <!-- Disclaimer summary shown when Power Saving Mode is enabled -->
-    <string name="power_save_dialog_summary">Untuk navigasi yang paling akurat, kami menyarankan untuk menonaktifkan mode hemat daya di pengaturan baterai ponsel.</string>
-    <!-- Prompt to start recording a track. -->
-    <string name="start_track_recording">Rekam Trek</string>
-    <!-- Prompt for stopping a track recording. -->
-    <string name="stop_track_recording">Hentikan Perekaman Trek</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="stop_without_saving">Berhenti Tanpa Menyimpan</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="continue_recording">Lanjutkan Perekaman</string>
-    <!-- Title for the alert when saving a track recording. -->
-    <string name="track_recording_alert_title">Simpan ke Favorit?</string>
-    <!-- Message for the toast when saving the track recording is finished but nothing to save. -->
-    <string name="track_recording_toast_nothing_to_save">Trek kosong - tidak ada yang disimpan</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Tidak dapat menampilkan dialog pemilihan folder karena tidak ada aplikasi yang sesuai terpasang di perangkat Anda. Silakan pasang aplikasi pengelola file dan coba lagi.</string>
     <string name="choose_color">Pilih Warna</string>

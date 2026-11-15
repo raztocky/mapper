@@ -285,6 +285,24 @@ public enum BookmarkManager {
     return nativeGetBookmarkInfo(bmkId);
   }
 
+  /**
+   * Finds the first bookmark with the given name (case-insensitive) across all bookmark categories.
+   */
+  @Nullable
+  public BookmarkInfo findBookmarkByName(@NonNull String name)
+  {
+    for (BookmarkCategory category : getCategories())
+    {
+      for (int i = 0; i < category.getBookmarksCount(); i++)
+      {
+        final long id = getBookmarkIdByPosition(category.getId(), i);
+        if (name.equalsIgnoreCase(getBookmarkName(id).trim()))
+          return getBookmarkInfo(id);
+      }
+    }
+    return null;
+  }
+
   public long getBookmarkIdByPosition(long catId, int positionInCategory)
   {
     return nativeGetBookmarkIdByPosition(catId, positionInCategory);

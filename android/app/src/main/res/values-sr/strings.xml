@@ -236,8 +236,6 @@
     <string name="help">Помоћ</string>
     <!-- Button in the main Help dialog -->
     <string name="faq">Често постављена питања</string>
-    <!-- Button in the main menu -->
-    <string name="donate">Донација</string>
     <!-- Button in the main Help dialog -->
     <string name="how_to_support_us">Волонтирајте и побољшајте CoMaps</string>
     <!-- Text in menu + Button in the main Help dialog -->
@@ -509,8 +507,6 @@
     <string name="editor_share_to_all_dialog_message_1">Проверите да нисте унели приватне или личне податке.</string>
     <string name="editor_share_to_all_dialog_message_2">OpenStreetMap мапери ће проверити промене и контактирати Вас уколико буду имали питања.</string>
     <string name="navigation_stop_button">Стоп</string>
-    <!-- Shown as toast when starting the recent track recording -->
-    <string name="track_recording">Снимање путање</string>
     <!-- For the first routing -->
     <string name="accept">Прихвати</string>
     <!-- For the first routing -->
@@ -714,10 +710,6 @@
     <string name="splash_subtitle">Подаци за мапе су са OpenStreetMap-а</string>
     <!-- App Tip #00 -->
     <string name="app_tip_00">Хвала што користите мапе које је направила заједница!</string>
-    <!-- App tip #01 -->
-    <string name="app_tip_01">Са вашим донацијама и подршком, можемо да направимо најбоље мапе на свету!</string>
-    <!-- App tip #02 -->
-    <string name="app_tip_02">Да ли вам се допада наша апликација? Молим Вас да донирате да бисте подржали даљи развој! Још вам се не допада? Молимо Вас да нам јавите зашто, па ћемо да је поправимо!</string>
     <!-- App tip #03 -->
     <string name="app_tip_03">Ако знате неког програмера, можете да га замолите да имплементира функционалност која вам је потребна.</string>
     <!-- App tip #04 -->
@@ -771,20 +763,6 @@
     <string name="select_option">Изаберите опцију</string>
     <!-- To indicate if restaurant or other place has outdoor seating -->
     <string name="outdoor_seating">Башта</string>
-    <!-- Disclaimer summary shown when Power Saving Mode is enabled -->
-    <string name="power_save_dialog_summary">За прецизнију навигацију препоручујемо да се искључи режим чувања батерије у Подешавањима везаним за бетерију телефона.</string>
-    <!-- Prompt to start recording a track. -->
-    <string name="start_track_recording">Сними путању</string>
-    <!-- Prompt for stopping a track recording. -->
-    <string name="stop_track_recording">Заустави снимање путање</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="stop_without_saving">Заустави без снимања</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="continue_recording">Настави снимање</string>
-    <!-- Title for the alert when saving a track recording. -->
-    <string name="track_recording_alert_title">Сачувати у маркерима и путањама?</string>
-    <!-- Message for the toast when saving the track recording is finished but nothing to save. -->
-    <string name="track_recording_toast_nothing_to_save">Путања је празна, нема шта да се сачува</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">Дијалог за избор фолдера није могуће приказати пошто на уређају није инсталирана одговарајућа апликација. Молим Вас да инсталирате апликацију за управљање фајловима и покушате поново.</string>
     <string name="choose_color">Изаберите боју</string>

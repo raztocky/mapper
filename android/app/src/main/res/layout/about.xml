@@ -110,15 +110,6 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/donate"
-        style="@style/MwmWidget.M3.Button.Primary"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/margin_base"
-        android:padding="@dimen/margin_quarter"
-        android:text="@string/donate" />
-
-    <com.google.android.material.button.MaterialButton
         android:id="@+id/report"
         style="@style/MwmWidget.M3.Button.Secondary"
         android:layout_width="match_parent"

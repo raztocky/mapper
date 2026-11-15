@@ -28,7 +28,6 @@ import com.google.android.material.textview.MaterialTextView;
 
 public class HelpFragment extends BaseMwmFragment implements View.OnClickListener
 {
-  private String mDonateUrl;
   private ActivityResultLauncher<SharingUtils.SharingIntent> shareLauncher;
 
   private void setupItem(@IdRes int id, boolean tint, @NonNull View frame)
@@ -42,7 +41,6 @@ public class HelpFragment extends BaseMwmFragment implements View.OnClickListene
   @Override
   public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState)
   {
-    mDonateUrl = Utils.getDonateUrl(requireContext());
     View root = inflater.inflate(R.layout.about, container, false);
 
     ((MaterialTextView) root.findViewById(R.id.version)).setText(BuildConfig.VERSION_NAME);
@@ -71,21 +69,7 @@ public class HelpFragment extends BaseMwmFragment implements View.OnClickListene
     setupItem(R.id.report, isLandscape, root);
     setupItem(R.id.copyright, false, root);
 
-    final MaterialTextView supportUsView = root.findViewById(R.id.support_us);
-    if (BuildConfig.FLAVOR.equals("google") && !TextUtils.isEmpty(mDonateUrl))
-      supportUsView.setVisibility(View.GONE);
-    else
-      setupItem(R.id.support_us, true, root);
-
-    final MaterialButton donateView = root.findViewById(R.id.donate);
-    if (TextUtils.isEmpty(mDonateUrl))
-      donateView.setVisibility(View.GONE);
-    else
-    {
-      /*donateView.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.ic_donate, 0,
-                R.drawable.ic_donate, 0);*/
-      setupItem(R.id.donate, isLandscape, root);
-    }
+    setupItem(R.id.support_us, true, root);
 
     if (BuildConfig.REVIEW_URL.isEmpty())
       root.findViewById(R.id.rate).setVisibility(View.GONE);
@@ -136,8 +120,6 @@ public class HelpFragment extends BaseMwmFragment implements View.OnClickListene
       Utils.sendBugReport(shareLauncher, requireActivity(), "", "");
     else if (id == R.id.support_us)
       Utils.openUrl(requireActivity(), getResources().getString(R.string.app_site_url) + "community/#volunteer-section");
-    else if (id == R.id.donate)
-      Utils.openUrl(requireActivity(), mDonateUrl);
     else if (id == R.id.rate)
       Utils.openAppInMarket(requireActivity(), BuildConfig.REVIEW_URL);
     else if (id == R.id.copyright)

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/map_top_bar"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:clipChildren="false"
+  android:clipToPadding="false"
+  android:orientation="vertical">
+
+  <com.google.android.material.card.MaterialCardView
+    android:id="@+id/search_pill"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/map_search_pill_height"
+    android:layout_marginHorizontal="@dimen/margin_base"
+    android:layout_marginTop="@dimen/margin_half"
+    app:cardBackgroundColor="?menuBackground"
+    app:cardCornerRadius="@dimen/map_search_pill_radius"
+    app:cardElevation="@dimen/margin_quarter"
+    app:strokeWidth="0dp">
+    <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:gravity="center_vertical"
+      android:orientation="horizontal">
+      <com.google.android.material.imageview.ShapeableImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin_base"
+        android:importantForAccessibility="no"
+        app:srcCompat="@drawable/ic_search"
+        app:tint="?iconTint" />
+      <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/search_pill_text"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="?selectableItemBackground"
+        android:contentDescription="@string/search"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:paddingStart="@dimen/margin_half_plus"
+        android:paddingEnd="@dimen/margin_half"
+        android:text="@string/search_here"
+        android:textAppearance="@style/MwmTextAppearance.Body1"
+        android:textColor="?android:textColorSecondary" />
+      <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/search_pill_clear"
+        android:layout_width="@dimen/map_button_size"
+        android:layout_height="@dimen/map_button_size"
+        android:background="?selectableItemBackgroundBorderless"
+        android:contentDescription="@string/clear_the_search"
+        android:scaleType="center"
+        android:visibility="gone"
+        app:srcCompat="@drawable/ic_close"
+        app:tint="?iconTint" />
+      <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/hamburger_button"
+        android:layout_width="@dimen/map_button_size"
+        android:layout_height="@dimen/map_button_size"
+        android:layout_marginEnd="@dimen/margin_quarter"
+        android:background="?selectableItemBackgroundBorderless"
+        android:contentDescription="@string/menu"
+        android:scaleType="center"
+        app:srcCompat="@drawable/ic_hamburger"
+        app:tint="?iconTint" />
+    </LinearLayout>
+  </com.google.android.material.card.MaterialCardView>
+
+  <HorizontalScrollView
+    android:id="@+id/chips_scroll"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipToPadding="false"
+    android:paddingHorizontal="@dimen/margin_base"
+    android:scrollbars="none">
+    <com.google.android.material.chip.ChipGroup
+      android:id="@+id/chip_group"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:chipSpacingHorizontal="@dimen/margin_half"
+      app:singleLine="true">
+      <com.google.android.material.chip.Chip
+        android:id="@+id/chip_home"
+        style="@style/MwmWidget.MapChip"
+        android:text="@string/chip_home" />
+      <com.google.android.material.chip.Chip
+        android:id="@+id/chip_gas"
+        style="@style/MwmWidget.MapChip"
+        android:text="@string/chip_gas" />
+      <com.google.android.material.chip.Chip
+        android:id="@+id/chip_coffee"
+        style="@style/MwmWidget.MapChip"
+        android:text="@string/chip_coffee" />
+      <com.google.android.material.chip.Chip
+        android:id="@+id/chip_playgrounds"
+        style="@style/MwmWidget.MapChip"
+        android:text="@string/chip_playgrounds" />
+      <com.google.android.material.chip.Chip
+        android:id="@+id/chip_groceries"
+        style="@style/MwmWidget.MapChip"
+        android:text="@string/chip_groceries" />
+      <com.google.android.material.chip.Chip
+        android:id="@+id/chip_restaurants"
+        style="@style/MwmWidget.MapChip"
+        android:text="@string/chip_restaurants" />
+    </com.google.android.material.chip.ChipGroup>
+  </HorizontalScrollView>
+</LinearLayout>

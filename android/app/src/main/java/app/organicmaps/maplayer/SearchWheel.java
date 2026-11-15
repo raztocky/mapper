@@ -25,6 +25,7 @@ public class SearchWheel implements View.OnClickListener
   private final View mFrame;
 
   private View mSearchLayout;
+  @Nullable
   private final ImageView mSearchButton;
   @Nullable
   private final View mTouchInterceptor;
@@ -94,7 +95,8 @@ public class SearchWheel implements View.OnClickListener
     if (mTouchInterceptor != null)
       mTouchInterceptor.setOnClickListener(this);
     mSearchButton = mFrame.findViewById(R.id.btn_search);
-    mSearchButton.setOnClickListener(this);
+    if (mSearchButton != null)
+      mSearchButton.setOnClickListener(this);
     refreshSearchVisibility();
   }
 
@@ -128,7 +130,8 @@ public class SearchWheel implements View.OnClickListener
 
   public void show(boolean show)
   {
-    UiUtils.showIf(show, mSearchButton);
+    if (mSearchButton != null)
+      UiUtils.showIf(show, mSearchButton);
     if (initSearchLayout())
       UiUtils.showIf(show && mIsExpanded, mSearchLayout);
   }
@@ -207,11 +210,15 @@ public class SearchWheel implements View.OnClickListener
 
   private void resetSearchButtonImage()
   {
+    if (mSearchButton == null)
+      return;
     mSearchButton.setImageDrawable(Graphics.tint(mSearchButton.getContext(), R.drawable.ic_search));
   }
 
   private void refreshSearchButtonImage()
   {
+    if (mSearchButton == null)
+      return;
     final SearchOption searchOption = mMapButtonsViewModel.getSearchOption().getValue();
     mSearchButton.setImageDrawable(Graphics.tint(
         mSearchButton.getContext(), searchOption == null ? R.drawable.ic_routing_search_off : searchOption.mDrawableOff,

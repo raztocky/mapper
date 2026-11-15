@@ -136,7 +136,6 @@
     <string name="rate_the_app">Ocenite aplikacijo</string>
     <string name="help">Pomoč</string>
     <string name="faq">Pogosta vprašanja</string>
-    <string name="donate">Daruj</string>
     <string name="how_to_support_us">Prispevajte in izboljšajte CoMaps</string>
     <string name="copyright">Avtorske pravice</string>
     <string name="report_a_bug">Prijavite napako</string>
@@ -348,7 +347,6 @@
     <string name="editor_share_to_all_dialog_message_1">Prepričajte se, da niste vnesli nobenih zasebnih podatkov.</string>
     <string name="editor_share_to_all_dialog_message_2">Uredniki na OpenStreetMap bodo preverili spremembe in stopili v stik z vami, če kaj ne bo jasno.</string>
     <string name="navigation_stop_button">Ustavi</string>
-    <string name="track_recording">Snemam pot</string>
     <string name="accept">Potrdi</string>
     <string name="decline">Zavrni</string>
     <string name="mobile_data_dialog">Naj se uporabijo mobilni podatki?</string>
@@ -519,8 +517,6 @@
     <string name="tts_info_link">https://www.comaps.app/support/tts-configuration-guide-for-android/</string>
     <string name="comma_separated_pair">%1$s, %2$s</string>
     <string name="app_tip_00">Hvala, ker uporabljate naše javno narejene zemljevide!</string>
-    <string name="app_tip_01">Z vašo podporo lahko ustvarimo najboljše zemljevide na svetu!</string>
-    <string name="app_tip_02">Vam je naše orodje všeč? Vabimo vas, da finančno podprete njen razvoj! Niste zadovoljni z njo? Prosimo, sporočite nam zakaj in jo bomo popravili!</string>
     <string name="app_tip_03">Če poznate kakega_o razvijalca_ko programske opreme, ga_jo lahko prosite, da implementira funkcionalnost, ki jo potrebujete.</string>
     <string name="app_tip_04">S kratkim pritiskom na zemljevid lahko izberete kateri koli element. Z dolgim pritiskom lahko skrijete ali pokažete vmesnik.</string>
     <string name="app_tip_05">Ali ste vedeli, da lahko na zemljevidu izberete svoj trenutni položaj?</string>
@@ -562,13 +558,6 @@
     <string name="self_service">Samopostrežno</string>
     <string name="select_option">Izberi možnost</string>
     <string name="outdoor_seating">Sedišča na prostem</string>
-    <string name="power_save_dialog_summary">Za kar najbolj natančno navigacijo priporočamo, da v nastavitvah baterije telefona onemogočite varčevanje z energijo.</string>
-    <string name="start_track_recording">Snemanje sledi</string>
-    <string name="stop_track_recording">Ustavi snemanje sledi</string>
-    <string name="stop_without_saving">Ustavi brez shranjevanja</string>
-    <string name="continue_recording">Nadaljuj snemanje</string>
-    <string name="track_recording_alert_title">Želite shraniti med zaznamke?</string>
-    <string name="track_recording_toast_nothing_to_save">Sled je prazna – ničesar ni za shraniti</string>
     <string name="error_no_file_manager_app">Pogovornega okna za izbiro mape ni mogoče prikazati, ker na vaši napravi ni nameščenega ustreznega orodja. Namestite upravitelja datotek in poskusite znova.</string>
     <string name="choose_color">Izberi barvo</string>
     <string name="edit_track">Uredi sled</string>

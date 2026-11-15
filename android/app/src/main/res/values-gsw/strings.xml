@@ -51,7 +51,6 @@
     <string name="food_places">Esse</string>
     <string name="search_in_the_list">I de Lischte sueche</string>
     <string name="app_tip_03">Wenn du en Softwareentwickler kennsch, chasch du ihn oder sie bitte, e Funktion z implementiere, wo du bruuchsch.</string>
-    <string name="continue_recording">Uufnahm fortsetze</string>
     <string name="uri_open_location_failed">Kei App installiert, wo de Speicherort öffne cha</string>
     <string name="phone_number">Telefonnummere</string>
     <string name="terms_of_use">Nutzigsbedingige</string>
@@ -125,9 +124,7 @@
     <string name="mountains">Berge</string>
     <string name="animals">Tier</string>
     <string name="fuel_places">Tankstelle</string>
-    <string name="app_tip_02">Gfallt dir eusi App? Bitte spend, zum d Entwicklig z unterstütze! Gfallts dir nonig? Bitte lass es eus wüsse und mir werded s Problem behebe!</string>
     <string name="app_tip_05">Scho gwüsst, dass du din aktuelle Standort uf de Charte uuswähle chasch?</string>
-    <string name="track_recording_toast_nothing_to_save">Route isch leer – nüt z speichere</string>
     <string name="nav_auto">Auto i de Navigation</string>
     <string name="pref_left_button_title">Iistellig lingge Chnopf</string>
     <string name="pref_backup_now_summary">Sicherig sofort erstelle</string>
@@ -136,7 +133,6 @@
     <string name="maps_storage_free_size">%1$s frei vo %2$s</string>
     <string name="shops">Ladegschäft</string>
     <string name="disk_error">Ordner cha nöd erstellt und d Dateie chönd nöd uf de Grätespeicher oder d SD-Charte verschobe werde</string>
-    <string name="track_recording_alert_title">I d Favorite speichere?</string>
     <string name="pref_backup_summary">Sicher automatisch in en Ordner uf dim Grät</string>
     <string name="unsupported_phone">S Programm bruucht OpenGL, zum funktioniere. Leider wird dis Grät nöd unterstützt.</string>
     <string name="download">Abelade</string>
@@ -239,7 +235,6 @@
     <string name="rate_the_app">Bewert d App</string>
     <string name="help">Hilf</string>
     <string name="faq">Hüüfigi Frage und Antworte</string>
-    <string name="donate">Spende</string>
     <string name="how_to_support_us">Freiwillig helfe und CoMaps verbessere</string>
     <string name="copyright">Copyright</string>
     <string name="report_a_bug">App-Fehler melde</string>
@@ -415,7 +410,6 @@
     <string name="editor_share_to_all_dialog_message_1">Stell sicher, dass du kei persönlichi oder privati Date iigeh hesch.</string>
     <string name="editor_share_to_all_dialog_message_2">Freiwilligi vo OpenStreetMap werded dini Änderige prüefe und sich bi Frage mit dir in Verbindig setze.</string>
     <string name="navigation_stop_button">Beende</string>
-    <string name="track_recording">Strecki wird uufzeichnet</string>
     <string name="accept">Aaneh</string>
     <string name="decline">Ablehne</string>
     <string name="mobile_data_option_always">Immer verwende</string>
@@ -490,7 +484,6 @@
     <string name="tts_info_link">https://www.comaps.app/support/tts-configuration-guide-for-android/</string>
     <string name="comma_separated_pair">%1$s, %2$s</string>
     <string name="app_tip_00">Danke, dass du eusi vo de Community erstellte Charte bruuchsch!</string>
-    <string name="app_tip_01">Mit dinere Spend und dinere Unterstützig chönd mir die beste Charte vo de Welt erstelle!</string>
     <string name="app_tip_07">Eusi App wird vo einige Enthusiaste und de Community entwicklet.</string>
     <string name="app_tip_08">Du chasch d Chartedate eifach korrigiere und verbessere.</string>
     <string name="car_used_on_the_phone_screen">Du verwendsch jetzt CoMaps uf dim Telefondisplay</string>
@@ -516,10 +509,6 @@
     <string name="self_service">Selbschtbedienig</string>
     <string name="select_option">Option uuswähle</string>
     <string name="outdoor_seating">Sitzplätz im Freie</string>
-    <string name="power_save_dialog_summary">Für e möglichscht gnaui Navigation empfehled mir, de Energiesparmodus i de Akku-Iistellige vom Telefon z deaktiviere.</string>
-    <string name="start_track_recording">Strecki uufzeichne</string>
-    <string name="stop_track_recording">Streckeuufzeichnig stoppe</string>
-    <string name="stop_without_saving">Ohni Speichere beende</string>
     <string name="choose_color">Farb uuswähle</string>
     <string name="edit_track">Track bearbeite</string>
     <string name="pref_left_button_disable">Deaktiviere</string>

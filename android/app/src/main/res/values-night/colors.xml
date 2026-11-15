@@ -17,6 +17,7 @@
   <color name="bg_primary_dark">#FF588157</color>
   <color name="bg_app">#10140F</color>
 
+  <color name="bg_tab_bar">#FF2D3237</color>
   <color name="bg_menu">#CC2D3237</color>
 
   <color name="bg_statusbar">#004120</color>

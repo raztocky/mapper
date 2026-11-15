@@ -487,8 +487,6 @@
     <!-- Dialog before publishing the modifications to the public map. -->
     <string name="editor_share_to_all_dialog_message_1">आपण कोणतीही वैयक्तिक माहिती प्रविष्ट केला नाही याची खात्री करा.</string>
     <string name="navigation_stop_button">थांबा</string>
-    <!-- Shown as toast when starting the recent track recording -->
-    <string name="track_recording">ट्रॅक रेकॉर्ड करत आहे</string>
     <!-- For the first routing -->
     <string name="accept">स्वीकारा</string>
     <!-- For the first routing -->
@@ -691,10 +689,6 @@
     <string name="translated_om_site_url">https://comaps.app/mr/</string>
     <!-- App Tip #00 -->
     <string name="app_tip_00">आमचे समुदाय-निर्मित नकाशे वापरल्याबद्दल धन्यवाद!</string>
-    <!-- App tip #01 -->
-    <string name="app_tip_01">तुमच्या देणग्या आणि समर्थनासह, आम्ही जगातील सर्वोत्तम नकाशे तयार करू शकतो!</string>
-    <!-- App tip #02 -->
-    <string name="app_tip_02">तुम्हाला आमचे अॅप आवडते का? कृपया विकासाला पाठिंबा देण्यासाठी देणगी द्या! अजून आवडत नाही? कृपया आम्हाला कळवा आणि आम्ही त्याचे निराकरण करू!</string>
     <!-- App tip #03 -->
     <string name="app_tip_03">तुम्हाला सॉफ्टवेअर डेव्हलपर माहीत असल्यास, तुम्ही त्याला किंवा तिला तुम्हाला आवश्यक असलेले वैशिष्ट्य लागू करण्यास सांगू शकता.</string>
     <!-- App tip #04 -->
@@ -754,20 +748,6 @@
     <string name="select_option">पर्याय निवडा</string>
     <!-- To indicate if restaurant or other place has outdoor seating -->
     <string name="outdoor_seating">बाहेरची आसनव्यवस्था</string>
-    <!-- Disclaimer summary shown when Power Saving Mode is enabled -->
-    <string name="power_save_dialog_summary">सर्वात अचूक नेव्हिगेशनसाठी, आम्ही फोनच्या बॅटरी सेटिंग्जमध्ये पॉवर सेव्हिंग मोड अक्षम करण्याची शिफारस करतो.</string>
-    <!-- Prompt to start recording a track. -->
-    <string name="start_track_recording">ट्रॅक रेकॉर्ड करा</string>
-    <!-- Prompt for stopping a track recording. -->
-    <string name="stop_track_recording">ट्रॅक रेकॉर्डिंग थांबवा</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="stop_without_saving">जतन न करता थांबवा</string>
-    <!-- Title for the "Stop Without Saving" action for the alert when saving a track recording. -->
-    <string name="continue_recording">रेकॉर्डिंग चालू ठेवा</string>
-    <!-- Title for the alert when saving a track recording. -->
-    <string name="track_recording_alert_title">मार्ग रेकॉर्डिंग खूणपत्रे आणि ट्रॅकमध्ये साठवायचे?</string>
-    <!-- Message for the toast when saving the track recording is finished but nothing to save. -->
-    <string name="track_recording_toast_nothing_to_save">मार्ग रिकामा आहे - साठवण्यासाठी काहीही नाही</string>
     <!-- Error message when there are no File Manager apps installed to select a folder when importing Bookmarks and Tracks -->
     <string name="error_no_file_manager_app">फोल्डर निवड संवाद प्रदर्शित करण्यात अक्षम कारण आपल्या डिव्हाइसवर कोणतेही योग्य ॲप स्थापित केलेले नाही. कृपया फाइल व्यवस्थापक ॲप स्थापित करा आणि पुन्हा प्रयत्न करा</string>
     <string name="choose_color">रंग निवडा</string>
@@ -777,7 +757,6 @@
     <string name="nav_auto">नेव्हिगेशनमध्ये ऑटो</string>
     <string name="pref_tts_street_names_title">मार्गांची नावे घोषित करा</string>
     <string name="about_proposition_1">• जाहिराती नाही, माहितीचा मागोवा नाही, डेटा संग्रहण नाही</string>
-    <string name="donate">दान करा</string>
     <string name="login_osm">OpenStreetMap मध्ये लॉगिन करा</string>
     <string name="pref_tts_street_names_description">चालू केल्यास, वळण घेण्यापूर्वी रस्त्याचे किंवा वळणाचे नाव बोलून सांगितले जाईल.</string>
     <string name="editor_share_to_all_dialog_message_2">OpenStreetMap संपादक बदल तपासतील व काही प्रश्न असल्यास तुमच्याशी संपर्क साधतील.</string>
