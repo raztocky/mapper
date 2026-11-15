@@ -38,7 +38,7 @@ java {
     }
 }
 
-val appName = "SlopMap"
+val appName = "Route 404"
 val appId = "app.comaps"
 // These are properly set in the 'secure.properties.*' files but must be declared here for build sync to succeed.
 project.ext["secretTestStoreFile"] = "comaps-test.keystore"
