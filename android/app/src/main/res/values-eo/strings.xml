@@ -10,7 +10,7 @@
     <string name="download_has_failed">Elŝutado malsukcesis, frapu por provi denove</string>
     <string name="downloading">Elŝutado…</string>
     <string name="pref_alt_map_lang_handling_ignore_alternatives">Ne uzi aliajn lingvojn</string>
-    <string name="editor_category_unsuitable_text">CoMaps nur povas aldoni simplajn lokojn, kaj ne urbojn, vojojn, lagojn, formojn de konstruaĵoj, ktp. Bonvolu aldoni tian aĵojn senpere al <a href="https://www.openstreetmap.org">OpenStreetMap.org</a>. Vidu nian <a href="https://www.comaps.app/support/advanced-map-editing/">gvidilon</a> por pli da instrukcioj.</string>
+    <string name="editor_category_unsuitable_text">Route 404 nur povas aldoni simplajn lokojn, kaj ne urbojn, vojojn, lagojn, formojn de konstruaĵoj, ktp. Bonvolu aldoni tian aĵojn senpere al <a href="https://www.openstreetmap.org">OpenStreetMap.org</a>. Vidu nian <a href="https://www.comaps.app/support/advanced-map-editing/">gvidilon</a> por pli da instrukcioj.</string>
     <string name="pref_alt_map_lang_handling_local_only">Preferi sisteman lingvon, kiu estas loka</string>
     <string name="offline_explanation_title">Eksterretaj mapoj</string>
     <string name="offline_explanation_text">Vi devas elŝuti mapon por vidi kaj navigi la lokon.\nElŝutu mapojn de lokoj vi volas vojaĝi.</string>
@@ -26,14 +26,14 @@
     <string name="country_status_download_failed">Elŝuto malsukcesis</string>
     <string name="feedback">Rimarkoj</string>
     <string name="try_again">Reprovi</string>
-    <string name="about_menu_title">Pri CoMaps</string>
+    <string name="about_menu_title">Pri Route 404</string>
     <string name="about_proposition_1">• Facila uzebla kaj rafinita</string>
     <string name="about_proposition_2">• Privatecfokusita kaj senreklama</string>
     <string name="about_proposition_3">• Senreta, rapida kaj kompakta</string>
     <string name="about_developed_by_enthusiasts">Tute malfermkodo kaj neprofitcela, kun travidebla decidado kaj financoj.</string>
     <string name="location_settings">Agordoj pri poziciaj servoj</string>
     <string name="unsupported_phone">La apo bezonas OpenGL kun aparatara plirapidigo. Bedaŭrinde, via komputilo ne povas ruli tiun ĉi apon.</string>
-    <string name="disconnect_usb_cable">Bonvolu malkonekti la USB-draton aŭ enmeti memorkarton por uzi CoMaps</string>
+    <string name="disconnect_usb_cable">Bonvolu malkonekti la USB-draton aŭ enmeti memorkarton por uzi Route 404</string>
     <string name="not_enough_free_space_on_sdcard">Bonvolu unue liberigi iom da spaco en la SD-karto/USB-poŝmemorilo por ke vi povu uzi la aplikaĵon</string>
     <string name="download_resources">Antaŭ ol vi komencos uzi la apon, bonvolu elŝuti mondan superrigardan mapon al via aparato.\nĜi okupos %s da stokado.</string>
     <string name="close">Fermi</string>
@@ -345,7 +345,7 @@
     <string name="error_value_must_be_positive">La valoro devas esti pozitiva</string>
     <string name="error_invalid_number">Malvalida nombro</string>
     <string name="pref_alt_map_lang_handling">Alternativaj maplingvoj</string>
-    <string name="traffic_update_app">Bonvolu ĝisdatigi CoMaps</string>
+    <string name="traffic_update_app">Bonvolu ĝisdatigi Route 404</string>
     <string name="editor_reset_edits_button">Forĵeti ŝanĝojn</string>
     <string name="editor_reset_edits_message">Forĵeti ĉiujn lokajn ŝanĝojn?</string>
     <string name="unknown_power_output">nekonata</string>
@@ -434,7 +434,7 @@
     <string name="downloader_no_space_message">Bonvolu forigi ĉiujn nenecesajn datumojn</string>
     <string name="editor_login_error_dialog">Ensaluta eraro</string>
     <string name="editor_profile_changes">Konfirmitaj ŝanĝoj</string>
-    <string name="download_resources_custom_url_message">Superregu la defaŭltan servilon por mapelŝutado. Lasu malplena por uzi la defaŭltan servilon de CoMaps.</string>
+    <string name="download_resources_custom_url_message">Superregu la defaŭltan servilon por mapelŝutado. Lasu malplena por uzi la defaŭltan servilon de Route 404.</string>
     <string name="pref_tts_street_names_description">Kiam ebligita, la nomo de la strato aŭ elirejo, sur kiun oni devas turniĝi, estos voĉlegata.</string>
     <string name="editor_focus_map_on_location">Trenu la mapon por meti la krucon ĉe la loko de la loko aŭ komerco.</string>
     <string name="editor_edit_place_title">Redaktado</string>
@@ -446,7 +446,7 @@
     <string name="editor_report_problem_other_title">Alia problemo</string>
     <string name="message_invalid_feature_position">Neniu objekto povas esti lokita ĉi tie</string>
     <string name="osm_presentation">Komunume kreitaj OpenStreetMap-datumoj ĝis %s. Eksciu pli pri kiel redakti kaj ĝisdatigi la mapon ĉe OpenStreetMap.org</string>
-    <string name="login_osm_presentation">OpenStreetMap.org (OSM) estas komunuma projekto por krei liberan kaj malfermitan mapon. Tiu estas Ĝi estas la ĉefa fonto de mapdatumoj en CoMaps kaj funkcias simile al Vikipedio. Vi povas aldoni aŭ redakti lokojn, kaj ili fariĝas haveblaj al milionoj da uzantoj tra la tuta mondo.\nAliĝu al la komunumo kaj helpu krei pli bonan mapon por ĉiuj!</string>
+    <string name="login_osm_presentation">OpenStreetMap.org (OSM) estas komunuma projekto por krei liberan kaj malfermitan mapon. Tiu estas Ĝi estas la ĉefa fonto de mapdatumoj en Route 404 kaj funkcias simile al Vikipedio. Vi povas aldoni aŭ redakti lokojn, kaj ili fariĝas haveblaj al milionoj da uzantoj tra la tuta mondo.\nAliĝu al la komunumo kaj helpu krei pli bonan mapon por ĉiuj!</string>
     <string name="login_to_make_edits_visible">Kreu OpenStreetMap-konton aŭ ensalutu por publikigi viajn mapŝanĝojn al la mondo</string>
     <string name="downloader_of">%1$d el %2$d</string>
     <string name="download_over_mobile_header">Ĉu elŝuti per poŝtelefona reto?</string>
@@ -469,7 +469,7 @@
     <string name="error_enter_correct_storey_number">La nombro de etaĝoj ne devas superi %d</string>
     <string name="editor_zip_code">Poŝtkodo</string>
     <string name="editor_other_info">Noto al OpenStreetMap-volontuloj (nedeviga)</string>
-    <string name="editor_note_hint">Priskribu erarojn sur la mapo aŭ aferojn, kiuj ne estas redakteblaj en CoMaps</string>
+    <string name="editor_note_hint">Priskribu erarojn sur la mapo aŭ aferojn, kiuj ne estas redakteblaj en Route 404</string>
     <string name="editor_about_osm">Viaj redaktoj estos alŝutitaj al la publika <a href="https://wiki.openstreetmap.org/wiki/About_OpenStreetMap">OpenStreetMap</a>-datumbazo. Bonvolu ne aldoni personajn aŭ kopirajtigitajn informojn.</string>
     <string name="editor_osm_history">Via redaktohistorio</string>
     <string name="editor_osm_notes">Viaj notoj pri mapdatumoj</string>
@@ -497,7 +497,7 @@
     <string name="placepage_add_place_button">Aldoni loko al OpenStreetMap</string>
     <string name="place_page_map_too_old_title">Mapdatumoj malaktualaj</string>
     <string name="place_page_map_too_old_description">Viaj nunaj mapdatumoj estas tre malaktualaj. Bonvolu ĝisdatigi la mapon.</string>
-    <string name="place_page_app_too_old_description">Viaj nunaj mapdatumoj estas tre malaktualaj. Bonvolu ĝisdatigi la CoMaps-aplikaĵon.</string>
+    <string name="place_page_app_too_old_description">Viaj nunaj mapdatumoj estas tre malaktualaj. Bonvolu ĝisdatigi la Route 404-aplikaĵon.</string>
     <string name="place_page_update_too_old_map">Ĝisdatigi mapregionon</string>
     <string name="place_page_too_old_to_edit">OpenStreetMap-redaktado estas malŝaltita ĉar la mapdatumoj estas tro malnovaj.</string>
     <string name="osm_note_hint">Aŭ lasu noton por la OpenStreetMap-komunumo, por ke iu alia povu aldoni aŭ korekti lokon ĉi tie.</string>
@@ -633,14 +633,14 @@
     <string name="app_tip_07">Nia aplikaĵo estas disvolvata de kelkaj entuziasmuloj kaj la komunumo.</string>
     <string name="app_tip_08">Vi povas facile repari kaj plibonigi la mapdatumojn.</string>
     <string name="app_tip_09">Nia ĉefa celo estas krei rapidajn, privatec-orientitajn, facile uzeblajn mapoj, kiujn vi amos.</string>
-    <string name="car_used_on_the_phone_screen">Vi nun uzas CoMaps sur la telefonekrano</string>
-    <string name="car_used_on_the_car_screen">Vi nun uzas CoMaps sur la aŭtoekrano</string>
+    <string name="car_used_on_the_phone_screen">Vi nun uzas Route 404 sur la telefonekrano</string>
+    <string name="car_used_on_the_car_screen">Vi nun uzas Route 404 sur la aŭtoekrano</string>
     <string name="aa_connected_title">Vi estas konektita al Android Auto</string>
     <string name="car_continue_on_the_phone">Daŭrigi ĉe la telefono</string>
     <string name="car_continue_in_the_car">Al la aŭtoekrano</string>
-    <string name="aa_location_permissions_request">CoMaps bezonas aliron al via loko. Kiam estos sekure, kontrolu la sciigon en via telefono.</string>
+    <string name="aa_location_permissions_request">Route 404 bezonas aliron al via loko. Kiam estos sekure, kontrolu la sciigon en via telefono.</string>
     <string name="aa_request_permission_notification">Ĉi tiu aplikaĵo bezonas vian permeson</string>
-    <string name="aa_request_permission_activity_text">CoMaps en Android Auto bezonas lokpermesojn pri loko por funkcii efike</string>
+    <string name="aa_request_permission_activity_text">Route 404 en Android Auto bezonas lokpermesojn pri loko por funkcii efike</string>
     <string name="aa_grant_permissions">Doni permesojn</string>
     <string name="button_layer_outdoor">Subĉiela</string>
     <string name="browser_not_available">Retumilo ne disponeblas</string>
@@ -700,7 +700,7 @@
     <string name="route_recalculating">Rekalkulante la itineron…</string>
     <string name="internet_unavailable">Neniu interreta konekto</string>
     <string name="pref_openexternallinks_title">Aŭtomate malfermi ligilojn de triaj</string>
-    <string name="pref_openexternallinks_summary">Malfermi ligilojn de triaj en CoMaps defaŭlte</string>
+    <string name="pref_openexternallinks_summary">Malfermi ligilojn de triaj en Route 404 defaŭlte</string>
     <string name="pref_aa_support_title">Android Auto</string>
     <string name="pref_aa_support_summary_yes">La aplikaĵo estas instalita el Google Play. Vi povas uzo ĝin en via aŭto.</string>
     <string name="pref_aa_support_summary_no">La aplikaĵo ne estas instalita el Google Play. Vi ne povas uzo ĝin en via aŭto. Frapu la agordon por trovi pliajn informojn en nia FAQ.</string>
@@ -713,7 +713,7 @@
     <string name="capacity_charging">Parkumejoj kun ŝargiloj: %s</string>
     <string name="capacity_charging_yes">Havas parkumejoj kun ŝargiloj</string>
     <string name="capacity_charging_no">Neniuj parkumejoj kun ŝargiloj</string>
-    <string name="permission_read_navigation_label">Legi navigadajn datumojn de CoMaps</string>
+    <string name="permission_read_navigation_label">Legi navigadajn datumojn de Route 404</string>
     <string name="permission_read_navigation_description">legi vivajn navigadajn informojn, kiel venontajn turniĝojn aŭ la nomon de la vojo, sur kiu vi estas</string>
     <string name="place_reviews_title">Recenzoj</string>
     <string name="place_reviews">%1$s recenzoj</string>

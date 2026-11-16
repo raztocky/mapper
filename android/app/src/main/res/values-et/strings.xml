@@ -45,7 +45,7 @@
     <string name="unsupported_phone">Rakendus vajab riistvaralist OpenGLi tuge. Kahjuks sinu nutiseade ei ole toetatud.</string>
     <string name="download">Laadi alla</string>
     <!-- Used in DownloadResources startup screen -->
-    <string name="disconnect_usb_cable">CoMaps kasutamiseks palun ühenda USB kaabel lahti või sisesta mälukaart</string>
+    <string name="disconnect_usb_cable">Route 404 kasutamiseks palun ühenda USB kaabel lahti või sisesta mälukaart</string>
     <!-- Used in DownloadResources startup screen -->
     <string name="not_enough_free_space_on_sdcard">Rakenduse kasutamiseks palun vabasta kõigepealt piisavalt ruumi mälukaardil/USB salvestusseadmel</string>
     <string name="download_resources">Enne rakenduse kasutamise alustamist luba meil laadida seadmesse alla maailma üldkaart. \nSee kasutab %s mälumahtu.</string>
@@ -474,7 +474,7 @@
     <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... -->
     <string name="operator">Käitaja: %s</string>
     <string name="editor_category_unsuitable_title">Ei leia sobivat kategooriat?</string>
-    <string name="editor_category_unsuitable_text">CoMaps võimaldab lisada ainult lihtsaid huvipunkte, see tähendab, et ei mingeid linnu, teid, järvi, hoonete piirjooni jne. Palun lisa sellised kategooriad otse <a href="https://www.openstreetmap.org">OpenStreetMap.org</a> saidis. Vaata meie <a href="https://www.comaps.app/support/advanced-map-editing/">juhendit</a> üksikasjalike samm-sammuliste juhiste saamiseks.</string>
+    <string name="editor_category_unsuitable_text">Route 404 võimaldab lisada ainult lihtsaid huvipunkte, see tähendab, et ei mingeid linnu, teid, järvi, hoonete piirjooni jne. Palun lisa sellised kategooriad otse <a href="https://www.openstreetmap.org">OpenStreetMap.org</a> saidis. Vaata meie <a href="https://www.comaps.app/support/advanced-map-editing/">juhendit</a> üksikasjalike samm-sammuliste juhiste saamiseks.</string>
     <string name="downloader_no_downloaded_maps_title">Sa ei ole kaarte alla laadinud</string>
     <string name="downloader_no_downloaded_maps_message">Laadi alla kaardid asukoha otsimiseks ja võrguühenduseta tee juhatamiseks</string>
     <string name="current_location_unknown_error_title">Praegune asukoht pole teada</string>
@@ -737,11 +737,11 @@
     <!-- Displayed on the Android Auto or CarPlay screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! -->
     <string name="car_continue_in_the_car">Auto ekraanile</string>
     <!-- Ask user to grant location permissions -->
-    <string name="aa_location_permissions_request">CoMaps vajab juurdepääsu asukohale. Kui see on turvaline, kontrolli oma telefonis olevat teadet.</string>
+    <string name="aa_location_permissions_request">Route 404 vajab juurdepääsu asukohale. Kui see on turvaline, kontrolli oma telefonis olevat teadet.</string>
     <!-- Notification title for permission request from AA. -->
     <string name="aa_request_permission_notification">See rakendus vajab sinu luba</string>
     <!-- The text in the activity for location permission request. -->
-    <string name="aa_request_permission_activity_text">Android Auto liidestusega CoMaps vajavab tõhusaks tööks luba asukoha tuvastamiseks</string>
+    <string name="aa_request_permission_activity_text">Android Auto liidestusega Route 404 vajavab tõhusaks tööks luba asukoha tuvastamiseks</string>
     <!-- Grant Permissions button. -->
     <string name="aa_grant_permissions">Anna luba</string>
     <!-- Outdoors/hiking map style (activity) name in the Styles and Layers dialog -->

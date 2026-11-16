@@ -51,7 +51,7 @@
     <string name="unsupported_phone">Laitteistokiihdytetty OpenGL vaaditaan. Valitettavasti laitteesi ei ole tuettu.</string>
     <string name="download">Lataa</string>
     <!-- Used in DownloadResources startup screen -->
-    <string name="disconnect_usb_cable">Irrota USB-kaapeli tai syötä muistikortti käyttääksesi CoMaps -sovellusta</string>
+    <string name="disconnect_usb_cable">Irrota USB-kaapeli tai syötä muistikortti käyttääksesi Route 404 -sovellusta</string>
     <!-- Used in DownloadResources startup screen -->
     <string name="not_enough_free_space_on_sdcard">Vapauta ensin tilaa SD-kortilta/USB-massamuistilta käyttääksesi sovellusta</string>
     <string name="download_resources">Ennen aloitusta laitteelle tulee ladata yleinen maailmankartta. \nSe tarvitsee yhteensä %s tilaa.</string>
@@ -481,7 +481,7 @@
     <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... -->
     <string name="operator">Operaattori: %s</string>
     <string name="editor_category_unsuitable_title">Etkö löydä sopivaa luokkaa?</string>
-    <string name="editor_category_unsuitable_text">CoMaps mahdollistaa vain yksinkertaisten pisteluokkien lisäämisen, eli ei kaupunkeja, teitä, järviä, rakennusten ääriviivoja jne. Lisää tällaiset luokat suoraan <a href="https://www.openstreetmap.org">OpenStreetMap.org</a>. Tarkista <a href="https://www.comaps.app/support/advanced-map-editing/">oppaastamme</a> yksityiskohtaiset ohjeet vaihe vaiheelta.</string>
+    <string name="editor_category_unsuitable_text">Route 404 mahdollistaa vain yksinkertaisten pisteluokkien lisäämisen, eli ei kaupunkeja, teitä, järviä, rakennusten ääriviivoja jne. Lisää tällaiset luokat suoraan <a href="https://www.openstreetmap.org">OpenStreetMap.org</a>. Tarkista <a href="https://www.comaps.app/support/advanced-map-editing/">oppaastamme</a> yksityiskohtaiset ohjeet vaihe vaiheelta.</string>
     <string name="downloader_no_downloaded_maps_title">Et ole ladannut yhtään karttaa</string>
     <string name="downloader_no_downloaded_maps_message">Lataa karttoja ei-verkkotilassa etsimistä ja navigoimista varten</string>
     <string name="current_location_unknown_error_title">Nykyinen sijainti on tuntematon</string>
@@ -532,7 +532,7 @@
     <string name="mobile_data_option_ask">Kysy aina</string>
     <string name="traffic_update_maps_text">Liikennetietojen näyttämiseksi kartat on päivitettävä</string>
     <string name="increase_font_size">Suurenna fonttikokoa kartalla</string>
-    <string name="traffic_update_app">Päivitä CoMaps</string>
+    <string name="traffic_update_app">Päivitä Route 404</string>
     <!-- "traffic" as in "road congestion" -->
     <string name="traffic_data_unavailable">Liikennetietoja ei ole saatavilla</string>
     <string name="enable_logging">Ota loki käyttöön</string>
@@ -614,7 +614,7 @@
     <string name="power_managment_setting_never">Ei koskaan</string>
     <string name="power_managment_setting_auto">Automaattinen</string>
     <string name="power_managment_setting_manual_max">Täysi virransäästö</string>
-    <string name="enable_logging_warning_message">Valinta ottaa käyttöön lokikirjaukset diagnostiikkaa varten. Se voi auttaa tukihenkilöstöämme, kun he korjaavat sovelluksen ongelmia. Ota tämä ominaisuus käyttöön vain, jos CoMaps:n tuki pyytää.</string>
+    <string name="enable_logging_warning_message">Valinta ottaa käyttöön lokikirjaukset diagnostiikkaa varten. Se voi auttaa tukihenkilöstöämme, kun he korjaavat sovelluksen ongelmia. Ota tämä ominaisuus käyttöön vain, jos Route 404:n tuki pyytää.</string>
     <string name="routing_options_title">Reititysvalinnat</string>
     <!-- Recommended length for CarPlay and Android Auto is around 25-27 characters -->
     <string name="avoid_tolls">Vältä maksullisia teitä</string>
@@ -736,7 +736,7 @@
     <!-- Text on the Android Auto or CarPlay placeholder screen that maps are displayed on the phone screen -->
     <string name="car_used_on_the_phone_screen">Käytät nyt CoMapsia puhelimen näytöllä</string>
     <!-- Text on the phone placeholder screen that maps are displayed on the car screen -->
-    <string name="car_used_on_the_car_screen">Käytät nyt CoMaps auton näytöllä</string>
+    <string name="car_used_on_the_car_screen">Käytät nyt Route 404 auton näytöllä</string>
     <!-- Displayed on the phone screen. Android Auto connected -->
     <string name="aa_connected_title">Olet yhteydessä Android Autoon</string>
     <!-- Displayed on the phone screen. Button to display maps on the phone screen instead of a car -->
@@ -744,11 +744,11 @@
     <!-- Displayed on the Android Auto or CarPlay screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! -->
     <string name="car_continue_in_the_car">Auton näyttöön</string>
     <!-- Ask user to grant location permissions -->
-    <string name="aa_location_permissions_request">CoMaps tarvitsee sijaintitietoja. Kun se on turvallista, tarkista puhelimesi ilmoitus.</string>
+    <string name="aa_location_permissions_request">Route 404 tarvitsee sijaintitietoja. Kun se on turvallista, tarkista puhelimesi ilmoitus.</string>
     <!-- Notification title for permission request from AA. -->
     <string name="aa_request_permission_notification">Tämä sovellus tarvitsee lupasi</string>
     <!-- The text in the activity for location permission request. -->
-    <string name="aa_request_permission_activity_text">CoMaps tarvitsee luvan käyttää sijantia toimiakseen tehokkaasti Android Autossa</string>
+    <string name="aa_request_permission_activity_text">Route 404 tarvitsee luvan käyttää sijantia toimiakseen tehokkaasti Android Autossa</string>
     <!-- Grant Permissions button. -->
     <string name="aa_grant_permissions">Lupien myöntäminen</string>
     <!-- Outdoors/hiking map style (activity) name in the Styles and Layers dialog -->
@@ -877,7 +877,7 @@
     <string name="editor_business_vacant_button">Liike on tyhjillään</string>
     <string name="place_page_map_too_old_title">Karttatiedot vanhentuneet</string>
     <string name="place_page_map_too_old_description">Nykyinen karttadata on hyvin vanhaa, päivitä kartta.</string>
-    <string name="place_page_app_too_old_description">Nykyinen karttadata on hyvin vanhaa, päivitä CoMaps-sovellus.</string>
+    <string name="place_page_app_too_old_description">Nykyinen karttadata on hyvin vanhaa, päivitä Route 404-sovellus.</string>
     <string name="place_page_update_too_old_map">Päivitä kartta-alue</string>
     <string name="place_page_too_old_to_edit">OpenStreetMap-muokkaus on poistettu käytöstä, koska karttadata on liian vanhaa.</string>
     <string name="prefs_speed_cameras_information">Nopeuskameravaroitukset on poistettu käytöstä niissä maissa, missä varoitukset on kielletty lain nojalla.</string>
@@ -939,7 +939,7 @@
     <string name="recalculate_route">Laske uudelleen</string>
     <string name="off_route">Olet pois reitiltä</string>
     <string name="editor_add_select_category_recent_subtitle">Äskettäin käytetty</string>
-    <string name="permission_read_navigation_label">Lue CoMaps-navigointidataa</string>
+    <string name="permission_read_navigation_label">Lue Route 404-navigointidataa</string>
     <string name="editor_mark_business_vacant_description">Käytä tätä, jos liike on muuttanut pois tiloista, tilat ovat tyhjinä ja valmiit vastaanottamaan uuden vuokralaisen.</string>
     <string name="editor_add_select_category_all_subtitle">Kaikki luokat</string>
     <string name="destination">Määränpää</string>

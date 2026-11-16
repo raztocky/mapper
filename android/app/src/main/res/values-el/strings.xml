@@ -34,7 +34,7 @@
     <string name="country_status_download_failed">Η λήψη απέτυχε</string>
     <!-- Button text for the button under the country_status_download_failed message -->
     <string name="try_again">Δοκιμάστε ξανά</string>
-    <string name="about_menu_title">Σχετικά με το CoMaps</string>
+    <string name="about_menu_title">Σχετικά με το Route 404</string>
     <!-- Text in About screen -->
     <string name="about_proposition_1">• Εύκολο στη χρήση και προσεγμένο</string>
     <!-- Text in About screen -->
@@ -49,7 +49,7 @@
     <string name="unsupported_phone">Η εφαρμογή απαιτεί OpenGL με επιτάχυνση υλικού. Δυστυχώς, η συσκευή σας δεν το υποστηρίζει.</string>
     <string name="download">Λήψη</string>
     <!-- Used in DownloadResources startup screen -->
-    <string name="disconnect_usb_cable">Αποσυνδέστε το καλώδιο USB ή τοποθετήστε την κάρτα μνήμης για να χρησιμοποιήσετε το CoMaps</string>
+    <string name="disconnect_usb_cable">Αποσυνδέστε το καλώδιο USB ή τοποθετήστε την κάρτα μνήμης για να χρησιμοποιήσετε το Route 404</string>
     <!-- Used in DownloadResources startup screen -->
     <string name="not_enough_free_space_on_sdcard">Ελευθερώσετε χώρο αποθήκευσης στην SD κάρτα/USB πρώτα προκειμένου να χρησιμοποιήσετε την εφαρμογή</string>
     <string name="download_resources">Πριν ξεκινήσετε τη χρήση της εφαρμογής, επιτρέψτε μας να κατεβάσουμε το γενικό παγκόσμιο χάρτη στη συσκευή σας. \nΘα χρησιμοποιήσει %s αποθηκευτικού χώρου.</string>
@@ -192,7 +192,7 @@
     <string name="pref_zoom_summary">Εμφάνιση στο χάρτη</string>
     <string name="prefs_group_advanced">Προχωρημένες</string>
     <string name="download_resources_custom_url_title">Προσαρμοσμένος διακομιστής χάρτη</string>
-    <string name="download_resources_custom_url_message">Παρακάμπτει τον προεπιλεγμένο διακομιστή λήψης χάρτη για τις λήψεις χαρτών. Αφήστε το κενό για να χρησιμοποιήσετε τον προεπιλεγμένο διακομιστή του CoMaps.</string>
+    <string name="download_resources_custom_url_message">Παρακάμπτει τον προεπιλεγμένο διακομιστή λήψης χάρτη για τις λήψεις χαρτών. Αφήστε το κενό για να χρησιμοποιήσετε τον προεπιλεγμένο διακομιστή του Route 404.</string>
     <string name="download_resources_custom_url_summary_none">Δεν έχει οριστεί</string>
     <string name="download_resources_custom_url_error_scheme">Παρακαλούμε εισάγετε ένα URL που να ξεκινά με http:// ή https://</string>
     <!-- Settings «Map» category: «Night style» title -->
@@ -456,7 +456,7 @@
     <!-- Text in About and OSM Login screens. First %@ is replaced by a local, human readable date. -->
     <string name="osm_presentation">Δεδομένα OpenStreetMap που δημιουργήθηκαν από την κοινότητα μέχρι %s. Μάθετε περισσότερα για τον τρόπο επεξεργασίας και ενημέρωσης του χάρτη στο OpenStreetMap.org</string>
     <!-- OSM explanation on Android login screen -->
-    <string name="login_osm_presentation">Το OpenStreetMap.org (OSM) είναι ένα κοινοτικό έργο για τη δημιουργία ενός ελεύθερου και ανοικτού χάρτη. Είναι η κύρια πηγή δεδομένων χάρτη στους CoMaps και λειτουργεί παρόμοια με τη Βικιπαίδεια. Μπορείτε να προσθέσετε ή να επεξεργαστείτε τοποθεσίες και αυτές γίνονται διαθέσιμες σε εκατομμύρια χρήστες σε όλο τον κόσμο. \nΕνταχθείτε στην κοινότητα και βοηθήστε να φτιάξουμε έναν καλύτερο χάρτη για όλους!</string>
+    <string name="login_osm_presentation">Το OpenStreetMap.org (OSM) είναι ένα κοινοτικό έργο για τη δημιουργία ενός ελεύθερου και ανοικτού χάρτη. Είναι η κύρια πηγή δεδομένων χάρτη στους Route 404 και λειτουργεί παρόμοια με τη Βικιπαίδεια. Μπορείτε να προσθέσετε ή να επεξεργαστείτε τοποθεσίες και αυτές γίνονται διαθέσιμες σε εκατομμύρια χρήστες σε όλο τον κόσμο. \nΕνταχθείτε στην κοινότητα και βοηθήστε να φτιάξουμε έναν καλύτερο χάρτη για όλους!</string>
     <string name="login_to_make_edits_visible">Δημιουργήστε έναν λογαριασμό OpenStreetMap ή συνδεθείτε για να δημοσιεύσετε τις επεξεργασίες του χάρτη σας στον κόσμο</string>
     <!-- Downloaded 10 **of** 20 <- it is that "of" -->
     <string name="downloader_of">%1$d από %2$d</string>
@@ -470,7 +470,7 @@
     <!-- Title for OSM note section in the editor -->
     <string name="editor_other_info">Σημείωση για τους εθελοντές του OpenStreetMap (προαιρετική)</string>
     <!-- Hint of the input field in the OSM note section of the editor -->
-    <string name="editor_note_hint">Περιγράψτε λάθη στο χάρτη ή πράγματα που δεν μπορούν να επεξεργαστούν με τους CoMaps</string>
+    <string name="editor_note_hint">Περιγράψτε λάθη στο χάρτη ή πράγματα που δεν μπορούν να επεξεργαστούν με τους Route 404</string>
     <!-- Information about OSM at the top of the editing page -->
     <string name="editor_about_osm">Οι επεξεργασίες σας μεταφορτώνονται στη δημόσια βάση δεδομένων <a href="https://wiki.openstreetmap.org/wiki/El:About_OpenStreetMap">OpenStreetMap</a>. Παρακαλούμε μην προσθέτετε προσωπικές πληροφορίες ή πληροφορίες που προστατεύονται από πνευματικά δικαιώματα.</string>
     <string name="editor_more_about_osm">Περισσότερα σχετικά με το OpenStreetMap</string>
@@ -480,7 +480,7 @@
     <!-- To indicate the operator of ATMs, bicycle rentals, electric vehicle charging stations... -->
     <string name="operator">Χειριστής: %s</string>
     <string name="editor_category_unsuitable_title">Δεν μπορείτε να βρείτε την κατάλληλη κατηγορία;</string>
-    <string name="editor_category_unsuitable_text">Το CoMaps επιτρέπει την προσθήκη κατηγοριών απλών σημείων μόνο, δηλαδή όχι την προσθήκη πόλεων, δρόμων, λιμνών, περιγραμμάτων κτιρίων κ.λπ. Παρακαλούμε προσθέστε τέτοιες κατηγορίες απευθείας στο <a href="https://www.openstreetmap.org">OpenStreetMap.org</a>. Ελέγξτε τον <a href="https://www.comaps.app/support/advanced-map-editing/">οδηγό μας</a> για λεπτομερείς οδηγίες βήμα προς βήμα.</string>
+    <string name="editor_category_unsuitable_text">Το Route 404 επιτρέπει την προσθήκη κατηγοριών απλών σημείων μόνο, δηλαδή όχι την προσθήκη πόλεων, δρόμων, λιμνών, περιγραμμάτων κτιρίων κ.λπ. Παρακαλούμε προσθέστε τέτοιες κατηγορίες απευθείας στο <a href="https://www.openstreetmap.org">OpenStreetMap.org</a>. Ελέγξτε τον <a href="https://www.comaps.app/support/advanced-map-editing/">οδηγό μας</a> για λεπτομερείς οδηγίες βήμα προς βήμα.</string>
     <string name="downloader_no_downloaded_maps_title">Δεν έχετε κατεβάσει χάρτες</string>
     <string name="downloader_no_downloaded_maps_message">Κατεβάστε χάρτες για να κάνετε αναζήτηση και να πλοηγηθείτε χωρίς σύνδεση</string>
     <string name="current_location_unknown_error_title">Η τρέχουσα τοποθεσία είναι άγνωστη</string>
@@ -527,7 +527,7 @@
     <string name="mobile_data_option_ask">Πάντα ερώτηση</string>
     <string name="traffic_update_maps_text">Για να εμφανιστούν πληροφορίες για την κίνηση, πρέπει να ενημερωθούν οι χάρτες</string>
     <string name="increase_font_size">Αύξηση μεγέθους γραμματοσειράς ετικετών χάρτη</string>
-    <string name="traffic_update_app">Παρακαλούμε ενημερώστε το CoMaps</string>
+    <string name="traffic_update_app">Παρακαλούμε ενημερώστε το Route 404</string>
     <!-- "traffic" as in "road congestion" -->
     <string name="traffic_data_unavailable">Οι πληροφορίες για την κίνηση δεν είναι διαθέσιμες</string>
     <string name="enable_logging">Ενεργοποίηση αρχείου καταγραφής</string>
@@ -731,9 +731,9 @@
     <!-- App tip #09 -->
     <string name="app_tip_09">Ο κύριος στόχος μας είναι να δημιουργήσουμε γρήγορους, εύχρηστους και με σεβασμό στην ιδιωτικότητα χάρτες που θα λατρέψετε.</string>
     <!-- Text on the Android Auto or CarPlay placeholder screen that maps are displayed on the phone screen -->
-    <string name="car_used_on_the_phone_screen">Τώρα χρησιμοποιείτε το CoMaps στην οθόνη του κινητού</string>
+    <string name="car_used_on_the_phone_screen">Τώρα χρησιμοποιείτε το Route 404 στην οθόνη του κινητού</string>
     <!-- Text on the phone placeholder screen that maps are displayed on the car screen -->
-    <string name="car_used_on_the_car_screen">Τώρα χρησιμοποιείτε το CoMaps στην οθόνη του αυτοκινήτου</string>
+    <string name="car_used_on_the_car_screen">Τώρα χρησιμοποιείτε το Route 404 στην οθόνη του αυτοκινήτου</string>
     <!-- Displayed on the phone screen. Android Auto connected -->
     <string name="aa_connected_title">Έχετε συνδεθεί στο Android Auto</string>
     <!-- Displayed on the phone screen. Button to display maps on the phone screen instead of a car -->
@@ -741,11 +741,11 @@
     <!-- Displayed on the Android Auto or CarPlay screen. Button to display maps on the car screen instead of a phone. Must be no more than 18 symbols! -->
     <string name="car_continue_in_the_car">Στην οθόνη του αυτοκινήτου</string>
     <!-- Ask user to grant location permissions -->
-    <string name="aa_location_permissions_request">Η εφαρμογή CoMaps χρειάζεται πρόσβαση στην τοποθεσία. Όταν είναι ασφαλές, ελέγξτε την ειδοποίηση στο τηλέφωνό σας.</string>
+    <string name="aa_location_permissions_request">Η εφαρμογή Route 404 χρειάζεται πρόσβαση στην τοποθεσία. Όταν είναι ασφαλές, ελέγξτε την ειδοποίηση στο τηλέφωνό σας.</string>
     <!-- Notification title for permission request from AA. -->
     <string name="aa_request_permission_notification">Αυτή η εφαρμογή χρειάζεται την άδειά σας</string>
     <!-- The text in the activity for location permission request. -->
-    <string name="aa_request_permission_activity_text">Η εφαρμογή CoMaps στο Android Auto χρειάζεται μια άδεια τοποθεσίας για να λειτουργήσει αποτελεσματικά</string>
+    <string name="aa_request_permission_activity_text">Η εφαρμογή Route 404 στο Android Auto χρειάζεται μια άδεια τοποθεσίας για να λειτουργήσει αποτελεσματικά</string>
     <!-- Grant Permissions button. -->
     <string name="aa_grant_permissions">Να επιτραπεί</string>
     <!-- Outdoors/hiking map style (activity) name in the Styles and Layers dialog -->
@@ -829,7 +829,7 @@
     <string name="at">στις %s</string>
     <string name="share_track">Κοινοποίηση Ίχνους</string>
     <string name="delete_track_dialog_title">Διαγραφή %s;</string>
-    <string name="place_page_app_too_old_description">Τα τρέχοντα δεδομένα χάρτη σας είναι πολύ παλιά, παρακαλούμε ενημερώστε την εφαρμογή CoMaps.</string>
+    <string name="place_page_app_too_old_description">Τα τρέχοντα δεδομένα χάρτη σας είναι πολύ παλιά, παρακαλούμε ενημερώστε την εφαρμογή Route 404.</string>
     <string name="editor_level">Όροφος (το 0 είναι το ισόγειο)</string>
     <string name="error_enter_correct_level">Εισάγετε έναν έγκυρο αριθμό ορόφου</string>
     <string name="editor_business_vacant_button">Η επιχείρηση είναι κενή</string>
@@ -891,7 +891,7 @@
     <string name="route_finished">Διαδρομή ολοκληρώθηκε</string>
     <string name="not_following_route">Δεν ακολουθείται η διαδρομή</string>
     <string name="pref_openexternallinks_title">Αυτόματο άνοιγμα τρίτων συνδέσμων</string>
-    <string name="pref_openexternallinks_summary">Άνοιγμα τρίτων συνδέσμων στο CoMaps από προεπιλογή</string>
+    <string name="pref_openexternallinks_summary">Άνοιγμα τρίτων συνδέσμων στο Route 404 από προεπιλογή</string>
     <string name="destination">Προορισμός</string>
     <string name="stop">Τερματισμός</string>
     <string name="mb_downloaded">%1$d MB / %2$d MB</string>
@@ -940,7 +940,7 @@
     <string name="capacity_charging_no">Δεν έχει θέσεις με φορτιστές</string>
     <string name="capacity_charging">Θέσεις με φορτιστές: %s</string>
     <string name="capacity_disabled">Θέσεις για ΑΜΕΑ: %s</string>
-    <string name="permission_read_navigation_label">Ανάγνωση δεδομένων πλοήγησης CoMaps</string>
+    <string name="permission_read_navigation_label">Ανάγνωση δεδομένων πλοήγησης Route 404</string>
     <string name="permission_read_navigation_description">ανάγνωση ζωντανών πληροφοριών πλοήγησης, όπως επερχόμενες στροφές ή ονομασία του δρόμου όπου βρίσκεστε</string>
     <string name="prefs_group_route_summary">Μονάδες μέτρησης, φωνητικές οδηγίες, επιλογές δρομολόγησης</string>
     <string name="prefs_group_privacy_summary">Ιστορικό αναζητήσεων</string>

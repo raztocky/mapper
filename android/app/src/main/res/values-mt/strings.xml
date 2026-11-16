@@ -30,7 +30,7 @@
     <string name="country_status_download_failed">It-tniżżil falla</string>
     <!-- Button text for the button under the country_status_download_failed message -->
     <string name="try_again">Erġa pprova</string>
-    <string name="about_menu_title">Dwar CoMaps</string>
+    <string name="about_menu_title">Dwar Route 404</string>
     <!-- Text in About screen -->
     <string name="about_proposition_1">• Faċli tużah u irfinut</string>
     <!-- Text in About screen -->
@@ -45,7 +45,7 @@
     <string name="unsupported_phone">L-applikazzjoni għanda bżonn \'hardware accelerated OpenGL\'. Sfortunatament, l-apparat tiegħek ma jissapportjahx.</string>
     <string name="download">Niżżel</string>
     <!-- Used in DownloadResources startup screen -->
-    <string name="disconnect_usb_cable">Jekk jogħġbok neħħi il-wajer USB jew daħħal kard tal-memorja biex tuża CoMaps</string>
+    <string name="disconnect_usb_cable">Jekk jogħġbok neħħi il-wajer USB jew daħħal kard tal-memorja biex tuża Route 404</string>
     <!-- Used in DownloadResources startup screen -->
     <string name="not_enough_free_space_on_sdcard">Jekk jogħġbok żid ftit spazju fuq il-kard tal-memorja jew fil-ħażna USB biex tkun tista\' tuża l-applikazzjoni</string>
     <string name="download_resources">Qabel ma tibda tuża l-app, niżżel il-mappa ġenerali tad-dinja fuq l-apparat. \nDan ser juża %s ta\' ħażna.</string>
@@ -338,7 +338,7 @@
     <string name="mobile_data_option_ask">Staqsi Dejjem</string>
     <string name="traffic_update_maps_text">Biex tintwera d-dejta tat-traffiku, il-mapep iridu jiġu aġġornati</string>
     <string name="increase_font_size">Żid id-daqs għat-tikketti tal-mapep</string>
-    <string name="traffic_update_app">Aġġorna CoMaps</string>
+    <string name="traffic_update_app">Aġġorna Route 404</string>
     <string name="enable_logging">Attiva l-illoggjar</string>
     <string name="prefs_languages_information_off_link">Għal aktar informazzjoni jekk jogħġbok iċċekkja din il-gwida</string>
     <string name="routing_add_finish_point">Uża t-tiftixa jew għafas fuq il-mappa biex iżżid punt tad-destinazzjoni</string>
@@ -417,7 +417,7 @@
     <string name="change_map_locale">Lingwa tal-mappa</string>
     <string name="app_tip_03">Jekk taf żviluppatur tas-softwer, tista’ titolbu jimplimenta il-karatteristika li għandek bżonn.</string>
     <string name="app_tip_06">Tista’ tgħin sabiex tittraduċi l-applikazzjoni tagħna fil-lingwa tiegħek.</string>
-    <string name="aa_request_permission_activity_text">CoMaps ġo\' Android Auto jeħtieġ permessi tal-post biex jaħdem b ’mod effettiv</string>
+    <string name="aa_request_permission_activity_text">Route 404 ġo\' Android Auto jeħtieġ permessi tal-post biex jaħdem b ’mod effettiv</string>
     <string name="aa_grant_permissions">Għati Permess</string>
     <string name="volume">Volum</string>
     <string name="bookmarks_export">Esporta l-bookmarks u l-korsiji kollha</string>
@@ -462,11 +462,11 @@
     <string name="common_check_internet_connection_dialog">Aċċerta ruħhek li t-tagħmir tiegħek huwa mqabbad mal-Internet.</string>
     <string name="editor_edit_place_category_title">Kategorija</string>
     <string name="avoid_motorways">Evita l-passaġġi ħielsa</string>
-    <string name="login_osm_presentation">OpenStreetMap.org (OSM) huwa proġett komunitarju biex tinbena mappa ħielsa u miftuħa. Huwa s-sors ewlieni tad-dejta tal-mapep fil-CoMaps u xogħlijiet simili għall-Wikipedija. Tista ’żżid jew teditja postijiet u dawn isiru disponibbli għal miljuni ta’ utenti madwar id-dinja kollha. \nIngħaqad mal-komunita’ u għen biex issir mappa aħjar għal kulħadd!</string>
+    <string name="login_osm_presentation">OpenStreetMap.org (OSM) huwa proġett komunitarju biex tinbena mappa ħielsa u miftuħa. Huwa s-sors ewlieni tad-dejta tal-mapep fil-Route 404 u xogħlijiet simili għall-Wikipedija. Tista ’żżid jew teditja postijiet u dawn isiru disponibbli għal miljuni ta’ utenti madwar id-dinja kollha. \nIngħaqad mal-komunita’ u għen biex issir mappa aħjar għal kulħadd!</string>
     <string name="sort">Issortja…</string>
     <string name="enable_show_on_lock_screen_description">Meta tkun attivata, l-applikazzjoni taħdem fuq il-lockscreen anki meta t-tagħmir ikun imsakkar.</string>
     <string name="editor_about_osm">L-editjar tiegħek jittella’ fid-database pubblika <a href="https://wiki.openstreetmap.org/wiki/About_OpenStreetMap">ta’ OpenStreetMap</a>. Jekk jogħġbok iżżidx informazzjoni personali jew bid-drittijiet tal-awtur.</string>
-    <string name="editor_category_unsuitable_text">CoMaps jippermetti li jiżdiedu kategoriji punti sempliċi biss, li jfisser l-ebda bliet, toroq, lagi, linji ġenerali tal-bini, eċċ. Jekk jogħġbok żid dawn il-kategoriji direttament mal-<a href="https://www.openstreetmap.org">OpenStreetMap.org</a>. Iċċekkja l-<a href="https://www.comaps.app/support/advanced-map-editing/">gwida</a> tagħna għal struzzjonijiet dettaljati.</string>
+    <string name="editor_category_unsuitable_text">Route 404 jippermetti li jiżdiedu kategoriji punti sempliċi biss, li jfisser l-ebda bliet, toroq, lagi, linji ġenerali tal-bini, eċċ. Jekk jogħġbok żid dawn il-kategoriji direttament mal-<a href="https://www.openstreetmap.org">OpenStreetMap.org</a>. Iċċekkja l-<a href="https://www.comaps.app/support/advanced-map-editing/">gwida</a> tagħna għal struzzjonijiet dettaljati.</string>
     <string name="learn_more">Tgħallem iktar</string>
     <string name="editor_share_to_all_dialog_message_1">Kun ċert li ma daħħalt l-ebda informazzjoni privata jew personali</string>
     <string name="error_enter_correct_instagram_page">Daħħal isem l-utent jew indirizz tal-web validu ta’ Instagram</string>
@@ -512,7 +512,7 @@
     <string name="editor_default_language_hint">Kif inhi miktuba bil-lingwa lokali</string>
     <string name="layers_title">Stili u Saffi tal-Mapep</string>
     <string name="fuel_places">Stazzjonijiet tal-Gass</string>
-    <string name="editor_note_hint">Iddeskrivi l-iżbalji fuq il-mappa jew l-affarijiet li ma jistgħux jiġu editjati ġewwa CoMaps</string>
+    <string name="editor_note_hint">Iddeskrivi l-iżbalji fuq il-mappa jew l-affarijiet li ma jistgħux jiġu editjati ġewwa Route 404</string>
     <string name="placepage_remove_stop">Neħħi l-Waqfa</string>
     <string name="enable_logging_warning_message">Attiva din l-għażla biex tirrekordja u tibgħat manwalment dijanjostiċi dettaljati dwar il-kwistjoni tiegħek lilna billi tuża “Irrapporta problemi” fid-djalogu għajnuna. Ir-reġistri jistgħu jinkludu informazzjoni dwar il-post.</string>
     <string name="trip_finished">Wasalt!</string>
@@ -582,12 +582,12 @@
     <string name="aa_request_permission_notification">Din l-applikazzjoni teħtieġ il-permess tiegħek</string>
     <string name="enable_keep_screen_on">Żomm l-iskrin mixgħul</string>
     <string name="app_tip_00">Grazzi talli użajtu l-mapep tagħna mibnija mill-komunita’!</string>
-    <string name="car_used_on_the_car_screen">Issa qed tuża CoMaps fuq l-iskrin tal-karozza</string>
+    <string name="car_used_on_the_car_screen">Issa qed tuża Route 404 fuq l-iskrin tal-karozza</string>
     <string name="app_tip_09">L-għan ewlieni tagħna huwa li nibnu mapep veloċi, iffukati fuq il-privatezza, u faċli biex jintużaw li se jinħabbu.</string>
     <string name="app_tip_05">Kont taf li l-post attwali tiegħek fuq il-mappa jista’ jintgħażel?</string>
     <string name="select_option">Agħżel l-għażla</string>
     <string name="app_tip_08">Tista’ faċilment tirranġa u ttejjeb l-informazzjoni tal-mappa.</string>
-    <string name="car_used_on_the_phone_screen">Issa qed tuża CoMaps fuq l-iskrin tat-telefown</string>
+    <string name="car_used_on_the_phone_screen">Issa qed tuża Route 404 fuq l-iskrin tat-telefown</string>
     <string name="uri_open_location_failed">Ebda applikazzjoni installata li tista’ tiftaħ il-post</string>
     <string name="aa_connected_title">Int imqabbad ma’ Android Auto</string>
     <string name="car_continue_in_the_car">Lejn l-iskrin tal-karozza</string>
@@ -596,7 +596,7 @@
     <string name="error_no_file_manager_app">Ma jistax juri d-djalogu tal-għażla tal-fowlder għax l-ebda applikazzjoni xierqa mhi installata fuq it-tagħmir tiegħek. Installa applikazzjoni tal-maniġer tal-fajl u erġa ’pprova.</string>
     <string name="browser_not_available">Brawżer tal-web mhux disponibbli</string>
     <string name="view_menu">Ara l-Menu</string>
-    <string name="aa_location_permissions_request">CoMaps teħtieġ aċċess għall-post. Meta jkun sigur, iċċekkja n-notifika fuq il-mowbajl tiegħek.</string>
+    <string name="aa_location_permissions_request">Route 404 teħtieġ aċċess għall-post. Meta jkun sigur, iċċekkja n-notifika fuq il-mowbajl tiegħek.</string>
     <string name="pref_tts_no_system_tts">Is-settings tas-Sinteżi tad-diskors ma nstabux, żgur li t-tagħmir tiegħek jappoġġjah?</string>
     <string name="settings">Settings</string>
     <string name="auto">Auto</string>
