@@ -23,6 +23,7 @@ import app.organicmaps.R;
 import app.organicmaps.car.CarAppService;
 import app.organicmaps.car.renderer.Renderer;
 import app.organicmaps.car.screens.base.BaseMapScreen;
+import app.organicmaps.car.screens.search.SearchScreen;
 import app.organicmaps.car.screens.settings.DrivingOptionsScreen;
 import app.organicmaps.car.util.Colors;
 import app.organicmaps.car.util.RoutingUtils;
@@ -180,7 +181,16 @@ public class NavigationScreen extends BaseMapScreen implements RoutingController
       mRoutingController.cancel();
     });
 
+    // Search for a place to add as a stop; picking a result opens AddStopScreen (see CarAppSession)
+    final Action searchAction =
+        new Action.Builder()
+            .setIcon(new CarIcon.Builder(IconCompat.createWithResource(getCarContext(), R.drawable.ic_search)).build())
+            .setOnClickListener(
+                () -> getScreenManager().push(new SearchScreen.Builder(getCarContext(), getSurfaceRenderer()).build()))
+            .build();
+
     final ActionStrip.Builder builder = new ActionStrip.Builder();
+    builder.addAction(searchAction);
     builder.addAction(createTtsAction());
     builder.addAction(UiHelpers.createSettingsActionForResult(this, getSurfaceRenderer(), this::onSettingsResult));
     builder.addAction(stopActionBuilder.build());

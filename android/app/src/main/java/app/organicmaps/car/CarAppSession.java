@@ -14,6 +14,7 @@ import app.organicmaps.MwmApplication;
 import app.organicmaps.R;
 import app.organicmaps.car.renderer.Renderer;
 import app.organicmaps.car.renderer.RendererFactory;
+import app.organicmaps.car.screens.AddStopScreen;
 import app.organicmaps.car.screens.ErrorScreen;
 import app.organicmaps.car.screens.MapPlaceholderScreen;
 import app.organicmaps.car.screens.MapScreen;
@@ -255,11 +256,18 @@ public final class CarAppSession extends Session implements DefaultLifecycleObse
       return;
 
     final MapObject mapObject = (MapObject) data;
-    // Don't display the PlaceScreen for 'MY_POSITION' or during navigation
-    // TODO (AndrewShkrob): Implement the 'Add stop' functionality
-    if (mapObject.isMyPosition() || RoutingController.get().isNavigating())
+    // Don't display anything for 'MY_POSITION'
+    if (mapObject.isMyPosition())
     {
       Framework.nativeDeactivatePopup();
+      return;
+    }
+    // During navigation, offer to add the place as a stop instead of starting a new route
+    if (RoutingController.get().isNavigating())
+    {
+      if (mScreenManager.getTop() instanceof AddStopScreen)
+        mScreenManager.pop();
+      mScreenManager.push(AddStopScreen.create(getCarContext(), mSurfaceRenderer, mapObject));
       return;
     }
     final PlaceScreen placeScreen =
