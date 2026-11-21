@@ -1,6 +1,6 @@
 package app.organicmaps.sdk.settings;
 
-import java.util.Locale;
+import app.organicmaps.sdk.util.Config;
 
 public class UnitLocale
 {
@@ -9,16 +9,10 @@ public class UnitLocale
   public static final int UNITS_METRIC = 0;
   public static final int UNITS_FOOT = 1;
 
+  // Route 404 defaults to miles regardless of locale.
   private static int getDefaultUnits()
   {
-    final String code = Locale.getDefault().getCountry();
-    // USA, UK, Liberia, Burma
-    String[] arr = {"US", "GB", "LR", "MM"};
-    for (String s : arr)
-      if (s.equalsIgnoreCase(code))
-        return UNITS_FOOT;
-
-    return UNITS_METRIC;
+    return UNITS_FOOT;
   }
 
   private static native int getCurrentUnits();
@@ -37,6 +31,13 @@ public class UnitLocale
 
   public static void initializeCurrentUnits()
   {
+    // One-time switch to miles for installs that predate the Route 404 default.
+    if (!Config.isImperialDefaultApplied())
+    {
+      setCurrentUnits(getDefaultUnits());
+      Config.setImperialDefaultApplied();
+      return;
+    }
     final int u = getCurrentUnits();
     setCurrentUnits(u == UNITS_UNDEFINED ? getDefaultUnits() : u);
   }

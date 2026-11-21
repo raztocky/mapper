@@ -17,6 +17,7 @@
 
 #include "platform/location.hpp"
 #include "platform/measurement_utils.hpp"
+#include "platform/settings.hpp"
 
 #include "base/logging.hpp"
 #include "base/math.hpp"
@@ -1012,6 +1013,12 @@ void MyPositionController::ActivateRouting(int zoomLevel, bool enableAutoZoom, b
     m_isArrowGluedInRouting = isArrowGlued;
     m_enableAutoZoomInRouting = enableAutoZoom;
     m_preferRouteDirectionInRouting = allowRouteRotation;
+
+    // Route 404: "North always up" driving option (on by default) keeps the map north-up while navigating.
+    // The user can still switch modes with the position button mid-route; this is re-applied on each route start.
+    bool northUp = true;
+    (void)settings::Get("NorthUpInRouting", northUp);
+    m_preferredRoutingMode = northUp ? location::Follow : location::FollowAndRotate;
 
     if (m_preferredRoutingMode == location::Follow)
     {

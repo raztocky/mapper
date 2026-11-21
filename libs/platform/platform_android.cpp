@@ -216,8 +216,8 @@ void Platform::SetupMeasurementSystem() const
   auto units = measurement_utils::Units::Metric;
   if (settings::Get(settings::kMeasurementUnits, units))
     return;
-  // @TODO Add correct implementation
-  units = measurement_utils::Units::Metric;
+  // Route 404 defaults to miles.
+  units = measurement_utils::Units::Imperial;
   settings::Set(settings::kMeasurementUnits, units);
 }
 

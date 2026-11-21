@@ -108,12 +108,13 @@ android {
     flavorDimensions += "default"
 
     productFlavors {
+        // Route 404's own Play Store listing (internal testing). Needs its own package name: app.comaps is CoMaps'.
         create("google") {
             dimension = "default"
-            applicationIdSuffix = ".google"
+            applicationId = "com.nestware.route404"
             versionName = "${android.defaultConfig.versionName!!}-Google"
             buildConfigField("String", "SUPPORT_MAIL", "\"gplay@comaps.app\"")
-            buildConfigField("String", "REVIEW_URL", "\"market://details?id=app.comaps.google\"")
+            buildConfigField("String", "REVIEW_URL", "\"market://details?id=com.nestware.route404\"")
         }
 
         // Distributed directly by the project, e.g. in repo releases, chats, etc.

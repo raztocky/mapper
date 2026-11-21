@@ -34,6 +34,9 @@ public final class Config
   private static final String KEY_DOWNLOADER_AUTO = "AutoDownloadEnabled";
   private static final String KEY_PREF_ZOOM_BUTTONS = "ZoomButtonsEnabled";
   private static final String KEY_PREF_USE_GS = "UseGoogleServices";
+  // Read natively by MyPositionController::ActivateRouting.
+  private static final String KEY_MISC_IMPERIAL_DEFAULT_APPLIED = "Route404ImperialDefaultApplied";
+  private static final String KEY_PREF_NORTH_UP_IN_ROUTING = "NorthUpInRouting";
 
   private static final String KEY_MISC_DISCLAIMER_ACCEPTED = "IsDisclaimerApproved";
   private static final String KEY_MISC_TTS_MESSAGE_DELIVERED = "TtsMessageDelivered";
@@ -190,6 +193,26 @@ public final class Config
   public static void setShowZoomButtons(boolean show)
   {
     setBool(KEY_PREF_ZOOM_BUTTONS, show);
+  }
+
+  public static boolean isImperialDefaultApplied()
+  {
+    return getBool(KEY_MISC_IMPERIAL_DEFAULT_APPLIED, false);
+  }
+
+  public static void setImperialDefaultApplied()
+  {
+    setBool(KEY_MISC_IMPERIAL_DEFAULT_APPLIED);
+  }
+
+  public static boolean isNorthUpInRouting()
+  {
+    return getBool(KEY_PREF_NORTH_UP_IN_ROUTING, true);
+  }
+
+  public static void setNorthUpInRouting(boolean enabled)
+  {
+    setBool(KEY_PREF_NORTH_UP_IN_ROUTING, enabled);
   }
 
   public static boolean isKeepScreenOnEnabled()

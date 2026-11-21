@@ -16,6 +16,6 @@ JNIEXPORT void JNICALL Java_app_organicmaps_sdk_settings_UnitLocale_setCurrentUn
 JNIEXPORT jint JNICALL Java_app_organicmaps_sdk_settings_UnitLocale_getCurrentUnits(JNIEnv * env, jobject thiz)
 {
   measurement_utils::Units u;
-  return static_cast<jint>(settings::Get(settings::kMeasurementUnits, u) ? u : measurement_utils::Units::Metric);
+  return static_cast<jint>(settings::Get(settings::kMeasurementUnits, u) ? u : measurement_utils::Units::Imperial);
 }
 }

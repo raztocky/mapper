@@ -275,6 +275,10 @@
     <!-- Bottom nav when planning route: button that disables TTS -->
     <string name="tts_toggle_disable">Disable voice instructions</string>
     <string name="pref_map_auto_zoom">Auto zoom</string>
+    <string name="pref_north_up_title">North always up</string>
+    <string name="pref_north_up_summary">Keep the map pointing north while navigating instead of rotating with your direction</string>
+    <string name="pref_use_miles_title">Use miles</string>
+    <string name="pref_use_miles_summary">Show distances and speeds in miles and feet instead of kilometers and meters</string>
     <string name="placepage_distance">Distance</string>
     <string name="search_show_on_map">View on map</string>
     <!-- Menu button -->

@@ -32,6 +32,7 @@ public class NavigationSettingsFragment extends BaseXmlSettingsFragment
 
     initMeasureUnitsPrefsCallbacks();
     initPerspectivePrefsCallbacks();
+    initNorthUpPrefsCallbacks();
     initAutoZoomPrefsCallbacks();
     initAndroidAutoSupportPrefsCallback();
     initAutoRerouteCallback();
@@ -92,10 +93,20 @@ public class NavigationSettingsFragment extends BaseXmlSettingsFragment
 
   private void initMeasureUnitsPrefsCallbacks()
   {
-    final Preference pref = getPreference(getString(R.string.pref_munits));
-    ((ListPreference) pref).setValue(String.valueOf(UnitLocale.getUnits()));
+    final TwoStatePreference pref = getPreference(getString(R.string.pref_munits));
+    pref.setChecked(UnitLocale.getUnits() == UnitLocale.UNITS_FOOT);
     pref.setOnPreferenceChangeListener((preference, newValue) -> {
-      UnitLocale.setUnits(Integer.parseInt((String) newValue));
+      UnitLocale.setUnits((Boolean) newValue ? UnitLocale.UNITS_FOOT : UnitLocale.UNITS_METRIC);
+      return true;
+    });
+  }
+
+  private void initNorthUpPrefsCallbacks()
+  {
+    final TwoStatePreference pref = getPreference(getString(R.string.pref_north_up));
+    pref.setChecked(Config.isNorthUpInRouting());
+    pref.setOnPreferenceChangeListener((preference, newValue) -> {
+      Config.setNorthUpInRouting((Boolean) newValue);
       return true;
     });
   }

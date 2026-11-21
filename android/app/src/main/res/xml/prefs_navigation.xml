@@ -2,12 +2,13 @@
 <androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto">
 
-  <ListPreference
-    android:entries="@array/measument_units"
-    android:entryValues="@array/measument_units_values"
+  <!-- Not persisted by AndroidX: the value lives in native settings (UnitLocale). -->
+  <SwitchPreferenceCompat
     android:key="@string/pref_munits"
-    android:summary="%s"
-    android:title="@string/measurement_units"
+    android:persistent="false"
+    android:title="@string/pref_use_miles_title"
+    android:summary="@string/pref_use_miles_summary"
+    android:widgetLayout="@layout/preference_switch"
     app:icon="@drawable/ic_straighten"
     app:singleLineTitle="false" />
 
@@ -27,6 +28,13 @@
     android:title="@string/pref_map_3d_title"
     android:widgetLayout="@layout/preference_switch"
     app:icon="@drawable/ic_three_d_rotation"
+    app:singleLineTitle="false" />
+  <SwitchPreferenceCompat
+    android:key="@string/pref_north_up"
+    android:persistent="false"
+    android:title="@string/pref_north_up_title"
+    android:summary="@string/pref_north_up_summary"
+    android:widgetLayout="@layout/preference_switch"
     app:singleLineTitle="false" />
   <SwitchPreferenceCompat
     android:key="@string/pref_auto_zoom"
