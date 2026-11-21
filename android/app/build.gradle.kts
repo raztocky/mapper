@@ -112,6 +112,7 @@ android {
         create("google") {
             dimension = "default"
             applicationId = "com.nestware.route404"
+            minSdk = 24 // Play automatic protection requires 24+.
             versionName = "${android.defaultConfig.versionName!!}-Google"
             buildConfigField("String", "SUPPORT_MAIL", "\"gplay@comaps.app\"")
             buildConfigField("String", "REVIEW_URL", "\"market://details?id=com.nestware.route404\"")
